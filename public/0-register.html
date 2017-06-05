@@ -26,7 +26,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>회원가입 페이지</title>
+	<title>[빨간거울]</title>
 
 </head>
 
@@ -60,7 +60,7 @@
 					============================================= -->
 					<nav id="primary-menu">
 
-						<ul>
+						<ul class='norightmargin' style='border-right : 0px !important;'>
 							<li><a href="0-login.html"><div>로그인</div></a>
 							</li>
 
@@ -69,9 +69,9 @@
 						<!-- Top Cart
 						============================================= -->
 
-						<div id="top-cart">
+						<!--div id="top-cart">
 							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
-						</div><!-- #top-cart end -->
+						</div> #top-cart end -->
 
 
 						<!-- Top Search
@@ -86,10 +86,36 @@
 
 		</header><!-- #header end -->
 
+		<!-- pc화면 --> 
+		<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix bottommargin-sm slider-parallax-visible hidden-xs" style="height: 284px;">
+			<div class="slider-parallax-inner" style="transform: translateY(0px); height: 284px;">
+
+				<div class="swiper-container swiper-parent swiper-container-horizontal" style="cursor: -webkit-grab;">
+					<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+						<!-- 슬라이드1 --> 
+						<div class="swiper-slide swiper-slide-active" style="height: 284px; width: 1440px;">
+							<div class="container clearfix">
+								<!-- 피씨 --> 
+								<div class="slider-caption slider-caption-center hidden-xs" style="transform: translateY(0px); opacity: 1; top: -10.5px;">
+									<h2 data-caption-animate="fadeInUp t300 bottommargin" class="fadeInUp t300 bottommargin animated">미팅은 <span class="color">추억</span>이다</h2>
+									<p class="t200 topmargin-sm fadeInUp animated" style="line-height : 1.8;" data-caption-animate="fadeInUp" data-caption-delay="200">빨간거울은 신촌지역 <span class="color">대학생 미팅 매칭</span> 서비스입니다.<br> 친구들과 함께 안전하고 즐거운 미팅을 경험해보세요</p>				   	
+									<a data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#content2">지금 시작하기</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+			</div>
+		</section>
+
+
 
 	<!-- Page Title
 		============================================= -->
-		<section id="page-title" class="page-title-parallax" style="padding: 30px 0px; background-image : none; background-size: cover; background-position: center center; border-top : 5px; border-color : black; text-align : left !important;" data-stellar-background-ratio="0.4">
+		<section id="page-title" class="page-title-parallax visible-xs" style="padding: 30px 0px; background-image : none; background-size: cover; background-position: center center; border-top : 5px; border-color : black; text-align : left !important;" data-stellar-background-ratio="0.4">
 
 			<div class="container clearfix">
 				<h3><a class = '#c0392b'>빨간거울</a> 신촌 지역 대학생들끼리 안전하고 유쾌한 미팅을 해보세요. </h3>
@@ -106,7 +132,7 @@
 
 		<!-- Content
 		============================================= -->
-		<section id="content">
+		<section id="content2">
 
 			<div class="content-wrap nopadding">
 
@@ -142,12 +168,11 @@
 
 							<div class="col_full" id="user_count-wrap" style='display : none;' >
 								<label for="user_count">미팅 멤버 수?</label>
-								<span data-container="body" data-toggle="popover" data-placement="bottom" data-content="함께 파티할 멤버수를 입력해주세요. 멤버수가 맞게 매칭이 됩니다. 가입 이후에 멤버수 변경도 가능해요">
+								<span data-container="body" data-toggle="popover" data-placement="top" data-content="함께 파티할 멤버수를 입력해주세요. 멤버수가 맞게 매칭이 됩니다. 현재는 3명만 가능합니다">
    								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
   								</span>
 								<select id="user_count" name="user_count" class="required sm-form-control">
-									<option value="">성별 선택</option>
-
+									<option value="">멤버수 선택</option>
 									<option value="3">3명</option>
 								</select>
 							</div>
@@ -161,20 +186,31 @@
 
 								<select id="user_age" name="user_age" class="required sm-form-control">
 									<option value="">멤버들 평균 나이 선택</option>
-									<option value="20">20</option>
+									<option value="20">21</option>
+									<option value="20">22</option>
+									<option value="20">23</option>
+									<option value="20">24</option>
+									<option value="20">25</option>
+									<option value="20">26</option>
+									<option value="20">27</option>
+									<option value="20">28</option>
+									<option value="20">29</option>
 								</select>
 							</div>
 
 
 
 							<div class="col_full" id="user_id-wrap" style='display : none;'>
-								<label for="user_id">이메일</label>
+								<label for="user_id">이메일(계정)</label>
+								<span data-container="body" data-toggle="popover" data-placement="top" data-content="로그인 게정으로 사용되니 정확하게 입력해주세요">
+   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
+  								</span>
 								<!-- Modal button -->
-								<a href="#myModal1" data-lightbox="inline">
+								<!--a href="#myModal1" data-lightbox="inline">
 									<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-								</a>
+								</a-->
 								<!-- Modal -->
-								<div class="modal1 mfp-hide" id="myModal1">
+								<!--div class="modal1 mfp-hide" id="myModal1">
 									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
 										<div class="center" style="padding: 50px;">
 											<h3>인증된 회원</h3>
@@ -184,9 +220,8 @@
 											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
 										</div>
 									</div>
-								</div>
-								<!-- 아이콘을 클릭시 trigger modal, 왜 메일로만 인증해야하는지 설명해놓기 -->
-								<input type="text" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr" type='email'>
+								</div-->
+								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr">
 							</div>
 
 							<!-- 인증번호 보내기
@@ -204,14 +239,14 @@
 							-->
 							<div class="col_full" id="user_pass-wrap" style='display : none;' >
 								<label for="user_pass">비밀번호를 설정해주세요</label>
-								<input type="text" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호" type='password'>
+								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호">
 							</div>
 							<div class="col_full" id="re_user_pass-wrap" style='display : none;' >
 								<label for="re_user_pass">한번더</label>
-								<input type="text" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력" type='password'>
+								<input type="password" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
 							</div>
 							<div class="col_full" id="tell-wrap" style='display : none;' >
-								<label for="tell">미팅 성사시 연락받을 핸드폰번호</label>
+								<label for="tell">연락받을 핸드폰번호</label>
 								<input type="text" class="sm-form-control required" id="tell0" name="tell" value="" placeholder="010" maxlength='4'>
 								<input type="text" class="sm-form-control required" id="tell1" name="tell" value="" placeholder="가운데" maxlength='4'>
 								<input type="text" class="sm-form-control required" id="tell2" name="tell" value="" placeholder="마지막" maxlength='4'>
@@ -221,15 +256,16 @@
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
 								<label for="user_concern">해쉬태그 3개</label>
+								<span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
+   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
+  								</span>
 								<input type="text" class="sm-form-control required" id="user_concern" name="user_concern" value="" placeholder="#공대남자 #미대여자 #잘놈">
 							</div>
 							<div class="col_full" id="btn_add-wrap" style='display : none;' >
 								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
+
 								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
 							</div>
-
-
-
 						</form>
 
 					</div>
@@ -271,7 +307,7 @@
 							<div class="tab-container">
 
 								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-33" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="false">
-									<strong> 미팅</strong>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅할 권리는 빨간거울이 챙겨드릴게요. <br> 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 우리 빨간 거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다.
+									<strong> 미팅</strong>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅할 권리는 빨간거울이 챙겨드릴게요. <br> 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 우리 빨간 거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다. 
 
 
 
@@ -363,12 +399,12 @@
 					<div class="col_half">
 						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
 
-						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.
+						Copyrights &copy; 2017 All Rights Reserved by Redmirror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="copyrights-menu copyright-links fright clearfix">
-							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
 						</div>
 						<div class="fright clearfix">
 							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
@@ -412,11 +448,11 @@
 				rules: {
 					'user_pass': {
 						required: true,
-						minlength: 5
+						minlength: 4
 					},
 					'user_concern': {
 						required: true,
-						minlength: 5
+						minlength: 1
 					}
 				}
 			});
