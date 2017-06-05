@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" />
+
+	<!-- Bootstrap Select CSS -->
+	<link rel="stylesheet" href="css/components/bs-select.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>회원가입 페이지</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="full-header nobottomborder">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger">
+						<i class="icon-reorder hidden-xs"></i>
+						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" class='visible-xs' width='14px;'></a>
+					</div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu">
+
+						<ul>
+							<li><a href="0-login.html"><div>로그인</div></a>
+							</li>
+
+						</ul>
+
+						<!-- Top Cart
+						============================================= -->
+
+						<div id="top-cart">
+							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
+						</div><!-- #top-cart end -->
+
+
+						<!-- Top Search
+						============================================= -->
+
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+
+	<!-- Page Title
+		============================================= -->
+		<section id="page-title" class="page-title-parallax" style="padding: 30px 0px; background-image : none; background-size: cover; background-position: center center; border-top : 5px; border-color : black; text-align : left !important;" data-stellar-background-ratio="0.4">
+
+			<div class="container clearfix">
+				<h3><a class = '#c0392b'>빨간거울</a> 신촌 지역 대학생들끼리 안전하고 유쾌한 미팅을 해보세요. </h3>
+				<!--ol class="breadcrumb">
+
+				</ol-->
+			</div>
+
+		</section><!-- #page-title end -->
+
+
+		<!-- #page-title end -->
+
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap nopadding">
+
+				<div class="container clearfix">
+
+					<div class="col_half nobottommargin">
+
+
+						<form id="conditional-form" class="nobottommargin" >
+							<div class="col_full" data-animate="fadeInLeft" data-delay="200" >
+								<h3 class='t200 hidden-xs'>미팅을 시작해보세요</h3>
+								<!--label for="user_univ visible-xs">시작하시려면..</label-->
+								<bf>
+								<select id="user_univ" name="user_univ" class="required sm-form-control">
+									<option value="">소속 대학 선택하여 시작</option>
+									<option value="서강대학교">서강대</option>
+									<option value="연세대학교">연세대</option>
+									<option value="이화여자대학교">이화여대</option>
+									<option value="홍익대학교">홍익대</option>
+								</select>
+
+							</div>
+
+							<div class="col_full" id="user_gender-wrap" style='display : none;' >
+								<label for="user_gender">성별?</label>
+								<select id="user_gender" name="user_gender" class="required sm-form-control">
+									<option value="">성별을 선택하세요</option>
+									<option value="M">남자</option>
+									<option value="W">여자</option>
+								</select>
+
+							</div>
+
+							<div class="col_full" id="user_count-wrap" style='display : none;' >
+								<label for="user_count">미팅 멤버 수?</label>
+								<span data-container="body" data-toggle="popover" data-placement="bottom" data-content="함께 파티할 멤버수를 입력해주세요. 멤버수가 맞게 매칭이 됩니다. 가입 이후에 멤버수 변경도 가능해요">
+   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
+  								</span>
+								<select id="user_count" name="user_count" class="required sm-form-control">
+									<option value="">성별 선택</option>
+
+									<option value="3">3명</option>
+								</select>
+							</div>
+
+							<div class="col_full" id="user_age-wrap" style='display : none;'>
+								<label for="user_age">나이?</label>
+
+								<!--span data-container="body" data-toggle="popover" data-placement="right" data-content="맴버들의 평균 나이를 연도로 계산해서 입력해주세요">
+   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
+  								</span-->
+
+								<select id="user_age" name="user_age" class="required sm-form-control">
+									<option value="">멤버들 평균 나이 선택</option>
+									<option value="20">20</option>
+								</select>
+							</div>
+
+
+
+							<div class="col_full" id="user_id-wrap" style='display : none;'>
+								<label for="user_id">이메일</label>
+								<!-- Modal button -->
+								<a href="#myModal1" data-lightbox="inline">
+									<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
+								</a>
+								<!-- Modal -->
+								<div class="modal1 mfp-hide" id="myModal1">
+									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
+										<div class="center" style="padding: 50px;">
+											<h3>인증된 회원</h3>
+											<p class="nobottommargin">빨간 잠망경은 안전하고 즐거운 미팅을 위해 인증제를 실시하고 있습니다. 소속 대학을 인중해주시고 이용 부탁드려요. 이메일은 </p>
+										</div>
+										<div class="section center nomargin" style="padding: 30px;">
+											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
+										</div>
+									</div>
+								</div>
+								<!-- 아이콘을 클릭시 trigger modal, 왜 메일로만 인증해야하는지 설명해놓기 -->
+								<input type="text" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr" type='email'>
+							</div>
+
+							<!-- 인증번호 보내기
+							<div class="col_full" id="user_pass-wrap" >
+								<div class="button button-3d nomargin" id='user_pass' type="submit">인증메일 발송</div>
+							</div>
+							<div class="col_full" id="form-condition-7-wrap" >
+								<label for="form-condition-7">인증번호</label>
+								<input type="text" class="sm-form-control required" id="form-condition-7" name="form-condition-7" value="" placeholder="인증번호">
+							</div>
+
+							<div class="col_full" id="user_concern-wrap" >
+								<div class="button button-3d nomargin" id='user_concern' type="submit">인증</div>
+							</div>
+							-->
+							<div class="col_full" id="user_pass-wrap" style='display : none;' >
+								<label for="user_pass">비밀번호를 설정해주세요</label>
+								<input type="text" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호" type='password'>
+							</div>
+							<div class="col_full" id="re_user_pass-wrap" style='display : none;' >
+								<label for="re_user_pass">한번더</label>
+								<input type="text" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력" type='password'>
+							</div>
+							<div class="col_full" id="tell-wrap" style='display : none;' >
+								<label for="tell">미팅 성사시 연락받을 핸드폰번호</label>
+								<input type="text" class="sm-form-control required" id="tell0" name="tell" value="" placeholder="010" maxlength='4'>
+								<input type="text" class="sm-form-control required" id="tell1" name="tell" value="" placeholder="가운데" maxlength='4'>
+								<input type="text" class="sm-form-control required" id="tell2" name="tell" value="" placeholder="마지막" maxlength='4'>
+								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
+								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
+								<input style="width: 31%;" type="text" id="tell2" maxlength="4" class="number" name="tell"-->
+							</div>
+							<div class="col_full" id="user_concern-wrap" style='display : none;' >
+								<label for="user_concern">해쉬태그 3개</label>
+								<input type="text" class="sm-form-control required" id="user_concern" name="user_concern" value="" placeholder="#공대남자 #미대여자 #잘놈">
+							</div>
+							<div class="col_full" id="btn_add-wrap" style='display : none;' >
+								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
+								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
+							</div>
+
+
+
+						</form>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!--  소개페이지 -->
+			<section id="content">
+
+			<div class="content-wrap padding-sm">
+
+				<div class="container clearfix">
+
+					<div class="row clearfix">
+
+						<div class="col-sm-9">
+
+
+
+							<div class="clear"></div>
+
+							<div class="row clearfix">
+
+								<div class="col-md-12">
+
+									<div class="tabs tabs-bb clearfix ui-tabs ui-widget ui-widget-content ui-corner-all" id="tab-9">
+
+							<ul class="tab-nav clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+								<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-33" aria-labelledby="ui-id-17" aria-selected="true" aria-expanded="true"><a href="#tabs-33" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-17">소개</a></li>
+								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-34" aria-labelledby="ui-id-18" aria-selected="false" aria-expanded="false"><a href="#tabs-34" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-18">후기</a></li>
+								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-35" aria-labelledby="ui-id-19" aria-selected="false" aria-expanded="false"><a href="#tabs-35" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-19">개발자</a></li>
+								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-36" aria-labelledby="ui-id-19" aria-selected="false" aria-expanded="false"><a href="#tabs-36" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-20">FAQ</a></li>
+							</ul>
+
+							<div class="tab-container">
+
+								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-33" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="false">
+									<strong> 미팅</strong>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅할 권리는 빨간거울이 챙겨드릴게요. <br> 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 우리 빨간 거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다.
+
+
+
+								</div>
+								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-34" aria-labelledby="ui-id-18" role="tabpanel" aria-hidden="true" style="display: none;">
+									준비중이에요
+								</div>
+								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-35" aria-labelledby="ui-id-19" role="tabpanel" aria-hidden="true" style="display: none;">
+									<ul class="testimonials-grid grid-3 clearfix">
+										<li style="height: auto;">
+											<div class="testimonial">
+												<div class="testi-image">
+													<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
+												</div>
+												<div class="testi-content">
+													<p>미팅은 추억이다. 미팅을 함께 했던 친구들과 가끔 미팅 얘기를 하지 않았던가. </p>
+													<div class="testi-meta">
+														Hyeongjin Kim
+														<span>기획</span>
+														<span>서강대 커뮤니티 서담 운영</span>
+														<span>서강대 영문11</span>
+
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="height: auto;">
+											<div class="testimonial">
+												<div class="testi-image">
+													<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
+												</div>
+												<div class="testi-content">
+													<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+													<div class="testi-meta">
+														Collis Ta'eed
+														<span>Envato Inc.</span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+
+								</div>
+								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-36" aria-labelledby="ui-id-20" role="tabpanel" aria-hidden="true" style="display: none;">
+									<div class="accordion accordion-border clearfix" data-state="closed">
+
+										<div class="acctitle"><i class="acc-closed icon-question-sign"></i><i class="acc-open icon-question-sign"></i>여기 뭐하는곳인가요?</div>
+										<div class="acc_content clearfix" style="display: none;">안내1</div>
+
+										<div class="acctitle"><i class="acc-closed icon-comments-alt"></i><i class="acc-open icon-comments-alt"></i>안전한 서비스인가요?</div>
+										<div class="acc_content clearfix" style="display: none;">안내2</div>
+
+										<div class="acctitle acctitlec"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-lock3"></i>매칭은 어떻게 이뤄지나요?</div>
+										<div class="acc_content clearfix" style="display: block;">안내3</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="line visible-xs-block"></div>
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
+
+						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="copyrights-menu copyright-links fright clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+
+	</div><!-- #wrapper end -->
+
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/login.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+
+	<script>
+		jQuery(document).ready( function($){
+			var conditionValidator = $("#conditional-form").validate({
+				rules: {
+					'user_pass': {
+						required: true,
+						minlength: 5
+					},
+					'user_concern': {
+						required: true,
+						minlength: 5
+					}
+				}
+			});
+
+			$('#user_univ').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_univ" ) === true ) {
+					$('#user_gender-wrap').fadeIn();
+				} else {
+					$('#user_gender-wrap').fadeOut();
+				}
+			});
+
+			$('#user_gender').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_gender" ) === true ) {
+					$('#user_count-wrap').fadeIn();
+				} else {
+					$('#user_count-wrap').fadeOut();
+				}
+			});
+
+			$('#user_count').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_count" ) === true ) {
+					$('#user_age-wrap').fadeIn();
+				} else {
+					$('#user_age-wrap').fadeOut();
+				}
+			});
+
+			$('#user_age').change( function() {
+				if( conditionValidator.element( "#user_age" ) === true ) {
+					$('#user_id-wrap').fadeIn();
+				} else {
+					$('#user_id-wrap').fadeOut();
+				}
+			});
+
+
+			$('#user_id').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_id" ) === true ) {
+					$('#user_pass-wrap').fadeIn();
+				} else {
+					$('#user_pass-wrap').fadeOut();
+				}
+			});
+			$('#user_pass').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_pass" ) === true ) {
+					$('#re_user_pass-wrap').fadeIn();
+				} else {
+					$('#re_user_pass-wrap').fadeOut();
+				}
+			});
+
+			$('#re_user_pass').bind('input propertychange', function() {
+				if( conditionValidator.element( "#re_user_pass" ) === true ) {
+					$('#tell-wrap').fadeIn();
+				} else {
+					$('#tell-wrap').fadeOut();
+				}
+			});
+
+			$('#tell2').bind('input propertychange', function() {
+				if( conditionValidator.element( "#tell2" ) === true ) {
+					$('#user_concern-wrap').fadeIn();
+				} else {
+					$('#user_concern-wrap').fadeOut();
+				}
+			});
+
+			$('#user_concern').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_concern" ) === true ) {
+					$('#btn_add-wrap').fadeIn();
+				} else {
+					$('#btn_add-wrap').fadeOut();
+				}
+			});
+			// 인증 성공후에 6,7,8번이 fadeout 되어야하고, 5번이 disabled 되어야함.
+
+		});
+
+	</script>
+
+	<script type="text/javascript">
+		$('.selectsplitter').selectsplitter();
+	</script>
+	<script>
+	$(document).ready(function(){
+		$(document).on("click", "#btn_add", AddUser);
+	})
+
+
+	function AddUser(){
+		var userUniv 	= $("#user_univ").val();
+ 		var userGender 	= $('#user_gender').val();
+		var userCount 	= $("#user_count").val();
+		var userAge 	= $("#user_age").val();
+		var userId 		= $("#user_id").val();
+		var userPass  	= $("#user_pass").val();
+		var userPhone 	= $("#tell0").val() + '-' + $("#tell1").val() + '-' + $("#tell2").val();
+		var userConcern = $("#user_concern").val();
+
+		$.ajax({
+			url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
+			dataType: "json",
+			type: "POST",
+			cache: true,
+			jsonp: true,
+			jsonpCallback: "",
+			data : {
+				userUniv 	: userUniv,
+				userGender 	: userGender,
+				userCount 	: userCount,
+				userAge 	: userAge,
+				userId 		: userId,
+				userPass 	: userPass,
+				userPhone 	: userPhone,
+				userConcern : userConcern
+			},
+			success: function(data){
+				console.log(data)
+				if(data.type == 1)
+					alert("아이디가 생성되었습니다.")
+
+					setCookie("user_id", 	data.content.user_id,1);
+					setCookie("user_num", 	data.content.user_num,1);
+					location.href = '0-main.html';
+			},
+			error: function() {
+				alert("잠시 후 다시 시도해주세요.");
+			}
+		});
+
+	}
+	/*
+    // 우편번호 찾기 화면을 넣을 element
+    var element_layer = document.getElementById('layer');
+
+    function closeDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_layer.style.display = 'none';
+    }
+
+    function sample2_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var fullAddr = data.address; // 최종 주소 변수
+                var extraAddr = ''; // 조합형 주소 변수
+
+                // 기본 주소가 도로명 타입일때 조합한다.
+                if(data.addressType === 'R'){
+                    //법정동명이 있을 경우 추가한다.
+                    if(data.bname !== ''){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있을 경우 추가한다.
+                    if(data.buildingName !== ''){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 조합형주소의 유무에 따라 양쪽에 괄호를 추가하여 최종 주소를 만든다.
+                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                // document.getElementById('sample2_postcode').value = data.zonecode; //5자리 새우편번호 사용
+                document.getElementById('sample2_postcode').value = data.postcode; //구우편번호
+                document.getElementById('sample2_address').value = fullAddr;
+                document.getElementById('sample2_address2').value = data.jibunAddress;
+                // document.getElementById('sample2_addressEnglish').value = data.addressEnglish;
+
+                 document.getElementById('sample2_address3').focus();
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_layer.style.display = 'none';
+            },
+            width : '100%',
+            height : '100%'
+        }).embed(element_layer);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_layer.style.display = 'block';
+
+        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+        initLayerPosition();
+    }
+
+    // 브라우저의 크기 변경에 따라 레이어를 가운데로 이동시키고자 하실때에는
+    // resize이벤트나, orientationchange이벤트를 이용하여 값이 변경될때마다 아래 함수를 실행 시켜 주시거나,
+    // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
+    function initLayerPosition(){
+        var width = 500; //우편번호서비스가 들어갈 element의 width
+        var height = 500; //우편번호서비스가 들어갈 element의 height
+        var borderWidth = 0; //샘플에서 사용하는 border의 두께
+
+        // 위에서 선언한 값들을 실제 element에 넣는다.
+        element_layer.style.width = width + 'px';
+        element_layer.style.height = height + 'px';
+        element_layer.style.border = borderWidth + 'px solid';
+        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+    }
+		*/
+
+	/*
+		$(function() {
+		  $('.number_only').on('keydown', '.number', function(e){-1!==$.inArray(e.keyCode,[46,8,9,27,13,110,190])||/65|67|86|88/.test(e.keyCode)&&(!0===e.ctrlKey||!0===e.metaKey)||35<=e.keyCode&&40>=e.keyCode||(e.shiftKey||48>e.keyCode||57<e.keyCode)&&(96>e.keyCode||105<e.keyCode)&&e.preventDefault()});
+		})
+		$(document).ready(function(){
+				login_check();
+		    $("aside #user li:eq(0) a").css({'font-weight':'bold','background':'#eee'});
+		    $("aside #user li:eq(0) a").prepend('<span>'+ '▶' +'</span>');
+		});
+		$(document).ready(function(){
+				$(document).on("click", "#btn_add", add_user);
+				$(document).on("click", "#id_check", id_check);
+				$(':input[type="radio"]').click(function () {
+					if ($(':radio[name="user_type"]:checked').val() == 'B') {
+						$('.tell_num th').text('휴대전화');
+						$('.enterprise').hide();
+					}else{
+						$('.tell_num th').text('전화번호');
+						$('.enterprise').show();
+					}
+				});
+		});
+
+		function add_user(){
+			var user_name = $("#user_name").val();
+			var user_id = $("#user_id").val();
+			var first_pass 	= $("#password").val();
+			var second_pass = $("#re_password").val();
+			var tmp = $("#id_check_confirm").val();
+			// alert(first_pass);
+			if(user_name === "")
+				alert("이름/병의원명을 입력해주세요.");
+			else if(user_id === "")
+				alert("아이디를 입력하세요.");
+			else if(tmp === "0")
+				alert("아이디 중복여부를 확인해주세요.");
+			else if (user_id != $('#re_user_id').val())
+				alert("아이디 중복여부를 확인해주세요.")
+			else if(first_pass == "")
+				alert("비밀번호를 입력해주세요.");
+			else if(first_pass != second_pass){
+				alert("비밀번호가 일치하지 않습니다.");
+			}else if ($('#tell0').val() == '' || $('#tell1').val() == '' || $('#tell2').val() == '') {
+				alert('전화번호를 입력해주세요.')
+			}else if ($('#sample2_postcode').val() == '') {
+				alert('우편번호를 입력해주세요.')
+			}
+			else{
+				$.ajax({
+					dataType: "json",
+					contentType:"application/json",
+					cache: true,
+					jsonp: true,
+					type: 'post' ,
+					url: 'https://b8ax8j2bn7.execute-api.ap-northeast-2.amazonaws.com/biopama/web/users' ,
+					data: JSON.stringify({
+						user_type : $(':radio[name="user_type"]:checked').val(),
+						user_name :$('#user_name').val(),
+						user_id :$('#user_id').val(),
+						user_pass :$('#password').val(),
+						phone_num1 : $('#tell0').val() + $('#tell1').val() + $('#tell2').val(),
+						post_num : $('#sample2_postcode').val(),
+						address : $('#sample2_address2').val() + $('#sample2_address3').val(),
+						delivery1 : $('#g_enterprise option:selected').val(),
+						delivery2 : $('#m_enterprise option:selected').val()
+					}),
+					success: function(data) {
+						alert('추가 완료 되었습니다.')
+						location.href = 'user_add.html'; // refresh 를 위해서
+					},
+					error : function(xhr, status, error){
+						alert("잠시 후 다시 시도해주세요.");
+					}
+				});
+			}
+		}
+
+		function id_check(){ // 중복확인 하는 부분.
+			user_id = $("#user_id").val();
+			$('#re_user_id').val(user_id);
+			// alert(user_id);
+			if(user_id != ""){
+				$.ajax({
+					url  :'https://b8ax8j2bn7.execute-api.ap-northeast-2.amazonaws.com/biopama/web/id-check',
+						dataType: "json",
+						type: "GET",
+						cache: true,
+						jsonp: true,
+						jsonpCallback: "",
+						data : {
+							user_info : user_id
+						},
+					 success: function(data){
+						 data = JSON.parse(data);
+						 console.log(data.result);
+						 if(data.result === "1"){
+						 		alert("해당 아이디는 사용 가능 합니다.");
+								$("#id_check_confirm").val("1");
+						 }else {
+							 	alert("다른 아이디를 입력해주세요.");
+						 		$("#user_id").val("");
+						 }
+					 },
+					 error: function() {
+								alert("잠시 후 다시 시도해주세요.");
+					 }
+				});
+			}else{
+				alert("아이디를 입력해주세요.");
+			}
+		}
+		*/
+	</script>
+
+
+</body>
+</html>
