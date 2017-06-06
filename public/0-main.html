@@ -186,24 +186,12 @@
 					============================================= -->
 					<nav id="primary-menu">
 
-						<ul>
+						<ul class='norightmargin' style='border-right : 0px !important;'>
 							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
 
 						</ul>
-
-						<!-- Top Cart
-						============================================= -->
-
-						<div id="top-cart">
-							<a href="0-config.html" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
-						</div><!-- #top-cart end -->
-
-
-						<!-- Top Search
-						============================================= -->
-
 
 					</nav><!-- #primary-menu end -->
 
@@ -217,18 +205,18 @@
 		<!-- 매칭 돌리는 버튼
 		============================================= -->
 
-		<section id="content">
+		<section id="content_1">
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nobg nomargin center clearfix" style="padding: 0px 0;">
+				<div class="section nobg nomargin center clearfix" style="padding: 100px 0;">
 					<div class="container clearfix">
 						<div class='col_one_fifth hidden-xs'>
 						</div>
 						<div class="col_three_fifth" >
 						<div class="fancy-title title-dotted-border">
 
-							<h3> Match Queue</h3>
+							<h3>&nbspMatch Queue</h3>
 						</div>
 						</div>
 						<div class='col_one_fifth'>
@@ -239,6 +227,7 @@
 							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대 찾기</a>
 							</div>
 						</div>
+						<h6 class='topmargin' style='color : grey; opacity : 0.4;'> 도움말</h6>
 					</div>
 
 
@@ -250,59 +239,42 @@
 
 		<!-- 매칭결과 페이지
 		============================================= -->
-		<section id="content">
+		<section id="match_box" style="margin-bottom: 0px;">
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nobg nomargin center clearfix" style="padding: 0px 0;">
-					<div class="container clearfix" id="match_box">
-						<div class='col_one_fifth hidden-xs'>
-						</div>
-						<div class="col_three_fifth" >
+				<div class="section nobg nomargin center clearfix" style="padding: 150px 0;">
+					<div class="container clearfix">		
 						<div class="fancy-title title-dotted-border">
+							<h3>검색 결과</h3>
+						</div>
 
-							<h3> 검색 결과</h3>
-						</div>
-						</div>
-						<div class='col_one_fifth'>
-						</div>
-						<div class="col_three_fifth">
-							<div class="fslider">
-							<div class="flexslider">
-								<div class="slider-wrap" >
-									<div class="slide">
-										<div class="feature-box center media-box fbox-bg">
-											<div class="fbox-media" id="match1_select">
-												<a href="#"><img  class="image_fade" src="images/mirror/01.jpg" alt="Featured Box Image"></a>
-											</div>
-											<div class="fbox-desc" id ="match1">
-												<!-- <h3>서강대학교<span class="subtitle">25세 3명</span><span class="subtitle">#잘생김 #똘기 #공대남자</span></h3> -->
-											</div>
-										</div>
-									</div>
-									<div class="slide">
-										<div class="feature-box center media-box fbox-bg">
-											<div class="fbox-media" id="match2_select">
-												<a href="#"><img  class="image_fade" src="images/mirror/02.jpg" alt="Featured Box Image"></a>
-											</div>
-											<div class="fbox-desc" id ="match2">
-												<!-- <h3>한양대학교<span class="subtitle">전기전자학부 25세</span></h3> -->
-											</div>
-										</div>
-									</div>
-
+						<div class="col_half">
+							<div class="feature-box center media-box fbox-bg">
+								<div class="fbox-media" id='match1_select'>
+								
+								</div>
+								<div class="fbox-desc" id='match1'>
+									
 								</div>
 							</div>
 						</div>
-					</div>
 
+						<div class="col_half norightmargin">
+							<div class="feature-box center media-box fbox-bg">
+								<div class="fbox-media" id='match2_select'>
+									
+								</div>
+								<div class="fbox-desc" id='match2'>
 
+								</div>
+							</div>
+						</div>						
 					</div>
-				</div>
+				</div>				
 			</div>
 
 		</section>
-
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark">
@@ -384,7 +356,7 @@
 				if(data.type == 1){
 
 					requestNum = data.request_num
-					var match1_select = "<input type='button' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")' value='선택'>";
+					var match1_select = "<a href='#' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/03/27/22/16/light-1284498__480.jpg'></a>";
 					var match1 = '<h3>'
 						match1+= data.content.m1_user_univ;
 						match1+= '<span class="subtitle">';
@@ -395,7 +367,7 @@
 						match1+= '</span>'
 						match1+= '</h3>'
 
-					var match2_select = "<input type='button' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")' value='선택'>";
+					var match2_select = "<a href='#' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/11/18/14/12/blurred-1834820__480.jpg'></a>";
 					var match2 = '<h3>'
 						match2+= data.content.m2_user_univ;
 						match2+= '<span class="subtitle">';
@@ -425,6 +397,7 @@
 					$("#match1").html(match1)
 					$("#match2").html(match2)
 					$("#queue_start").hide()
+					$("#content_1").hide()	
 
 
 				}
