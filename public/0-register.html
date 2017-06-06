@@ -304,11 +304,10 @@
 
 							<div class="tab-container">
 
-								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-33" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="false" style = 'max-width : 400px;'>
-								<p style = 'font-size : 16px;'>
+								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-33" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="false">
 									<span class='t700'>- 미팅</span>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅은 빨간거울이 챙겨드릴게요. <br><br>- 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 저희 빨간거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다. 
-									<br><br>- 매칭은 아주 간단하게 이루어 집니다. 위의 간단한 정보를 입력하고 큐를 돌리세요. 큐를 돌리면 두 팀이 잡힙니다. 그 중 한팀을 선택하여 신청을 보내고, 상대팀도 수락을 하면 서로의 연락처를 알 수 있습니다. 그 뒤로는 여러분들께서 알아서 하시면 됩니다. 
-									</p>
+									<br><br>- 매칭은 아주 간단하게 이루어 집니다. <br>1)양식작성  <br> 2)큐돌리기 <br>3)신청 <br> 4)번호로 연락 
+
 
 
 								</div>
@@ -316,8 +315,8 @@
 									준비중이에요
 								</div>
 								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-35" aria-labelledby="ui-id-19" role="tabpanel" aria-hidden="true" style="display: none;">
-									<ul class="testimonials-grid">
-										<li style="height: 183px;">
+									<ul class="testimonials-grid grid-3 clearfix">
+										<li style="height: auto;">
 											<div class="testimonial">
 												<div class="testi-image">
 													<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
@@ -334,7 +333,7 @@
 												</div>
 											</div>
 										</li>
-										<li style="height: 183px;">
+										<li style="height: auto;">
 											<div class="testimonial">
 												<div class="testi-image">
 													<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
@@ -355,13 +354,13 @@
 									<div class="accordion accordion-border clearfix" data-state="closed">
 
 										<div class="acctitle"><i class="acc-closed icon-question-sign"></i><i class="acc-open icon-question-sign"></i>여기 뭐하는곳인가요?</div>
-										<div class="acc_content clearfix" style="display: none;">미팅하는 사이트입니다.</div>
+										<div class="acc_content clearfix" style="display: none;">대학생들끼리 미팅하는 사이트입니다. </div>
 
 										<div class="acctitle"><i class="acc-closed icon-comments-alt"></i><i class="acc-open icon-comments-alt"></i>매칭은 어떻게 이뤄지나요?</div>
-										<div class="acc_content clearfix" style="display: none;">매칭은 이성이란 조건에서 랜덤으로 됩니다. 8월중에는 조건 검색기능도 추가할 예정입니다.</div>
+										<div class="acc_content clearfix" style="display: none;">큐를 돌리면 이성팀 중에서 2팀이 랜덤으로 나옵니다. 그 중에서 한 팀을 골라 신청해주시면 됩니다. 상대가 수락하면 연락처를 열람할 수 있습니다.</div>
 
 										<div class="acctitle acctitlec"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-lock3"></i>큐가 뭔가요?</div>
-										<div class="acc_content clearfix" style="display: block;">큐는 </div>
+										<div class="acc_content clearfix" style="display: block;">큐는 미팅할 사람을 찾는 것입니다. 큐를 돌리면 두 팀이 나옵니다. 큐는 하루 한 번 돌릴 수 있습니다. (자정 갱신)</div>
 
 									</div>
 								</div>
@@ -554,7 +553,8 @@
 		var userConcern = $("#user_concern").val();
 
 		$.ajax({
-			url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
+			url     : 'http://13.124.15.208:9000/users',
+			//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
 			dataType: "json",
 			type: "POST",
 			cache: true,

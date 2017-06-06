@@ -239,22 +239,29 @@
 		// var userNum = 16
 
 		$(document).ready(function(){
-			$("#config_btn").click(function(){
+
+			if(user_id == "" || userNum ==""){
+				location.href = '0-login.html';
+			}
+			else{
+
+				$("#config_btn").click(function(){
+					GetConfig(userNum)
+				})
+				$("#match_btn").click(function(){
+					// GetMatchList(userNum, 'S')
+					GetData(userNum, 'S')
+				})
+				$("#Rreq_btn").click(function(){
+					// GetRreqList(userNum, 'T')
+					GetData(userNum, 'T')
+				})
+				$("#Sreq_btn").click(function(){
+					// GetSreqList(userNum, 'F')
+					GetData(userNum, 'F')
+				})
 				GetConfig(userNum)
-			})
-			$("#match_btn").click(function(){
-				// GetMatchList(userNum, 'S')
-				GetData(userNum, 'S')
-			})
-			$("#Rreq_btn").click(function(){
-				// GetRreqList(userNum, 'T')
-				GetData(userNum, 'T')
-			})
-			$("#Sreq_btn").click(function(){
-				// GetSreqList(userNum, 'F')
-				GetData(userNum, 'F')
-			})
-			GetConfig(userNum)
+			}
 		})
 
 		$(document).ready(function() {
@@ -311,7 +318,8 @@
 
 		function GetConfig(userNum){
 			$.ajax({
-				url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users/'+userNum,
+				url     : 'http://13.124.15.208:9000/users/'+userNum,
+				//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users/'+userNum,
 				dataType: "json",
 				type: "GET",
 				cache: true,
@@ -379,7 +387,8 @@
 		function GetData(userNum, pageType){
 
 			$.ajax({
-				url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match/'+userNum,
+				url     : 'http://13.124.15.208:9000/match/'+userNum,
+				//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match/'+userNum,
 				dataType: "json",
 				type: "GET",
 				cache: true,
@@ -425,22 +434,22 @@
 									fuser_id 	= f.to_user_id;
 									fuser_univ 	= f.to_user_univ;
 									fuser_phone = f.to_user_phone;
+									fuser_concern = f.to_user_concern;
  
 									fuser_count = '';
 									fuser_age 	= '';
 									fuser_gender = '';
-									fuser_concern = '';
 
 								}else{
 									fuser_num 	= f.from_user_num;
 									fuser_id 	= f.from_user_id;
 									fuser_univ 	= f.from_user_univ;
 									fuser_phone = f.from_user_phone;
+									fuser_concern = f.from_user_concern;
 
 									fuser_count = '';
 									fuser_age 	= '';
 									fuser_gender = '';
-									fuser_concern = '';
 								}
 
 
@@ -579,7 +588,8 @@
 
 	        if( confirm(msg) == true ){
 	            $.ajax({
-	    			url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match/'+requestNum,
+					url     : 'http://13.124.15.208:9000/match/'+requestNum,
+	    			//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match/'+requestNum,
 	    			dataType: "json",
 	    			type: "PUT",
 	    			cache: true,
