@@ -12,6 +12,14 @@ router.get('/', function(req, res, next) {
 	var sql_input = [userNum]
 	var result = {}
 
+	var tdate = new Date();
+	var ydate = tdate.getFullYear().toString();
+	var mdate = (tdate.getMonth()+1).toString();
+    var ddate = tdate.getDate().toString();
+	var cdate = ydate+ (mdate[1] ? mdate : '0'+mdate[0])+ (ddate[1] ? ddate : '0'+ddate[0])
+
+	console.log(tdate)
+
 	//connection.connect();
 	connection.query(sql, sql_input, function (err, results){
 		if(err){
@@ -29,7 +37,10 @@ router.get('/', function(req, res, next) {
 			else
 				search_gender = 'M'
 
-			sql = "SELECT expire_flag FROM queue_info WHERE queue_user_num = ? ORDER BY queue_time DESC limit 1"
+			search_univ = results[0].user_univ
+
+//SELECT DATE_FORMAT(queue_time, '%Y%m%d') FROM queue_info
+			sql = "SELECT expire_flag, DATE_FORMAT(queue_time, '%Y%m%d') AS queue_time FROM queue_info WHERE queue_user_num = ? ORDER BY queue_time DESC limit 1"
 			sql_input = [userNum];
 			
 			connection.query(sql, sql_input, function (err, results){
@@ -53,36 +64,63 @@ router.get('/', function(req, res, next) {
 			*/
 			//		else{
 
-						sql = "SELECT user_num, user_univ, user_age, user_gender FROM user_info WHERE user_gender = ?"
-						sql_input = [search_gender]
-						
-						connection.query(sql, sql_input, function (err, results){
+						queue_time = results[0].queue_time
+						console.log(queue_time)
+						console.log(cdate)
 
-							if(err){
+						if( queue_time > cdate){ // this case is unnormal case
 
-								console.log(err)
-								result.type = 0
-								result.content = err
-								res.send(JSON.stringify(result))
-							}
-							else{
-								// select just 2 user_info 
-								var random1 = Math.floor(Math.random() * results.length);
-								var random2 = Math.floor(Math.random() * results.length);
+							result.type = 3
+							result.content = "stange case"
+							res.send(JSON.stringify(result))
+		
+						}
+						else if( queue_time == cdate){ // already run queue today
 
-								while( random1 == random2 )
-									random2 = Math.floor(Math.random() * results.length);
+							result.type = 2
+							result.content = "already run today"
+							console.log("hihi")
+							res.send( JSON.stringify(result) )
+						}
+						else{ //
 
-								console.log(random1)
-								console.log(random2)
+							console.log(queue_time)
+							console.log(cdate)
 
-								result.type = 1
-								result.match1 = results[random1]
-								result.match2 = results[random2]
-								res.send( JSON.stringify(result) )
-							}
 
-						})
+							sql = "SELECT user_num, user_univ, user_age, user_gender FROM user_info WHERE user_gender = ? AND user_univ <> ?"
+							sql_input = [search_gender, search_univ]
+							console.log(sql)
+							console.log(sql_input)
+							
+							connection.query(sql, sql_input, function (err, results){
+
+								if(err){
+
+									console.log(err)
+									result.type = 0
+									result.content = err
+									res.send(JSON.stringify(result))
+								}
+								else{
+									// select just 2 user_info 
+									var random1 = Math.floor(Math.random() * results.length);
+									var random2 = Math.floor(Math.random() * results.length);
+
+									while( random1 == random2 )
+										random2 = Math.floor(Math.random() * results.length);
+
+									console.log(random1)
+									console.log(random2)
+
+									result.type = 1
+									result.match1 = results[random1]
+									result.match2 = results[random2]
+									res.send( JSON.stringify(result) )
+								}
+
+							})
+						}
 			//		}
 
 				}
@@ -151,7 +189,9 @@ router.get('/:userNum', function(req, res, next){
 	else{
 		sql  = " SELECT "
 		sql += " _from.user_num as from_user_num, _from.user_id as from_user_id, _from.user_univ as from_user_univ, _from.user_phone as from_user_phone, "
-		sql += " _to.user_num as to_user_num,     _to.user_id as to_user_id,	_to.user_univ as to_user_univ,	 _to.user_phone as to_user_phone"
+		sql += " _from.user_age as from_user_age, _from.user_concern as from_user_concern, " 
+		sql += " _to.user_num as to_user_num,     _to.user_id as to_user_id,	_to.user_univ as to_user_univ,	 _to.user_phone as to_user_phone,"
+		sql += " _to.user_age as to_user_age,	  _to.user_concern as to_user_concern " 
 		sql += " FROM user_info AS _from, user_info AS _to, request_info"
 		sql += " WHERE (request_info.to_user_num = ? OR request_info.from_user_num = ?) AND request_info.success_flag = ?" 
 		sql += " AND request_info.from_user_num = _from.user_num AND request_info.to_user_num = _to.user_num"
