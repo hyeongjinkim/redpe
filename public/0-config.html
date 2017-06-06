@@ -58,7 +58,7 @@
 					============================================= -->
 					<nav id="primary-menu">
 
-						<ul>
+						<ul class='norightmargin' style='border-right : 0px !important;'>
 							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
@@ -68,9 +68,6 @@
 						<!-- Top Cart
 						============================================= -->
 
-						<div id="top-cart">
-							<a href="#0-config.html" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
-						</div><!-- #top-cart end -->
 
 
 						<!-- Top Search
@@ -96,7 +93,7 @@
 
 					<div class="row clearfix">
 
-						<div class="col-sm-9">
+						<div class="col-sm-9 nopadding">
 
 
 							<div class="heading-block noborder">
@@ -108,30 +105,25 @@
 
 							<div class="row clearfix">
 
-								<div class="col-md-12">
+								<div class="col-md-12 nopadding">
 
 									<div class="tabs tabs-alt clearfix" id="tabs-profile">
 
+
 										<ul class="tab-nav clearfix">
 											<li class='noleftmargin'>
-												<div id="config_btn" >
-												<a href="#config"><i class="icon-rss2"></i> 검색설정 </a>
-												</div>
+												<a href="#tab-1" id='config_btn'>정보</a>
+												
 											</li>
 											<li>
-												<div id="match_btn" >
-												<a href="#match.html"><i class="icon-pencil2"></i> 성사내역</a>
-												</div>
+												<a href="#tab-2" id='match_btn'>성사된</a>
+												
 											</li>
 											<li>
-												<div id="Rreq_btn" >
-												<a href="#Rrequest.html"><i class="icon-users"></i> 받은카드</a>
-												</div>
+												<a href="#tab-3" id='Rreq_btn'>받은</a>
 											</li>
 											<li>
-												<div id="Sreq_btn" >
-												<a href="#Srequest.html"><i class="icon-reply"></i> 보낸내역</a>
-												</div>
+												<a href="#tab-4" id='Sreq_btn'>보낸</a>
 											</li>
 
 										</ul>
@@ -331,7 +323,7 @@
 
 					if(data.type == 1){
 						html = '';
-						html += '<div class="tab-content clearfix" id="tab-info">'
+						html += '<div class="tab-content clearfix" id="tab-1">'
 						html += '<div class="table-responsive">'
 						html += '<table class="table table-bordered table-striped">'
 						html += '<colgroup>'
@@ -345,9 +337,6 @@
 						html += '</tr>'
 						html += '</thead>'
 						html += '<tbody>'
-						html += '<tr>'
-						html += '<td>'
-						html += '<tr>'
 						html += '<td> 소속 </td>'
 						html += '<td>' + data.content.user_univ + '</td>'
 						html += '</tr>'
@@ -417,19 +406,18 @@
 							var fuser_concern;
 
 							html  = '';
-							html += '<div class="tab-content clearfix" id="tab-success">'
-							html += '<table class="table table-hover">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-2">'
+							html += '<table class="table">'
 							html += '<thead>'
 							html += '<tr>'
-							html += '<th>상태</th>'
-							html += '<th>시간</th>'
-							html += '<th>상대방 학교 + 인원</th>'
-							html += '<th>상대방 해쉬태그</th>'
+							html += '<th>no.</th>'
+							html += '<th>상대방 학교</th>'
+							html += '<th>해쉬태그</th>'
 							html += '<th>연락처</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
-
+							var num = 1;
 							$.each(data.content, function(i, f) {
 
 								if(f.from_user_num == userNum){
@@ -457,12 +445,12 @@
 
 
 								html += '<tr>'
-								html += '<td>수락됨</td>'
-								html += '<td>'+ ' '+'</td>'
-								html += '<td>'+fuser_univ+" "+fuser_count+'</td>'
+								html += '<td>' + num + '</td>'
+								html += '<td>'+fuser_univ+" "+fuser_count+''+'</td>'
 								html += '<td>'+fuser_concern +'</td>'
 								html += '<td>'+fuser_phone +'</td>'
 								html += '</tr>'
+								num += 1;
 
 							})
 							html += '</tbody>'
@@ -476,8 +464,8 @@
 							console.log(data)
 							// receive
 							html  = '';
-							html += '<div class="tab-content clearfix" id="tab-receive">'
-							html += '<table class="table table-hover">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-3">'
+							html += '<table class="table">'
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>상대방 학교 + 인원</th>'
@@ -521,13 +509,13 @@
 
 
 							html  = '';
-							html += '<div class="tab-content clearfix" id="tab-send">'
-							html += '<table class="table table-hover">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-4">'
+							html += '<table class="table">'
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no</th>'
-							html += '<th>상대방 학교 + 인원</th>'
-							html += '<th>평균 나이</th>'
+							html += '<th>상대방 학교</th>'
+							html += '<th>나이</th>'
 							html += '<th>해시태그</th>'
 							html += '<th>상태</th>'
 							html += '</tr>'

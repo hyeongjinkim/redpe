@@ -178,15 +178,15 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
+						<a href="0-login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
+						<a href="0-main.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
 					============================================= -->
 					<nav id="primary-menu">
 
-						<ul>
+						<ul class='norightmargin' style='border-right : 0px !important;'>
 							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
@@ -196,9 +196,6 @@
 						<!-- Top Cart
 						============================================= -->
 
-						<div id="top-cart">
-							<a href="0-config.html" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
-						</div><!-- #top-cart end -->
 
 
 						<!-- Top Search
@@ -213,14 +210,13 @@
 
 		</header><!-- #header end -->
 
-
 		<!-- 매칭 돌리는 버튼
 		============================================= -->
 
 
 
 
-		<section id="content_queue">
+		<section id="content_1">
 
 			<div class="content-wrap nopadding">
 
@@ -231,7 +227,7 @@
 						<div class="col_three_fifth" >
 						<div class="fancy-title title-dotted-border">
 
-							<h3> Match Queue</h3>
+							<h3>&nbspMatch Queue</h3>
 						</div>
 						</div>
 						<div class='col_one_fifth'>
@@ -239,7 +235,7 @@
 						<div class="col_three_fifth">
 							<div class="fslider">
 							<div class="flexslider">
-							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대 찾기</a>
+							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대팀 찾기</a>
 							</div>
 						</div>
  
@@ -255,60 +251,42 @@
 
 		<!-- 매칭결과 페이지
 		============================================= -->
-		<section id="match_box">
+		<section id="match_box" style="margin-bottom: 0px;">
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nobg nomargin center clearfix" style="padding: 0px 0;">
-					<div class="container clearfix">
-						<div class='col_one_fifth hidden-xs'>
-						</div>
-						<div class="col_three_fifth" >
+				<div class="section nobg nomargin center clearfix" style="padding: 150px 0;">
+					<div class="container clearfix">		
 						<div class="fancy-title title-dotted-border">
+							<h3>검색 결과</h3>
+						</div>
 
-							<h3> 검색 결과</h3>
-						</div>
-						</div>
-						<div class='col_one_fifth'>
-						</div>
-						<div class="col_three_fifth">
-							<div class="fslider">
-							<div class="flexslider">
-								<div class="slider-wrap" >
-									<div class="slide">
-										<div class="feature-box center media-box fbox-bg">
-											<div class="fbox-media" id="match1_select">
-												<!-- ajax 이미지 들어가는 부분 -->
-												<a href="#"><img  class="image_fade" src="images/mirror/01.jpg" alt="Featured Box Image"></a>
-											</div>
-											<div class="fbox-desc" id ="match1">
-												<!-- <h3>서강대학교<span class="subtitle">25세 3명</span><span class="subtitle">#잘생김 #똘기 #공대남자</span></h3> -->
-											</div>
-										</div>
-									</div>
-									<div class="slide">
-										<div class="feature-box center media-box fbox-bg">
-											<div class="fbox-media" id="match2_select">
-												<a href="#"><img  class="image_fade" src="images/mirror/02.jpg" alt="Featured Box Image"></a>
-											</div>
-											<div class="fbox-desc" id ="match2">
-												<!-- <h3>한양대학교<span class="subtitle">전기전자학부 25세</span></h3> -->
-											</div>
-										</div>
-									</div>
-
+						<div class="col_half">
+							<div class="feature-box center media-box fbox-bg">
+								<div class="fbox-media" id='match1_select'>
+								
+								</div>
+								<div class="fbox-desc" id='match1'>
+									
 								</div>
 							</div>
 						</div>
-					</div>
 
+						<div class="col_half norightmargin">
+							<div class="feature-box center media-box fbox-bg">
+								<div class="fbox-media" id='match2_select'>
+									
+								</div>
+								<div class="fbox-desc" id='match2'>
 
+								</div>
+							</div>
+						</div>						
 					</div>
-				</div>
+				</div>				
 			</div>
 
 		</section>
-
 		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark">
@@ -386,7 +364,8 @@
 				if(data.type == 1){
 
 					requestNum = data.request_num
-					var match1_select = "<a href="#" onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><img  class="image_fade" src="img/match1.jpg" alt="Featured Box Image"></a>";
+					var match1_select = "<a href='#' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/03/27/22/16/light-1284498__480.jpg'></a>";
+						""
 					var match1 = '<h3>'
 						match1+= data.content.m1_user_univ;
 						match1+= '<span class="subtitle">';
@@ -397,7 +376,7 @@
 						match1+= '</span>'
 						match1+= '</h3>'
 
-					var match2_select = "<a href="#" onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><img  class="image_fade" src="img/match2.jpg" alt="Featured Box Image"></a>";
+					var match2_select = "<a href='#' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/11/18/14/12/blurred-1834820__480.jpg'></a>";
 					var match2 = '<h3>'
 						match2+= data.content.m2_user_univ;
 						match2+= '<span class="subtitle">';
@@ -426,9 +405,8 @@
 					$("#match2_select").html(match2_select)
 					$("#match1").html(match1)
 					$("#match2").html(match2)
-					$("#content_queue").hide()
-
-
+					$("#queue_start").hide()
+					$("#content_1").hide()	
 				}
 				else{
 					$("#match_box").hide()
@@ -443,7 +421,7 @@
 
 	function StartQueue(){
 
-		if( confirm("매칭을 진행하시겠습니까?") == true){
+		if( confirm("미팅 상대팀을 찾아보시겠어요?") == true){
 			$.ajax({
 				url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match',
 				dataType: "json",
@@ -473,7 +451,7 @@
 								matchNum2 	: match2_user_num
 							},
 							success: function(data){
-								alert("큐가 등록되었습니다.");
+								alert("두 팀중 한 팀을 골라주세용");
 								default_show();
 							},
 							error: function() {
@@ -522,8 +500,8 @@
 							},
 							success: function(data){
 								if(data.type == 1){
-									alert("미팅신청을 보냈습니다1.")
-									location.href = '0-main.html';
+									alert("미팅 신청을 보냈습니다.")
+									location.href = '0-config.html';
 								}
 							},
 							error: function() {
