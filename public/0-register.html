@@ -140,7 +140,7 @@
 
 
 						<form id="conditional-form" class="nobottommargin" >
-							<div class="col_full" data-animate="fadeInLeft" data-delay="200" >
+							<div class="col_full">
 								<h3 class='t200 hidden-xs'>미팅을 시작해보세요</h3>
 								<!--label for="user_univ visible-xs">시작하시려면..</label-->
 								<bf>
@@ -397,7 +397,7 @@
 		<center>
 
 		            <div class="style-msg" style="background-color: #EEE;">
-									<div class="sb-msg"><i class="icon-info-sign"></i>벌써 절반이나 하셨네요</div>
+									<div class="sb-msg"><i class="icon-info-sign"></i>오래걸리지 않아요. 벌써 반이나 했는걸요</div>
 								</div>
 
 		</center>
@@ -469,6 +469,21 @@
 	<script type="text/javascript" src="js/functions.js"></script>
 
 	<script>
+	var user_id = getCookie("user_id");
+	var userNum = getCookie("user_num");
+	var requestNum
+	// var user_id = "test"
+	// var userNum = 16
+
+	// 로그인 쿠키가 있다면 가입이 아닌 main으로 이동시키기.
+	//$(document).ready(function(){
+	//	if( userNum > 0 ){
+    //        location.href = '0-main.html';
+    //    }
+	//	$(document).on("click", "#queue_start", StartQueue)
+	//	default_show()
+	// })
+
 		jQuery(document).ready( function($){
 			var conditionValidator = $("#conditional-form").validate({
 				rules: {

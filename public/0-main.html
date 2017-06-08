@@ -259,33 +259,32 @@
 				<div class="section nobg nomargin center clearfix" style="padding: 50px 0;">
 					<div class="container clearfix nopadding">		
 						<div class="fancy-title title-dotted-border">
-							<h3> 매칭큐 결과</h3>
+							<h3>&nbsp;SELECT</h3>
+						
+
 						</div>
 
 						<div class="col_half">
 							<div class="feature-box center media-box fbox-bg">
 								<div class="fbox-media" id='match1_select'>
-								
 								</div>
 								<div class="fbox-desc" id='match1'>
-									
 								</div>
 							</div>
 						</div>
-
+						<div class='visible-xs bottommargin' style='text-align :center;'>VS</div>
 						<div class="col_half norightmargin">
 							<div class="feature-box center media-box fbox-bg">
-								<div class="fbox-media" id='match2_select'>
-									
+								<div class="fbox-media" id='match2_select'>			
 								</div>
 								<div class="fbox-desc" id='match2'>
-
 								</div>
 							</div>
 						</div>
+
 						<div class = "col_full">
 						<div class="style-msg" style="background-color: #EEE;">
-							<div class="sb-msg"><i class="icon-info-sign"></i>한 팀을 선택해주세요. 해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 신청해주세요,</div>
+							<div class="sb-msg"><i class="icon-info-sign"></i>한 팀을 선택해주세요. 해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 선택을 완료해주세요,</div>
 						</div>
 						</div>					
 					</div>
@@ -307,7 +306,7 @@
 					<div class="col_half">
 						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
 
-						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.
+						Copyrights &copy; 2017 All Rights Reserved by RedMirror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
@@ -522,7 +521,7 @@
 		}
 	}
 	function MatchRequest(toUserNum, queueNum){
-		if( confirm("해당 팀에게 미팅 신청하시겠습니까?") == true ){
+		if( confirm("해당 팀을 선택하시겠습니까?") == true ){
 
 			$.ajax({
 				url : 'http://13.124.15.208:9000/match',
@@ -553,8 +552,8 @@
 							},
 							success: function(data){
 								if(data.type == 1){
-									alert("미팅신청을 보냈습니다1. 신청이 수락되면 매칭내역에서 확인 연락처를 열람할 수 있습니다.")
-									location.href = '0-main.html';
+									alert("미팅신청을 보냈습니다. 상대팀이 수락하면 연락처를 열람할 수 있습니다.")
+									location.href = '0-config.html';
 								}
 							},
 							error: function() {
