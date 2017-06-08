@@ -27,6 +27,14 @@
 	<!-- Document Title
 	============================================= -->
 	<title>[빨간거울]</title>
+	<style>
+	.hashtag {
+		border : 0px;
+		border-bottom : 2px solid #DDD !important;
+		padding-left : 5px !important;
+		padding-bottom : 0px !important;
+	}
+	</style>
 
 </head>
 
@@ -154,11 +162,11 @@
 
 							</div>
 
-							<div class="col_full" id="user_gender-wrap" style='display : none;' >
+							<div class="col_full" id="user_gender-wrap" style='display : none;' onchange="admSelectCheck(this);">
 								<label for="user_gender">성별?</label>
 								<select id="user_gender" name="user_gender" class="required sm-form-control">
 									<option value="">성별을 선택하세요</option>
-									<option value="M">남자</option>
+									<option value="M" id='admOption'>남자</option>
 									<option value="W">여자</option>
 								</select>
 
@@ -199,26 +207,7 @@
 
 
 							<div class="col_full" id="user_id-wrap" style='display : none;'>
-								<label for="user_id">이메일(계정)</label>
-								<span data-container="body" data-toggle="popover" data-placement="top" data-content="로그인 게정으로 사용되니 정확하게 입력해주세요">
-   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-  								</span>
-								<!-- Modal button -->
-								<!--a href="#myModal1" data-lightbox="inline">
-									<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-								</a-->
-								<!-- Modal -->
-								<!--div class="modal1 mfp-hide" id="myModal1">
-									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
-										<div class="center" style="padding: 50px;">
-											<h3>인증된 회원</h3>
-											<p class="nobottommargin">빨간 잠망경은 안전하고 즐거운 미팅을 위해 인증제를 실시하고 있습니다. 소속 대학을 인중해주시고 이용 부탁드려요. 이메일은 </p>
-										</div>
-										<div class="section center nomargin" style="padding: 30px;">
-											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
-										</div>
-									</div>
-								</div-->
+								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정" >이메일</label>
 								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr">
 							</div>
 
@@ -255,36 +244,29 @@
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4" class="number" name="tell"-->
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
-								<label for="user_concern">기타정보</label>
+								<label id='hash_popover' for="user_concern" data-toggle="popover" title="작성요령" data-content="팀을 잘 표현할 수 있는 해쉬태그를 넣으세요. 예) #공대남자 #훈녀팀 #술게임잘함 #재미보장함" data-placement="top">해쉬태그</label>
 								<!--span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
    								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
   								</span-->
   										<!-- Modal button -->
-  								<div>
-								<input type="text" class="sm-form-control required" id="user_concern0" name="user_concern0" value="" placeholder="소속학과" style='display : inline-block; width : 66%'>
-								<select id="user_concern1" name="user_concern1" class="required sm-form-control" style='display : inline-block; width : 66%'>
-									<option value="">매력포인트1</option>
-									<option value="몸짱">이뻐요</option>
-									<option value="세잴예">잘생겼어요</option>
-									<option value="존잘">키가커요</option>
-									<option value="인성좋음">목소리가좋아요</option>
-									<option value="목소리좋음">목소리좋음</option>
-									<option value="노래잘함">노래를잘해요</option>
-									<option value="춤잘춤">춤을잘춰요</option>
-									<option value="금수저">기가쎄요</option>
-									<option value="목소리좋음">유머러스해요</option>
 
-									<option value="목소리좋음">유머러스해요</option>
-								</select>
-								<select id="user_concern2" name="user_concern2" class="required sm-form-control" style='display : inline-block; width : 66%'>
-									<option value="">매력포인트2</option>
-									<option value=""></option>
-									<option value="">세젤예</option>
-									<option value="">존잘</option>
-									<option value="">인성ㅎ</option>
-									<option value="">목소리좋음</option>
-								</select>
+  								<!-- 해쉬태그 --> 	
+  								<div style ='margin-bottom :10px;'>
+								<label for='user_concern0 nomargin' style='font-size : 25px;'>#</label>
+								<input id="user_concern0" name="user_concern0" class="required sm-form-control hashtag hashtag1" style='width : 66%; display:inline-block;'>	
 								</div>
+
+								<div style ='margin-bottom :10px;'>
+								<label for='user_concer1 nomargin' style='font-size : 25px;'>#</label>
+								<input id="user_concern1" name="user_concern1" class="required sm-form-control hashtag" style= 'width : 66%; display:inline-block;'
+								>
+								</div>
+
+								<div style ='margin-bottom :10px;'>
+								<label for='user_concer2 nomargin' style='font-size : 25px;'>#</label>
+								<input id="user_concern2" name="user_concern2" class="required sm-form-control hashtag" style='width : 66%; display:inline-block;'
+								>
+								</div>							
 							</div>
 							<div class="col_full" id="btn_add-wrap" style='display : none;' >
 								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
@@ -413,7 +395,7 @@
 		</section><!-- #content end -->
 
 
-		<div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:50px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage1'>
+		<!--div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:50px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage1'>
 		<center>
 
 		            <div class="style-msg" style="background-color: #EEE;">
@@ -422,11 +404,11 @@
 
 		</center>
 		</div>
-		<!--div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:70px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage2'>
+		<div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:70px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage2' data-animate='shake'>
 		<center>
 
 		            <div class="style-msg" style="background-color: #EEE;">
-									<div class="sb-msg"><i class="icon-info-sign"></i>특징 : <strong>훈남있음, 훈녀팀, 술게임고수</strong> 등 미팅팀의 매력을 적어주시면 되요.</div>
+									<div class="sb-msg"><i class="icon-info-sign"></i>해쉬태그에는 학과, 매력포인트, 미팅컨셉 등 팀을 어필할만한 내용을 적어주세요. 센스있게 적을수록 매칭률이 높아집니다.</div>
 								</div>
 
 		</center>
@@ -481,13 +463,26 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 
+	<script>
+$('#user_concern0').focus(function() { 
+	$('#hash_popover').popover('show');
+});
+$('#user_concern1').focus(function() { 
+	$('#hash_popover').popover('hide');
+});
+$('#user_id').focus(function(){
+	$('#user_id_tooltip').tooltip('show');
+});
+$('#user_pass').focus(function(){
+	$('#user_id_tooltip').tooltip('hide');
+});
+</script>
 
 
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="js/login.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
-
 	<script>
 	var user_id = getCookie("user_id");
 	var userNum = getCookie("user_num");
@@ -521,6 +516,7 @@
 			$('#user_univ').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_univ" ) === true ) {
 					$('#user_gender-wrap').fadeIn();
+					$('#user_gender').focus();
 				} else {
 					$('#user_gender-wrap').fadeOut();
 				}
@@ -529,6 +525,7 @@
 			$('#user_gender').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_gender" ) === true ) {
 					$('#user_count-wrap').fadeIn();
+					$('#user_count').focus();
 				} else {
 					$('#user_count-wrap').fadeOut();
 				}
@@ -537,6 +534,7 @@
 			$('#user_count').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_count" ) === true ) {
 					$('#user_age-wrap').fadeIn();
+					$('#user_age').focus();
 				} else {
 					$('#user_age-wrap').fadeOut();
 				}
@@ -545,10 +543,11 @@
 			$('#user_age').change( function() {
 				if( conditionValidator.element( "#user_age" ) === true ) {
 					$('#user_id-wrap').fadeIn();
-					$('#infomessage1').fadeIn();
+					$('#user_id').focus();
+					/* $('#infomessage1').fadeIn(); */
 				} else {
 					$('#user_id-wrap').fadeOut();
-					$('#infomessage1').fadeOut();
+					/* $('#infomessage1').fadeOut(); */
 				}
 			});
 
@@ -563,7 +562,7 @@
 			$('#user_pass').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_pass" ) === true ) {
 					$('#re_user_pass-wrap').fadeIn();
-					$('#infomessage1').fadeOut();
+					/* $('#infomessage1').fadeOut(); */
 				} else {
 					$('#re_user_pass-wrap').fadeOut();
 				}
@@ -583,7 +582,7 @@
 					/* $('#infomessage2').fadeIn(); */
 				} else {
 					$('#user_concern-wrap').fadeOut();
-					/* $('#infomessage2').fadeOut(); */
+					 /* $('#infomessage2').fadeOut(); */
 				}
 			});
 			
@@ -598,6 +597,9 @@
 			// 인증 성공후에 6,7,8번이 fadeout 되어야하고, 5번이 disabled 되어야함.
 
 		});
+
+	</script>
+	<script type="text/javascript">
 
 	</script>
 
@@ -868,7 +870,6 @@
 		}
 		*/
 	</script>
-
 
 </body>
 </html>
