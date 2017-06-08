@@ -64,7 +64,14 @@ router.get('/', function(req, res, next) {
 			*/
 			//		else{
 
-						queue_time = results[0].queue_time
+
+						if( results.length == 0 ){ // in case that run queue first time
+							queue_time = 0
+						}
+						else{
+							queue_time = results[0].queue_time
+						}
+
 						console.log(queue_time)
 						console.log(cdate)
 

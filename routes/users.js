@@ -5,6 +5,41 @@ var dbconfig	= require('../config/database.js');
 var connection	= mysql.createConnection(dbconfig);
 connection.connect();
 
+router.get('/', function(req, res, next) {
+
+	console.log(req.query)
+	var userId = req.query.userId
+	var sql = "SELECT user_id as count FROM user_info WHERE user_id = ?"
+	var sql_input = [userId]
+
+	result = {}
+
+	console.log(sql)
+	console.log(sql_input)
+	connection.query(sql, sql_input, function (err, results){
+
+		if(err){
+			console.log(err)
+			result.type = 0 // error
+			result.content = err
+		}
+		else{
+			
+			console.log("results.length:" , results.length)
+			if( results.length != 0 ) { // already exist this Id
+				console.log(results)
+				result.type = 2
+			}
+			else{
+
+				console.log(results)
+				result.type = 1 // succss
+			}
+		}
+		res.send( JSON.stringify(result) )
+	});	
+
+})
 
 router.post("/", function(req, res, next){
 	// Add User
