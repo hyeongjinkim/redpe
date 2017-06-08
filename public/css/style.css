@@ -7071,8 +7071,8 @@ body:not(.device-touch) .button.button-full strong {
 .button-border.button-red.button-fill:before { background-color: #C02942 !important; }
 
 .button-border.button-red {
-	color: #C02942;
-	border-color: #C02942;
+	color: #C0392b;
+	border-color: #C0392b;
 }
 
 .button-teal { background-color: #53777A; }

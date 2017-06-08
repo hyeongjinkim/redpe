@@ -257,9 +257,9 @@
 			<div class="content-wrap nopadding">
 
 				<div class="section nobg nomargin center clearfix" style="padding: 50px 0;">
-					<div class="container clearfix">		
+					<div class="container clearfix nopadding">		
 						<div class="fancy-title title-dotted-border">
-							<h3>검색 결과</h3>
+							<h3> 매칭큐 결과</h3>
 						</div>
 
 						<div class="col_half">
@@ -285,7 +285,7 @@
 						</div>
 						<div class = "col_full">
 						<div class="style-msg" style="background-color: #EEE;">
-							<div class="sb-msg"><i class="icon-info-sign"></i>해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 신청해주세요,</div>
+							<div class="sb-msg"><i class="icon-info-sign"></i>한 팀을 선택해주세요. 해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 신청해주세요,</div>
 						</div>
 						</div>					
 					</div>
@@ -374,28 +374,62 @@
 
 				if(data.type == 1){
 
+
+					/*대학교 이미지 삽입 */
+					if(data.content.m1_user_univ == '서강대학교'){
+						var img_src = "<img src='/img/campus/sogang.jpg'>"
+					}
+					else if (data.content.m1_user_univ == '연세대학교') {
+						var img_src = "<img src='/img/campus/yonsei.jpg'>"
+					}
+					else if (data.content.m1_user_univ == '이화여자대학교') {
+						var img_src = "<img src='/img/campus/ewha.jpg'>"
+					}
+					else if (data.content.m1_user_univ == '홍익대학교') {
+						var img_src = "<img src='/img/campus/hongik.jpg'>"
+					}
+
+					if(data.content.m2_user_univ == '서강대학교'){
+						var img_src2 = "<img src='/img/campus/sogang.jpg'>"
+					}
+					else if (data.content.m2_user_univ == '연세대학교') {
+						var img_src2 = "<img src='/img/campus/yonsei.jpg'>"
+					}
+					else if (data.content.m2_user_univ == '이화여자대학교') {
+						var img_src2 = "<img src='/img/campus/ewha.jpg'>"
+					}
+					else if (data.content.m2_user_univ == '홍익대학교') {
+						var img_src2 = "<img src='/img/campus/hongik.jpg'>"
+					}
+
+					/* 이미지 변수 끝 */
+
 					requestNum = data.request_num
-					var match1_select = "<a href='#' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/03/27/22/16/light-1284498__480.jpg'></a>";
+					var match1_select = "<a href='#' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'>"+img_src+"</a>";
 					var match1 = '<h3>'
 						match1+= data.content.m1_user_univ;
 						match1+= '<span class="subtitle">';
 						match1+= data.content.m1_user_age +'세 ' + data.content.m1_user_count + '명'
 						match1+= '</span>'
-						match1+= '<span class="subtitle">'
+						match1+= '<span class="subtitle" style="opacity:0.7">'
 						match1+= data.content.m1_user_concern
 						match1+= '</span>'
 						match1+= '</h3>'
+						match1+= '<br>'
+						match1+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";
 
-					var match2_select = "<a href='#' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><img src='https://cdn.pixabay.com/photo/2016/11/18/14/12/blurred-1834820__480.jpg'></a>";
+					var match2_select = "<a href='#' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'>"+img_src2+"</a>";
 					var match2 = '<h3>'
 						match2+= data.content.m2_user_univ;
 						match2+= '<span class="subtitle">';
 						match2+= data.content.m2_user_age +'세 ' + data.content.m2_user_count + '명'
 						match2+= '</span>'
-						match2+= '<span class="subtitle">'
+						match2+= '<span class="subtitle" style="opacity:0.7">'
 						match2+= data.content.m2_user_concern
 						match2+= '</span>'
 						match2+= '</h3>'
+						match2+= '<br>'
+						match2+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";
 
 						// $(document).on('dblclick', '#an_tnam tr', function(event) {
     					// 	ADS('hello');
