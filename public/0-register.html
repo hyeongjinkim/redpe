@@ -261,9 +261,29 @@
   								</span-->
   										<!-- Modal button -->
   								<div>
-								<input type="text" class="sm-form-control required" id="user_concern0" name="user_concern0" value="" placeholder="소속학과" style='display : inline-block; width : 31%'>
-								<input type="text" class="sm-form-control required" id="user_concern1" name="user_concern1" value="" placeholder="특징1" style='display : inline-block; width : 31%'>
-								<input type="text" class="sm-form-control required" id="user_concern2" name="user_concern2" value="" placeholder="특징2" style='display : inline-block; width : 31%'>
+								<input type="text" class="sm-form-control required" id="user_concern0" name="user_concern0" value="" placeholder="소속학과" style='display : inline-block; width : 66%'>
+								<select id="user_concern1" name="user_concern1" class="required sm-form-control" style='display : inline-block; width : 66%'>
+									<option value="">매력포인트1</option>
+									<option value="몸짱">이뻐요</option>
+									<option value="세잴예">잘생겼어요</option>
+									<option value="존잘">키가커요</option>
+									<option value="인성좋음">목소리가좋아요</option>
+									<option value="목소리좋음">목소리좋음</option>
+									<option value="노래잘함">노래를잘해요</option>
+									<option value="춤잘춤">춤을잘춰요</option>
+									<option value="금수저">기가쎄요</option>
+									<option value="목소리좋음">유머러스해요</option>
+
+									<option value="목소리좋음">유머러스해요</option>
+								</select>
+								<select id="user_concern2" name="user_concern2" class="required sm-form-control" style='display : inline-block; width : 66%'>
+									<option value="">매력포인트2</option>
+									<option value=""></option>
+									<option value="">세젤예</option>
+									<option value="">존잘</option>
+									<option value="">인성ㅎ</option>
+									<option value="">목소리좋음</option>
+								</select>
 								</div>
 							</div>
 							<div class="col_full" id="btn_add-wrap" style='display : none;' >
@@ -398,11 +418,11 @@
 
 		            <div class="style-msg" style="background-color: #EEE;">
 									<div class="sb-msg"><i class="icon-info-sign"></i>오래걸리지 않아요. 벌써 반이나 했는걸요</div>
-								</div>
+					</div>
 
 		</center>
 		</div>
-		<div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:70px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage2'>
+		<!--div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:70px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage2'>
 		<center>
 
 		            <div class="style-msg" style="background-color: #EEE;">
@@ -410,7 +430,7 @@
 								</div>
 
 		</center>
-		</div>
+		</div-->
 
 		<!-- Footer
 		============================================= -->
@@ -491,10 +511,6 @@
 						required: true,
 						minlength: 4
 					},
-					'user_concern2': {
-						required: true,
-						minlength: 1
-					},
 					'tell2': {
 						required: true,
 						minlength: 4
@@ -564,17 +580,17 @@
 			$('#tell2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
-					$('#infomessage2').fadeIn();
+					/* $('#infomessage2').fadeIn(); */
 				} else {
 					$('#user_concern-wrap').fadeOut();
-					$('#infomessage2').fadeOut();
+					/* $('#infomessage2').fadeOut(); */
 				}
 			});
-
+			
 			$('#user_concern2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_concern2" ) === true ) {
 					$('#btn_add-wrap').fadeIn();
-					$('#infomessage2').fadeOut();
+					/* $('#infomessage2').fadeOut(); */
 				} else {
 					$('#btn_add-wrap').fadeOut();
 				}
