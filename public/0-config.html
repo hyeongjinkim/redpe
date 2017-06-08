@@ -59,7 +59,6 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
 
@@ -354,7 +353,12 @@
 						html += '</tr>'
 						html += '<tr>'
 						html += '<td> 성별 </td>'
-						html += '<td>' + data.content.user_gender + '</td>'
+						if(data.content.user_gender == 'M'){
+							html += '<td>남자</td>';
+						}
+						else {
+							html += '<td>여자</td>';
+						};
 						html += '</tr>'
 						html += '<tr>'
 						html += '<td> 연락처 </td>'
@@ -369,7 +373,7 @@
 						html += '<td>'+data.content.user_count+'</td>'
 						html += '</tr>'
 						html += '<tr>'
-						html += '<td> 해시태그 </td>'
+						html += '<td> 태그 </td>'
 						html += '<td><a href="#" class="bt-hash" data-type="text" data-pk="1" data-title="#공대남자 #잘놈 #술고래">'+data.content.user_concern+'</a></td>'
 						html += '</tr>'
 						html += '</tbody>'
@@ -425,8 +429,8 @@
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no.</th>'
-							html += '<th>정보</th>'
-							html += '<th>해쉬태그</th>'
+							html += '<th>상대팀 정보</th>'
+							html += '<th>태그</th>'
 							html += '<th>연락처</th>'
 							html += '</tr>'
 							html += '</thead>'
@@ -461,7 +465,7 @@
 
 								html += '<tr>'
 								html += '<td>' + num + '</td>'
-								html += '<td>'+fuser_univ+" "+fuser_age+'세'+'</td>'
+								html += '<td>'+fuser_univ+" " + '<span style="font-size :10px; font-color : grey;">('+  fuser_age + '세 3명)</span>' 
 								html += '<td>'+fuser_concern +'</td>'
 								html += '<td>'+fuser_phone +'</td>'
 								html += '</tr>'
@@ -483,21 +487,20 @@
 							html += '<table class="table">'
 							html += '<thead>'
 							html += '<tr>'
-							html += '<th>학교</th>'
-							html += '<th>나이</th>'
-							html += '<th>해시태그</th>'
+							html += '<th>no.</th>'
+							html += '<th>상대팀 정보</th>'
+							html += '<th>태그</th>'
 							html += '<th>수락/거절</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
-
+							var num = 1;
 							$.each(data.content, function(i, f) {
 
 								html += '<tr>'
-								html += '<td>' + f.from_user_univ + ' '+ f.from_user_count + '</td>'
-								html += '<td>' + f.from_user_age + '</td>'
+								html += '<td>' + num + '</td>'
+								html += '<td>' + f.from_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.from_user_age + '세 ' + f.from_user_count +'명)</span>'  +'</td>'
 								html += '<td>' + f.from_user_concern + '</td>'
-
 
 								if(f.success_flag == 0){
 									html += '<td>'
@@ -506,13 +509,14 @@
 									html += '</td>'
 								}
 								else if(f.success_flag == 1){
-									html += '<td>수락</td>';
+									html += '<td>수락함</td>';
 								}
 								else if(f.success_flag == 2){
-									html += '<td>거절</td>';
+									html += '<td>거절함</td>';
 								}
 
 								html += '</tr>'
+								num += 1;
 
 							})
 
@@ -529,9 +533,8 @@
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no</th>'
-							html += '<th>상대방 학교</th>'
-							html += '<th>나이</th>'
-							html += '<th>해시태그</th>'
+							html += '<th>상대팀 정보</th>'
+							html += '<th>태그</th>'
 							html += '<th>상태</th>'
 							html += '</tr>'
 							html += '</thead>'
@@ -544,18 +547,17 @@
 
 								html += '<tr>'
 								html += '<td>' + num + '</td>'
-								html += '<td>' + f.to_user_univ +' '+ f.to_user_count +'</td>'
-								html += '<td>' + f.to_user_age + '</td>'
+								html += '<td>' + f.to_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.to_user_age + '세 ' + f.to_user_count +'명)</span>'  +'</td>'
 								html += '<td>' + f.to_user_concern +'</td>'
 
 								if(f.success_flag == 0){
-									html += '<td>대기중</td>';
+									html += '<td>수락 대기중</td>';
 								}
 								else if(f.success_flag == 1){
-									html += '<td>수락</td>';
+									html += '<td>수락됨</td>';
 								}
 								else if(f.success_flag == 2){
-									html += '<td>거절</td>';
+									html += '<td>거절됨</td>';
 								}
 								else{
 

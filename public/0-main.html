@@ -187,7 +187,6 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
 
@@ -227,7 +226,21 @@
 							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대 찾기</a>
 							</div>
 						</div>
-						<h6 class='topmargin' style='color : grey; opacity : 0.4;'> 도움말</h6>
+						<div class = 'topmargin'>
+						<a href='0-config.html' style='color : grey; opacity : 0.4; font-size :14px;'>매칭내역 |</a>
+						<a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움말</a>
+						</div>
+								<div class="modal1 mfp-hide" id="myModal">
+									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
+										<div style="padding: 50px;">
+											<h3>안내</h3>
+											<p class="nobottommargin">매치큐는 하루에 한 번만 돌릴수 있습니다. 매일밤 자정에 큐 권한이 갱신됩니다. 큐를 돌리면 두 개의 팀이 큐에 잡힙니다. 그 중 한 팀을 선택하세요. 상대도 ok하면 서로의 연락처를 알 수 있습니다.</p>
+										</div>
+										<div class="section center nomargin" style="padding: 30px;">
+											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
+										</div>
+									</div>
+								</div>
 					</div>
 
 
@@ -243,7 +256,7 @@
 
 			<div class="content-wrap nopadding">
 
-				<div class="section nobg nomargin center clearfix" style="padding: 150px 0;">
+				<div class="section nobg nomargin center clearfix" style="padding: 50px 0;">
 					<div class="container clearfix">		
 						<div class="fancy-title title-dotted-border">
 							<h3>검색 결과</h3>
@@ -269,9 +282,15 @@
 
 								</div>
 							</div>
-						</div>						
+						</div>
+						<div class = "col_full">
+						<div class="style-msg" style="background-color: #EEE;">
+							<div class="sb-msg"><i class="icon-info-sign"></i>해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 신청해주세요,</div>
+						</div>
+						</div>					
 					</div>
-				</div>				
+				</div>	
+							
 			</div>
 
 		</section>
@@ -455,7 +474,7 @@
 						});
 					}
 					else if(data.type == 2){
-						alert("오늘의 카드는 이미 사용하셨습니다.")
+						alert("오늘은 이미 큐를 돌렸어요. 자정이 지나면 다시 돌릴 수 있어요.")
 					}
 					else{
 						alert("정상적으로 실행이 되지 않습니다.[1]");
@@ -469,7 +488,7 @@
 		}
 	}
 	function MatchRequest(toUserNum, queueNum){
-		if( confirm("미팅을 신청하시겠습니까?") == true ){
+		if( confirm("해당 팀에게 미팅 신청하시겠습니까?") == true ){
 
 			$.ajax({
 				url : 'http://13.124.15.208:9000/match',
@@ -500,7 +519,7 @@
 							},
 							success: function(data){
 								if(data.type == 1){
-									alert("미팅신청을 보냈습니다1.")
+									alert("미팅신청을 보냈습니다1. 신청이 수락되면 매칭내역에서 확인 연락처를 열람할 수 있습니다.")
 									location.href = '0-main.html';
 								}
 							},
