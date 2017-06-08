@@ -240,24 +240,31 @@
 								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호">
 							</div>
 							<div class="col_full" id="re_user_pass-wrap" style='display : none;' >
-								<label for="re_user_pass">한번더</label>
+								<label for="re_user_pass">비밀번호 한번더</label>
 								<input type="password" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
 							</div>
 							<div class="col_full" id="tell-wrap" style='display : none;' >
 								<label for="tell">연락받을 핸드폰번호</label>
-								<input type="text" class="sm-form-control required" id="tell0" name="tell" value="" placeholder="010" maxlength='4'>
-								<input type="text" class="sm-form-control required" id="tell1" name="tell" value="" placeholder="가운데" maxlength='4'>
-								<input type="text" class="sm-form-control required" id="tell2" name="tell" value="" placeholder="마지막" maxlength='4'>
+								<div>
+								<input type="number" class="sm-form-control required" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
+								<input type="number" class="sm-form-control required" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
+								<input type="number" class="sm-form-control required" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
+								</div>
 								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4" class="number" name="tell"-->
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
-								<label for="user_concern">해쉬태그 3개</label>
-								<span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
+								<label for="user_concern">기타정보</label>
+								<!--span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
    								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-  								</span>
-								<input type="text" class="sm-form-control required" id="user_concern" name="user_concern" value="" placeholder="#공대남자 #미대여자 #잘놈">
+  								</span-->
+  										<!-- Modal button -->								
+  								<div>
+								<input type="text" class="sm-form-control required" id="user_concern0" name="user_concern0" value="" placeholder="소속학과" style='display : inline-block; width : 31%'>
+								<input type="text" class="sm-form-control required" id="user_concern1" name="user_concern1" value="" placeholder="특징1" style='display : inline-block; width : 31%'>
+								<input type="text" class="sm-form-control required" id="user_concern2" name="user_concern2" value="" placeholder="특징2" style='display : inline-block; width : 31%'>
+								</div>
 							</div>
 							<div class="col_full" id="btn_add-wrap" style='display : none;' >
 								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
@@ -296,25 +303,25 @@
 									<div class="tabs tabs-bb clearfix ui-tabs ui-widget ui-widget-content ui-corner-all" id="tab-9">
 
 							<ul class="tab-nav clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-								<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-33" aria-labelledby="ui-id-17" aria-selected="true" aria-expanded="true"><a href="#tabs-33" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-17">소개</a></li>
-								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-34" aria-labelledby="ui-id-18" aria-selected="false" aria-expanded="false"><a href="#tabs-34" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-18">후기</a></li>
-								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-35" aria-labelledby="ui-id-19" aria-selected="false" aria-expanded="false"><a href="#tabs-35" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-19">개발자</a></li>
-								<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="tabs-36" aria-labelledby="ui-id-19" aria-selected="false" aria-expanded="false"><a href="#tabs-36" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-20">FAQ</a></li>
+								<li><a href="#tabs-33">소개</a></li>
+								<li><a href="#tabs-34">후기</a></li>
+								<li><a href="#tabs-35">개발자</a></li>
+								<li><a href="#tabs-36">FAQ</a></li>
 							</ul>
 
 							<div class="tab-container">
 
-								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-33" aria-labelledby="ui-id-17" role="tabpanel" aria-hidden="false">
+								<div class="tab-content clearfix" id="tabs-33">
 									<span class='t700'>- 미팅</span>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅은 빨간거울이 챙겨드릴게요. <br><br>- 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 저희 빨간거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다. 
 									<br><br>- 매칭은 아주 간단하게 이루어 집니다. <br>1)양식작성  <br> 2)큐돌리기 <br>3)신청 <br> 4)번호로 연락 
 
 
 
 								</div>
-								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-34" aria-labelledby="ui-id-18" role="tabpanel" aria-hidden="true" style="display: none;">
+								<div class="tab-content clearfix" id="tabs-34">
 									준비중이에요
 								</div>
-								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-35" aria-labelledby="ui-id-19" role="tabpanel" aria-hidden="true" style="display: none;">
+								<div class="tab-content clearfix" id="tabs-35">
 									<ul class="testimonials-grid grid-3 clearfix">
 										<li style="height: auto;">
 											<div class="testimonial">
@@ -350,7 +357,7 @@
 									</ul>
 
 								</div>
-								<div class="tab-content clearfix ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-36" aria-labelledby="ui-id-20" role="tabpanel" aria-hidden="true" style="display: none;">
+								<div class="tab-content clearfix" id="tabs-36">
 									<div class="accordion accordion-border clearfix" data-state="closed">
 
 										<div class="acctitle"><i class="acc-closed icon-question-sign"></i><i class="acc-open icon-question-sign"></i>여기 뭐하는곳인가요?</div>
@@ -384,6 +391,26 @@
 			</div>
 
 		</section><!-- #content end -->
+
+
+		<div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:50px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage1'>
+		<center>
+		 
+		            <div class="style-msg" style="background-color: #EEE;">
+									<div class="sb-msg"><i class="icon-question-sign"></i>오래걸리지 않아요. 벌써 반이나 했는걸요.</div>
+								</div>
+		            
+		</center>
+		</div>
+		<div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:70px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage2'>
+		<center>
+		 
+		            <div class="style-msg" style="background-color: #EEE;">
+									<div class="sb-msg"><i class="icon-question-sign"></i>특징란에는 <strong>훈남있음, 훈녀팀, 술게임고수</strong> 등 미팅팀의 매력을 적어주시면 되요.</div>
+								</div>
+		            
+		</center>
+		</div>
 
 		<!-- Footer
 		============================================= -->
@@ -449,9 +476,13 @@
 						required: true,
 						minlength: 4
 					},
-					'user_concern': {
+					'user_concern2': {
 						required: true,
 						minlength: 1
+					},
+					'tell2': {
+						required: true,
+						minlength: 4
 					}
 				}
 			});
@@ -483,8 +514,10 @@
 			$('#user_age').change( function() {
 				if( conditionValidator.element( "#user_age" ) === true ) {
 					$('#user_id-wrap').fadeIn();
+					$('#infomessage1').fadeIn();
 				} else {
 					$('#user_id-wrap').fadeOut();
+					$('#infomessage1').fadeOut();
 				}
 			});
 
@@ -499,6 +532,7 @@
 			$('#user_pass').bind('input propertychange', function() {
 				if( conditionValidator.element( "#user_pass" ) === true ) {
 					$('#re_user_pass-wrap').fadeIn();
+					$('#infomessage1').fadeOut();
 				} else {
 					$('#re_user_pass-wrap').fadeOut();
 				}
@@ -515,14 +549,17 @@
 			$('#tell2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
+					$('#infomessage2').fadeIn();
 				} else {
 					$('#user_concern-wrap').fadeOut();
+					$('#infomessage2').fadeOut();
 				}
 			});
 
-			$('#user_concern').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_concern" ) === true ) {
+			$('#user_concern2').bind('input propertychange', function() {
+				if( conditionValidator.element( "#user_concern2" ) === true ) {
 					$('#btn_add-wrap').fadeIn();
+					$('#infomessage2').fadeOut();
 				} else {
 					$('#btn_add-wrap').fadeOut();
 				}
@@ -550,8 +587,8 @@
 		var userId 		= $("#user_id").val();
 		var userPass  	= $("#user_pass").val();
 		var userPhone 	= $("#tell0").val() + '-' + $("#tell1").val() + '-' + $("#tell2").val();
-		var userConcern = $("#user_concern").val();
-
+		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + ' #' + $("#user_concern2").val();
+		
 		$.ajax({
 			url     : 'http://13.124.15.208:9000/users',
 			//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
@@ -573,7 +610,7 @@
 			success: function(data){
 				console.log(data)
 				if(data.type == 1)
-					alert("아이디가 생성되었습니다.")
+					alert("계정이 생성되었어요. 매칭큐를 돌려보세요")
 
 					setCookie("user_id", 	data.content.user_id,1);
 					setCookie("user_num", 	data.content.user_num,1);
