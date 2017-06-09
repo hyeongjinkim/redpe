@@ -72,7 +72,15 @@
 							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
+							<li><a id='#aaf'><div>로그아웃</div></a></li>
 
+<script>
+$('.aaf').on("click",function(){
+    $.cookie("user_id", 	data.content.user_id, -1);
+    $.cookie("user_num", 	data.content.user_num, -1);
+
+});
+</script>
 						</ul>
 
 						<!-- Top Cart
@@ -173,10 +181,7 @@
 							</div>
 
 							<div class="col_full" id="user_count-wrap" style='display : none;' >
-								<label for="user_count">미팅 멤버 수?</label>
-								<span data-container="body" data-toggle="popover" data-placement="top" data-content="함께 파티할 멤버수를 입력해주세요. 멤버수가 맞게 매칭이 됩니다. 현재는 3명만 가능합니다">
-   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-  								</span>
+								<label id='user_count_tooltip' for="user_count" data-toggle="tooltip" data-placement='right' title="현재는 3대3 미팅만 가능해요">미팅 멤버 수?</label>
 								<select id="user_count" name="user_count" class="required sm-form-control">
 									<option value="">멤버수 선택</option>
 									<option value="3">3명</option>
@@ -207,7 +212,7 @@
 
 
 							<div class="col_full" id="user_id-wrap" style='display : none;'>
-								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정" >이메일</label>
+								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정으로 사용됩니다" >이메일</label>
 								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr">
 							</div>
 
@@ -232,7 +237,7 @@
 								<label for="re_user_pass">비밀번호 한번더</label>
 								<input type="password" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
 							</div>
-							<div class="col_full" id="tell-wrap" style='display : none;' >
+							<div class="col_full" id="tell-wrap" style='display : none;'>
 								<label for="tell">연락받을 핸드폰번호</label>
 								<div>
 								<input type="number" class="sm-form-control required" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
@@ -241,7 +246,7 @@
 								</div>
 								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
-								<input style="width: 31%;" type="text" id="tell2" maxlength="4" class="number" name="tell"-->
+								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
 								<label id='hash_popover' for="user_concern" data-toggle="popover" title="작성요령" data-content="팀을 잘 표현할 수 있는 해쉬태그를 넣으세요. 예) #공대남자 #훈녀팀 #술게임잘함 #재미보장함" data-placement="top">해쉬태그</label>
@@ -479,6 +484,17 @@ $('#user_pass').focus(function(){
 </script>
 
 
+<script>
+$(document).ready(function(){
+    $('input').keyup(function(){
+        if($(this).val().length==$(this).attr("maxlength")){
+            $(this).next().focus();
+        }
+    });
+});
+</script>
+
+
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="js/login.js"></script>
@@ -526,6 +542,7 @@ $('#user_pass').focus(function(){
 				if( conditionValidator.element( "#user_gender" ) === true ) {
 					$('#user_count-wrap').fadeIn();
 					$('#user_count').focus();
+					$('#user_count_tooltip').tooltip('show');
 				} else {
 					$('#user_count-wrap').fadeOut();
 				}
@@ -535,6 +552,7 @@ $('#user_pass').focus(function(){
 				if( conditionValidator.element( "#user_count" ) === true ) {
 					$('#user_age-wrap').fadeIn();
 					$('#user_age').focus();
+					$('#user_count_tooltip').tooltip('hide');
 				} else {
 					$('#user_age-wrap').fadeOut();
 				}
@@ -579,6 +597,7 @@ $('#user_pass').focus(function(){
 			$('#tell2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
+					$('#user_concern0').focus();
 					/* $('#infomessage2').fadeIn(); */
 				} else {
 					$('#user_concern-wrap').fadeOut();

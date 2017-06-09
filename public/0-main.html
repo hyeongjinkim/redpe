@@ -187,17 +187,12 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="0-main.html"><div>매칭</div></a></li>
+							<li><a href="0-main.html"><div>매칭큐</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
-
 						</ul>
-
 					</nav><!-- #primary-menu end -->
-
 				</div>
-
 			</div>
-
 		</header><!-- #header end -->
 
 
@@ -205,16 +200,13 @@
 		============================================= -->
 
 		<section id="content_1">
-
 			<div class="content-wrap nopadding">
-
 				<div class="section nobg nomargin center clearfix" style="padding: 100px 0;">
 					<div class="container clearfix">
 						<div class='col_one_fifth hidden-xs'>
 						</div>
 						<div class="col_three_fifth" >
 						<div class="fancy-title title-dotted-border">
-
 							<h3>&nbspMatch Queue</h3>
 						</div>
 						</div>
@@ -223,7 +215,7 @@
 						<div class="col_three_fifth">
 							<div class="fslider">
 							<div class="flexslider">
-							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대 찾기</a>
+							<a id="queue_start" data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#conditional-form">상대팀 찾기</a>
 							</div>
 						</div>
 						<div class = 'topmargin'>
@@ -241,7 +233,7 @@
 										</div>
 									</div>
 								</div>
-					</div>
+							</div>
 
 
 					</div>
@@ -284,7 +276,7 @@
 
 						<div class = "col_full">
 						<div class="style-msg" style="background-color: #EEE;">
-							<div class="sb-msg"><i class="icon-info-sign"></i>한 팀을 선택해주세요. 해당 큐는 매일밤 자정에 만료됩니다. 자정이 되기전에 선택을 완료해주세요,</div>
+							<div class="sb-msg"><i class="icon-info-sign"></i>한 팀을 선택해주세요. 해당 큐는 <strong>매일밤 자정에 만료</strong>됩니다. 자정이 되기전에 선택을 완료해주세요,</div>
 						</div>
 						</div>					
 					</div>
@@ -428,7 +420,7 @@
 						match2+= '</span>'
 						match2+= '</h3>'
 						match2+= '<br>'
-						match2+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";
+						match2+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";
 
 						// $(document).on('dblclick', '#an_tnam tr', function(event) {
     					// 	ADS('hello');
