@@ -7,7 +7,7 @@
 
 	<!-- Stylesheets
 	============================================= -->
-	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<!--ink href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" /-->
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" />
+	<!--link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" /-->
 
 	<!-- Bootstrap Select CSS -->
 	<link rel="stylesheet" href="css/components/bs-select.css" type="text/css" />
@@ -33,6 +33,9 @@
 		border-bottom : 2px solid #DDD !important;
 		padding-left : 5px !important;
 		padding-bottom : 0px !important;
+	}
+	.erros {
+		border-color : #E42C3E !important;
 	}
 	</style>
 
@@ -54,14 +57,14 @@
 
 					<div id="primary-menu-trigger">
 						<i class="icon-reorder hidden-xs"></i>
-						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" class='visible-xs' width='14px;'></a>
+						<img src="" class='visible-xs' width='14px;'></a>
 					</div>
 
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="0-login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
-						<a href="0-main.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
+						<a href="0-login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="" alt="Canvas Logo"></a>
+						<a href="0-main.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="" alt="Canvas Logo"></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -72,16 +75,7 @@
 							<li><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
-							<li><a id='#aaf'><div>로그아웃</div></a></li>
-
-<script>
-$('.aaf').on("click",function(){
-    $.cookie("user_id", 	data.content.user_id, -1);
-    $.cookie("user_num", 	data.content.user_num, -1);
-
-});
-</script>
-						</ul>
+</ul>
 
 						<!-- Top Cart
 						============================================= -->
@@ -249,7 +243,7 @@ $('.aaf').on("click",function(){
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
-								<label id='hash_popover' for="user_concern" data-toggle="popover" title="작성요령" data-content="팀을 잘 표현할 수 있는 해쉬태그를 넣으세요. 예) #공대남자 #훈녀팀 #술게임잘함 #재미보장함" data-placement="top">해쉬태그</label>
+								<label id='hash_popover' for="user_concern" data-toggle="popover" title="마지막단계!" data-content="팀을 잘 표현할 수 있는 해쉬태그를 넣으세요. 잘 표현할수록 인기도가 높아집니다. 예) #훈녀팀 #술게임잘함 #아지매팀  " data-placement="top">해쉬태그</label>
 								<!--span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
    								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
   								</span-->
@@ -587,10 +581,14 @@ $(document).ready(function(){
 			});
 
 			$('#re_user_pass').bind('input propertychange', function() {
-				if( conditionValidator.element( "#re_user_pass" ) === true ) {
+				if( conditionValidator.element( "#re_user_pass" ) === true && $('#re_user_pass').val() == $('#user_pass').val() ) {  
 					$('#tell-wrap').fadeIn();
+					var element = document.getElementById("re_user_pass");
+					element.classList.remove("erros");
 				} else {
 					$('#tell-wrap').fadeOut();
+					var element = document.getElementById("re_user_pass");
+					element.classList.add("erros");
 				}
 			});
 
@@ -598,6 +596,7 @@ $(document).ready(function(){
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
 					$('#user_concern0').focus();
+
 					/* $('#infomessage2').fadeIn(); */
 				} else {
 					$('#user_concern-wrap').fadeOut();
@@ -638,6 +637,7 @@ $(document).ready(function(){
 		var userAge 	= $("#user_age").val();
 		var userId 		= $("#user_id").val();
 		var userPass  	= $("#user_pass").val();
+		var re_userPass = $("#re_user_pass").val();
 		var userPhone 	= $("#tell0").val() + '-' + $("#tell1").val() + '-' + $("#tell2").val();
 		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + ' #' + $("#user_concern2").val();
 

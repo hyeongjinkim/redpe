@@ -399,12 +399,12 @@
 					var match1_select = "<a href='#' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'>"+img_src+"</a>";
 					var match1 = '<h3>'
 						match1+= data.content.m1_user_univ;
-						match1+= '<span class="subtitle">';
-						match1+= data.content.m1_user_age +'세 ' + data.content.m1_user_count + '명'
+						match1+= '<span class="subtitle">평균 ';
+						match1+= data.content.m1_user_age +'세 ,' + data.content.m1_user_count + '명'
 						match1+= '</span>'
-						match1+= '<span class="subtitle" style="opacity:0.7">'
+						match1+= '<span class="subtitle" style="opacity:0.7"><code>'
 						match1+= data.content.m1_user_concern
-						match1+= '</span>'
+						match1+= '</code></span>'
 						match1+= '</h3>'
 						match1+= '<br>'
 						match1+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m1_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";
@@ -412,12 +412,12 @@
 					var match2_select = "<a href='#' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'>"+img_src2+"</a>";
 					var match2 = '<h3>'
 						match2+= data.content.m2_user_univ;
-						match2+= '<span class="subtitle">';
-						match2+= data.content.m2_user_age +'세 ' + data.content.m2_user_count + '명'
+						match2+= '<span class="subtitle">평균 ';
+						match2+= data.content.m2_user_age +'세 ,' + data.content.m2_user_count + '명'
 						match2+= '</span>'
-						match2+= '<span class="subtitle" style="opacity:0.7">'
+						match2+= '<span class="subtitle" style="opacity:0.7"><code>'
 						match2+= data.content.m2_user_concern
-						match2+= '</span>'
+						match2+= '</code></span>'
 						match2+= '</h3>'
 						match2+= '<br>'
 						match2+= "<a href='#' class='button button-border button-rounded button-red' onclick='MatchRequest("+data.content.m2_user_num+","+ data.request_num+")'><i class='icon-off'></i>선택</a>";

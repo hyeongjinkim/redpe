@@ -4,6 +4,9 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- 안드로이드 홈화면추가시 상단 주소창 제거 -->
+<meta name="mobile-web-app-capable" content="yes">
 
 	<!-- Stylesheets
 	============================================= -->
@@ -25,6 +28,13 @@
 	<!-- Document Title
 	============================================= -->
 	<title>내 정보 페이지</title>
+<style>
+.tableicon {
+	height : 20px !important;
+	right-margin : 8px;
+
+}
+</style>
 
 </head>
 
@@ -85,19 +95,21 @@
 		============================================= -->
 		<section id="content">
 
-			<div class="content-wrap">
+			<div class="content-wrap nopadding">
 
 				<div class="container clearfix">
 
 					<div class="row clearfix">
 
-						<div class="col-sm-9 nopadding">
+						<div class = 'bottommargin hidden-xs'>
+						</div>
 
 
-							<div class="heading-block noborder">
-								<h3>회원님의 정보</h3>
+						<div class="fancy-title title-dotted-border center">
+							<h3>&nbsp;Match List</h3>
+						
 
-							</div>
+						</div>
 
 							<div class="clear"></div>
 
@@ -110,19 +122,18 @@
 
 										<ul class="tab-nav clearfix">
 											<li class='noleftmargin'>
-												<a href="#tab-1" id='config_btn'>정보</a>
-												
+												<a href="#tab-1" id='Sreq_btn'>보낸내역</a>
 											</li>
 											<li>
-												<a href="#tab-2" id='match_btn'>성사된</a>
-												
+												<a href="#tab-2" id='Rreq_btn'>받은내역</a>
 											</li>
 											<li>
-												<a href="#tab-3" id='Rreq_btn'>받은</a>
+												<a href="#tab-3" id='match_btn'>성사내역</a>
 											</li>
 											<li>
-												<a href="#tab-4" id='Sreq_btn'>보낸</a>
+											<a href="#tab-4" id='config_btn'>정보</a>	
 											</li>
+										
 
 										</ul>
 										<div class="tab-container" id="tab-container">
@@ -135,37 +146,8 @@
 
 							</div>
 
-						</div>
 
 						<div class="line visible-xs-block"></div>
-
-						<div class="col-sm-3 clearfix">
-
-							<!--div class="list-group">
-								<a href="#" class="list-group-item clearfix">Profile <i class="icon-user pull-right"></i></a>
-								<a href="#" class="list-group-item clearfix">Servers <i class="icon-laptop2 pull-right"></i></a>
-								<a href="#" class="list-group-item clearfix">Messages <i class="icon-envelope2 pull-right"></i></a>
-								<a href="#" class="list-group-item clearfix">Billing <i class="icon-credit-cards pull-right"></i></a>
-								<a href="#" class="list-group-item clearfix">Settings <i class="icon-cog pull-right"></i></a>
-								<a href="#" class="list-group-item clearfix">Logout <i class="icon-line2-logout pull-right"></i></a>
-							</div-->
-
-							<div class="fancy-title topmargin title-border">
-								<h4>잠깐!</h4>
-							</div>
-
-							<p>빨잠이 그렇게 친절하지 않을 수 있어요. 혹시 이용중에 궁금한게 있다면 FAQ페이지를 확인해주시거나 문의를 남겨주세요!</p>
-
-							<div class="fancy-title topmargin title-border">
-								<h4>Social Profiles</h4>
-							</div>
-
-							<a href="#" class="social-icon si-facebook si-small si-rounded si-light" title="Facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-						</div>
-
 					</div>
 
 				</div>
@@ -258,7 +240,7 @@
 					// GetSreqList(userNum, 'F')
 					GetData(userNum, 'F')
 				})
-				GetConfig(userNum)
+				GetData(userNum, 'F')
 			}
 		})
 
@@ -329,7 +311,7 @@
 
 					if(data.type == 1){
 						html = '';
-						html += '<div class="tab-content clearfix" id="tab-1">'
+						html += '<div class="tab-content clearfix" id="tab-4">'
 						html += '<div class="table-responsive">'
 						html += '<table class="table table-bordered table-striped">'
 						html += '<colgroup>'
@@ -409,7 +391,7 @@
 					console.log(data)
 					if(data.type == 1){
 
-
+						// 성사내역
 						var html;
 						if( pageType == 'S' ){
 
@@ -423,19 +405,25 @@
 							var fuser_concern;
 
 							html  = '';
-							html += '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button><i class="icon-gift"></i><strong>축하드립니다!</strong> 미팅 매칭이 연결되었습니다. 상대방에게 먼저 연락하여 약속을 잡으세요!</div>'
-							html += '<div class="tab-content clearfix table-responsive" id="tab-2">'
-							html += '<table class="table">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-3">'
+							html += '<table class="table table-bordered bottommargin">'
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no.</th>'
 							html += '<th>상대팀 정보</th>'
-							html += '<th>태그</th>'
+							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft"></i></th>'
 							html += '<th>연락처</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
 							var num = 1;
+							if (!data.content.length) {
+								html += '<tr>'
+								html += '<td colspan = "4">아직 성사내역이 없습니다.</td>'
+								html += '</tr>'
+								num += 1;
+
+							}
 							$.each(data.content, function(i, f) {
 
 								if(f.from_user_num == userNum){
@@ -462,12 +450,16 @@
 									fuser_gender = '';
 								}
 
+								// 성사내역 정보 호출 
 
 								html += '<tr>'
 								html += '<td>' + num + '</td>'
 								html += '<td>'+fuser_univ+" " + '<span style="font-size :10px; font-color : grey;">('+  fuser_age + '세 3명)</span>' 
-								html += '<td>'+fuser_concern +'</td>'
-								html += '<td>'+fuser_phone +'</td>'
+								html += '<td><code>'+fuser_concern +'</code></td>'
+								html += '<td><img src="/img/message.png" class="tableicon"><a href = "sms:'
+								html += fuser_phone
+								html += '"> ' + fuser_phone + '</a>'
+								html += '</td>'
 								html += '</tr>'
 								num += 1;
 
@@ -475,6 +467,8 @@
 							html += '</tbody>'
 							html += '</table>'
 							html += '</div>'
+							html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>서로 수락한 매칭입니다.</div></div>'
+						
 
 							console.log(html)
 						}
@@ -483,24 +477,31 @@
 							console.log(data)
 							// receive
 							html  = '';
-							html += '<div class="tab-content clearfix table-responsive" id="tab-3">'
-							html += '<table class="table">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-2">'
+							html += '<table class="table table-bordered">'
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no.</th>'
 							html += '<th>상대팀 정보</th>'
-							html += '<th>태그</th>'
+							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft visible-xs-*"></i></th>'
 							html += '<th>수락/거절</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
 							var num = 1;
+							if (!data.content.length) {
+								html += '<tr>'
+								html += '<td colspan = "4">아직 신청받은 내역이 없습니다.</td>'
+								html += '</tr>'
+								num += 1;
+
+							}
 							$.each(data.content, function(i, f) {
 
 								html += '<tr>'
 								html += '<td>' + num + '</td>'
 								html += '<td>' + f.from_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.from_user_age + '세 ' + f.from_user_count +'명)</span>'  +'</td>'
-								html += '<td>' + f.from_user_concern + '</td>'
+								html += '<td><code>' + f.from_user_concern + '</code></td>'
 
 								if(f.success_flag == 0){
 									html += '<td>'
@@ -528,13 +529,13 @@
 
 
 							html  = '';
-							html += '<div class="tab-content clearfix table-responsive" id="tab-4">'
-							html += '<table class="table">'
+							html += '<div class="tab-content clearfix table-responsive" id="tab-1">'
+							html += '<table class="table table-bordered bottommargin">'
 							html += '<thead>'
 							html += '<tr>'
 							html += '<th>no</th>'
 							html += '<th>상대팀 정보</th>'
-							html += '<th>태그</th>'
+							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft visible-xs-*"></i></th>'
 							html += '<th>상태</th>'
 							html += '</tr>'
 							html += '</thead>'
@@ -548,7 +549,7 @@
 								html += '<tr>'
 								html += '<td>' + num + '</td>'
 								html += '<td>' + f.to_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.to_user_age + '세 ' + f.to_user_count +'명)</span>'  +'</td>'
-								html += '<td>' + f.to_user_concern +'</td>'
+								html += '<td><code>' + f.to_user_concern +'</code></td>'
 
 								if(f.success_flag == 0){
 									html += '<td>수락 대기중</td>';
@@ -569,6 +570,7 @@
 							html += '</tbody>'
 							html += '</table>'
 							html += '</div>'
+							html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>미팅 신청을 보낸 내역입니다. 상대방도 수락을 하면 성사내역에서 연락처를 확인할 수 있습니다.</div></div>'
 						}
 						else{
 
