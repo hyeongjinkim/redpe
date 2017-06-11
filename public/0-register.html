@@ -207,7 +207,7 @@
 
 							<div class="col_full" id="user_id-wrap" style='display : none;'>
 								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정으로 사용됩니다" >이메일</label>
-								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="example@sogang.ac.kr">
+								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="email@email.com">
 							</div>
 
 							<!-- 인증번호 보내기
@@ -243,11 +243,20 @@
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
 							</div>
 							<div class="col_full" id="user_concern-wrap" style='display : none;' >
-								<label id='hash_popover' for="user_concern" data-toggle="popover" title="마지막단계!" data-content="팀을 잘 표현할 수 있는 해쉬태그를 넣으세요. 잘 표현할수록 인기도가 높아집니다. 예) #훈녀팀 #술게임잘함 #아지매팀  " data-placement="top">해쉬태그</label>
+								<label class='popover_html' id='hash_popover' for="user_concern" data-toggle="popover" title="마지막단계!" data-content="팀을 잘 표현할 수 있는 해시태그를 적어주세요. 센스있게 적을수록 매칭률이 올라갑니다. 
+								&lt;br&gt; 
+								ex)
+								&lt;code&gt; #잘생겼습니다&lt;/code&gt; 
+								&lt;code&gt; #미대여자&lt;/code&gt; 
+								&lt;code&gt; #경영학과&lt;/code&gt; 
+								&lt;code&gt; #술게임잘함&lt;/code&gt; 
+								&lt;code&gt; #재밌게놀아요&lt;/code&gt;" data-placement="top">해쉬태그</label>
 								<!--span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
    								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
   								</span-->
   										<!-- Modal button -->
+
+
 
   								<!-- 해쉬태그 --> 	
   								<div style ='margin-bottom :10px;'>
@@ -463,10 +472,7 @@
 	<script type="text/javascript" src="js/plugins.js"></script>
 
 	<script>
-$('#user_concern0').focus(function() { 
-	$('#hash_popover').popover('show');
-});
-$('#user_concern1').focus(function() { 
+$('#user_concern2').focus(function() { 
 	$('#hash_popover').popover('hide');
 });
 $('#user_id').focus(function(){
@@ -595,7 +601,8 @@ $(document).ready(function(){
 			$('#tell2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
-					$('#user_concern0').focus();
+					$('#hash_popover').popover('show');
+
 
 					/* $('#infomessage2').fadeIn(); */
 				} else {
@@ -623,6 +630,9 @@ $(document).ready(function(){
 
 	<script type="text/javascript">
 		$('.selectsplitter').selectsplitter();
+	</script>
+	<script>
+	$('.popover_html').popover({ html : true});
 	</script>
 	<script>
 	$(document).ready(function(){
