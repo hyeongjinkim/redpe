@@ -56,8 +56,9 @@
 				<div class="container clearfix">
 
 					<div id="primary-menu-trigger">
-						<i class="icon-reorder hidden-xs"></i>
-						<img src="" class='visible-xs' width='14px;'></a>
+						<!--i class="icon-reorder hidden-xs"></i-->
+						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  width="14px;" style='display : inline !important'>
+						<img src="/img/down_arrow.png" width="12px;" style='display : inline'>
 					</div>
 
 					<!-- Logo
@@ -72,7 +73,7 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="0-login.html"><div>로그인</div></a></li>
+							<li id='login_menu'><a href="0-login.html"><div>로그인</div></a></li>
 							<li><a href="0-main.html"><div>매칭</div></a></li>
 							<li><a href="0-config.html"><div>내역</div></a></li>
 </ul>
@@ -225,7 +226,7 @@
 							-->
 							<div class="col_full" id="user_pass-wrap" style='display : none;' >
 								<label for="user_pass">비밀번호를 설정해주세요</label>
-								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호">
+								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호(최소 4자)">
 							</div>
 							<div class="col_full" id="re_user_pass-wrap" style='display : none;' >
 								<label for="re_user_pass">비밀번호 한번더</label>
@@ -251,13 +252,7 @@
 								&lt;code&gt; #경영학과&lt;/code&gt; 
 								&lt;code&gt; #술게임잘함&lt;/code&gt; 
 								&lt;code&gt; #재밌게놀아요&lt;/code&gt;" data-placement="top">해쉬태그</label>
-								<!--span data-container="body" data-toggle="popover" data-placement="top" data-content="파티 멤버들을 잘 표현하는 해쉬태그를 넣어주세요">
-   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-  								</span-->
-  										<!-- Modal button -->
-
-
-
+							
   								<!-- 해쉬태그 --> 	
   								<div style ='margin-bottom :10px;'>
 								<label for='user_concern0 nomargin' style='font-size : 25px;'>#</label>
@@ -280,7 +275,14 @@
 								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
 
 								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
+								<div>
+									<input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" checked="">
+									<label for="checkbox-10" class="checkbox-style-3-label">이용약관에 동의</label>
+								</div>
 							</div>
+							
+								
+						
 						</form>
 
 					</div>
@@ -321,9 +323,9 @@
 
 							<div class="tab-container">
 
-								<div class="tab-content clearfix" id="tabs-33">
-									<span class='t700'>- 미팅</span>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅은 빨간거울이 챙겨드릴게요. <br><br>- 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 저희 빨간거울이 신촌 미팅의 성지가 되겠습니다. 8월까지 서비스는 베타버전으로 운영됩니다.
-									<br><br>- 매칭은 아주 간단하게 이루어 집니다. <br>1)양식작성  <br> 2)큐돌리기 <br>3)신청 <br> 4)번호로 연락
+								<div class="tab-content clearfix" id="tabs-33" style='max-width : 400px;'>
+									<span class='t700'>- 미팅</span>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅은 빨간거울이 챙겨드릴게요. <br><br>- 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 저희 빨간거울이 신촌 미팅의 성지가 되겠습니다. 
+									<br><br>8월말까지 서비스는 베타버전으로 운영되며, 지속적으로 업데이트 될거에요. 언제나 즐거운 마음으로 빨간 거울을 이용할 수 있도록 노력하겠습니다.
 
 
 
@@ -339,12 +341,12 @@
 													<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
 												</div>
 												<div class="testi-content">
-													<p>미팅은 추억이다. 미팅을 함께 했던 친구들과 가끔 미팅 얘기를 하지 않았던가. </p>
+													<p>고학번의 연륜이라면, 미팅은 더욱 재밌을 것이다. </p>
 													<div class="testi-meta">
-														Hyeongjin Kim
+														김형진
 														<span>기획</span>
 														<span>서강대 커뮤니티 서담 운영</span>
-														<span>서강대 영문11</span>
+														<span>서강대 영문과</span>
 
 													</div>
 												</div>
@@ -356,10 +358,11 @@
 													<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
 												</div>
 												<div class="testi-content">
-													<p>Natus voluptatum enim quod necessitatibus quis expedita harum provident eos obcaecati id culpa corporis molestias.</p>
+													<p>미팅 재밌게 하시고 </p>
 													<div class="testi-meta">
-														Collis Ta'eed
-														<span>Envato Inc.</span>
+														정종석
+														<span>개발</span>
+														<span>서강대 컴퓨터공학과</span>
 													</div>
 												</div>
 											</div>
@@ -471,20 +474,25 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
 
-	<script>
-$('#user_concern2').focus(function() { 
-	$('#hash_popover').popover('hide');
-});
-$('#user_id').focus(function(){
-	$('#user_id_tooltip').tooltip('show');
-});
-$('#user_pass').focus(function(){
-	$('#user_id_tooltip').tooltip('hide');
-});
+<script>
+/* 툴팁, 팝오버 함수 */
+	$('#user_concern2').focus(function() { 
+		$('#hash_popover').popover('hide');
+	});
+	$('#user_id').focus(function(){
+		$('#user_id_tooltip').tooltip('show');
+	});
+	$('#user_pass').focus(function(){
+		$('#user_id_tooltip').tooltip('hide');
+	});
+	$('#user_concern0').focus(function() { 
+		$('#hash_popover').popover('show');
+	});
 </script>
 
 
 <script>
+/* 핸드폰 번호 다음걸로 바로 넘어가는 함수 */
 $(document).ready(function(){
     $('input').keyup(function(){
         if($(this).val().length==$(this).attr("maxlength")){
@@ -499,10 +507,12 @@ $(document).ready(function(){
 	============================================= -->
 	<script src="js/login.js"></script>
 	<script type="text/javascript" src="js/functions.js"></script>
+
 	<script>
 	var user_id = getCookie("user_id");
 	var userNum = getCookie("user_num");
 	var requestNum
+
 	// var user_id = "test"
 	// var userNum = 16
 
@@ -601,8 +611,8 @@ $(document).ready(function(){
 			$('#tell2').bind('input propertychange', function() {
 				if( conditionValidator.element( "#tell2" ) === true ) {
 					$('#user_concern-wrap').fadeIn();
-					$('#hash_popover').popover('show');
-
+					
+					
 
 					/* $('#infomessage2').fadeIn(); */
 				} else {
@@ -693,12 +703,12 @@ $(document).ready(function(){
 								location.href = '0-main.html';
 						},
 						error: function() {
-							alert("잠시 후 다시 시도해주세요.");
+							alert("버그가 생겼어요. 잠시 후 다시 시도해주세요.");
 						}
 					});
 				}
 				else if(data.type == 2){
-					alert("이미 등록된 아이디 입니다.")
+					alert("미안해요. 이미 등록된 계정이에요.")
 				}
 				else{
 

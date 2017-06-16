@@ -215,7 +215,7 @@
 						<div class="col_three_fifth">
 							<div class="fslider">
 							<div class="flexslider">
-							<a id="queue_start" href="#" class="button button-3d topmargin shake animated" data-delay="4000" data-animate="shake">상대팀 찾기</a>
+							<a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
 							</div>
 						</div>
 						<div class = 'topmargin'>
@@ -225,8 +225,8 @@
 								<div class="modal1 mfp-hide" id="myModal">
 									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
 										<div style="padding: 50px;">
-											<h3>안내</h3>
-											<p class="nobottommargin">매치큐는 하루에 한 번만 돌릴수 있습니다. 매일밤 자정에 큐 권한이 갱신됩니다. 큐를 돌리면 두 개의 팀이 큐에 잡힙니다. 그 중 한 팀을 선택하세요. 상대도 ok하면 서로의 연락처를 알 수 있습니다.</p>
+											<h3>도움말</h3>
+											<p class="nobottommargin">Match Queue는 하루에 한 번 돌릴 수 있어요. 매일밤 자정에 Queue가 갱신됩니다. Queue를 돌리면 2개의 팀이 결과로 나와요. 그 중 한 팀을 선택하세요. 상대도 ok하면 서로의 연락처를 알 수 있습니다.</p>
 										</div>
 										<div class="section center nomargin" style="padding: 30px;">
 											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
@@ -400,7 +400,7 @@
 					var match1 = '<h3>'
 						match1+= data.content.m1_user_univ;
 						match1+= '<span class="subtitle">평균 ';
-						match1+= data.content.m1_user_age +'세 ,' + data.content.m1_user_count + '명'
+						match1+= data.content.m1_user_age +'세, ' + data.content.m1_user_count + '명'
 						match1+= '</span>'
 						match1+= '<span class="subtitle" style="opacity:0.7"><code>'
 						match1+= data.content.m1_user_concern
@@ -413,7 +413,7 @@
 					var match2 = '<h3>'
 						match2+= data.content.m2_user_univ;
 						match2+= '<span class="subtitle">평균 ';
-						match2+= data.content.m2_user_age +'세 ,' + data.content.m2_user_count + '명'
+						match2+= data.content.m2_user_age +'세, ' + data.content.m2_user_count + '명'
 						match2+= '</span>'
 						match2+= '<span class="subtitle" style="opacity:0.7"><code>'
 						match2+= data.content.m2_user_concern

@@ -313,7 +313,7 @@
 						html = '';
 						html += '<div class="tab-content clearfix" id="tab-4">'
 						html += '<div class="table-responsive">'
-						html += '<table class="table table-bordered">'
+						html += '<table class="table table-bordered bottommargin">'
 						html += '<colgroup>'
 						html += '<col class="col-xs-1">'
 						html += '<col class="col-xs-7">'
@@ -361,6 +361,7 @@
 						html += '</tbody>'
 						html += '</table>'
 						html += '</div>'
+						html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>혹시 정보를 수정하고싶으시다면 여기로 변경하고픈 내용을 보내주세요. (수정기능 준비중입니다)</div></div>'
 						html += '</div>'
 					}else{
 
@@ -409,10 +410,10 @@
 							html += '<table class="table table-bordered bottommargin">'
 							html += '<thead>'
 							html += '<tr>'
-							html += '<th>no.</th>'
+							html += '<th>연락처</th>'
 							html += '<th>상대팀 정보</th>'
 							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft"></i></th>'
-							html += '<th>연락처</th>'
+							html += '<th>no.</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
@@ -453,13 +454,14 @@
 								// 성사내역 정보 호출 
 
 								html += '<tr>'
-								html += '<td>' + num + '</td>'
+								html += '<td><img src="/img/message.png" class="tableicon"><a style="margin-right : 20px;" href = "sms:'
+								html += fuser_phone
+								html += '?body=안녕하세요!%20빨간거울 매칭되어 연락드려요. ' + fuser_univ + ' 분들 맞으신가요?' + '"> ' + fuser_phone + '</a>'
+								html += '</td>'
+								
 								html += '<td>'+fuser_univ+" " + '<span style="font-size :10px; font-color : grey;">('+  fuser_age + '세 3명)</span>' 
 								html += '<td><code>'+fuser_concern +'</code></td>'
-								html += '<td><img src="/img/message.png" class="tableicon"><a href = "sms:'
-								html += fuser_phone
-								html += '"> ' + fuser_phone + '</a>'
-								html += '</td>'
+								html += '<td>' + num + '</td>'
 								html += '</tr>'
 								num += 1;
 
@@ -467,7 +469,16 @@
 							html += '</tbody>'
 							html += '</table>'
 							html += '</div>'
-							html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>서로 수락한 매칭입니다.</div></div>'
+							if (!data.content.length) {
+								html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>아직 성사된 매칭이 없네요. 행운을 빌어요. </div></div>'
+								}
+							else {
+								html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>서로가 수락한 매칭입니다. <strong>연락처를 클릭</strong>하여 문자를 보내고, 시간을 맞춰보세요. </div></div>'
+
+							}
+
+							
+						
 						
 
 							console.log(html)
@@ -477,14 +488,14 @@
 							console.log(data)
 							// receive
 							html  = '';
-							html += '<div class="tab-content clearfix table-responsive" id="tab-2">'
-							html += '<table class="table table-bordered">'
+							html += '<div class="tab-content clearfix table-responsive " id="tab-2">'
+							html += '<table class="table table-bordered bottommargin">'
 							html += '<thead>'
 							html += '<tr>'
-							html += '<th>no.</th>'
+							html += '<th>상태</th>'
 							html += '<th>상대팀 정보</th>'
 							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft visible-xs-*"></i></th>'
-							html += '<th>수락/거절</th>'
+							html += '<th>no.</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
@@ -499,9 +510,6 @@
 							$.each(data.content, function(i, f) {
 
 								html += '<tr>'
-								html += '<td>' + num + '</td>'
-								html += '<td>' + f.from_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.from_user_age + '세 ' + f.from_user_count +'명)</span>'  +'</td>'
-								html += '<td><code>' + f.from_user_concern + '</code></td>'
 
 								if(f.success_flag == 0){
 									html += '<td>'
@@ -516,6 +524,12 @@
 									html += '<td>거절함</td>';
 								}
 
+								
+								html += '<td>' + f.from_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.from_user_age + '세 ' + f.from_user_count +'명)</span>'  +'</td>'
+								html += '<td><code>' + f.from_user_concern + '</code></td>'
+								html += '<td>' + num + '</td>'
+
+
 								html += '</tr>'
 								num += 1;
 
@@ -524,6 +538,16 @@
 							html += '</tbody>'
 							html += '</table>'
 							html += '</div>'
+
+							if (!data.content.length) {
+								html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>아직 신청받은 내용이 없어요. 신청이 온다면 카톡으로 알려드릴게요. </div></div>'
+								}
+							else {
+								html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>당신과 미팅을 하고싶어해요 <strong>수락/거절 버튼</strong>을 버튼을 눌러주세요. 오랜시간 선택을 하지 않으면 신청이 안 올수 있어요.</div></div>'
+
+							}
+
+
 						}
 						else if ( pageType == 'F' ){
 
@@ -533,10 +557,10 @@
 							html += '<table class="table table-bordered bottommargin">'
 							html += '<thead>'
 							html += '<tr>'
-							html += '<th>no</th>'
+							html += '<th>상태</th>'
 							html += '<th>상대팀 정보</th>'
 							html += '<th>#태그 <i class="icon-angle-right infinite animated fadeInLeft visible-xs-*"></i></th>'
-							html += '<th>상태</th>'
+							html += '<th>no.</th>'
 							html += '</tr>'
 							html += '</thead>'
 							html += '<tbody>'
@@ -547,10 +571,6 @@
 								console.log(f)
 
 								html += '<tr>'
-								html += '<td>' + num + '</td>'
-								html += '<td>' + f.to_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.to_user_age + '세 ' + f.to_user_count +'명)</span>'  +'</td>'
-								html += '<td><code>' + f.to_user_concern +'</code></td>'
-
 								if(f.success_flag == 0){
 									html += '<td>수락 대기중</td>';
 								}
@@ -563,14 +583,20 @@
 								else{
 
 								}
+								
+								
+								html += '<td>' + f.to_user_univ + ' <span style="font-size :10px; font-color : grey;">('+  f.to_user_age + '세 ' + f.to_user_count +'명)</span>'  +'</td>'
+								html += '<td><code>' + f.to_user_concern +'</code></td>'
+								html += '<td>' + num + '</td>'
 								html += '</tr>'
+
 
 								num += 1;
 							})
 							html += '</tbody>'
 							html += '</table>'
 							html += '</div>'
-							html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>미팅 신청을 보낸 내역입니다. 상대방도 수락을 하면 성사내역에서 연락처를 확인할 수 있습니다.</div></div>'
+							html += '<div class="style-msg" style="background-color: #EEE;"><div class="sb-msg"><i class="icon-info-sign"></i>미팅 신청을 보낸 내역입니다. 상대방이 수락을 하면 성사내역에서 연락처를 확인할 수 있습니다.</div></div>'
 						}
 						else{
 
