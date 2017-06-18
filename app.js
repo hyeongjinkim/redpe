@@ -9,6 +9,7 @@ var mysql		= require('mysql');
 var dbconfig    = require('./config/database.js');
 var connection  = mysql.createConnection(dbconfig);
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 var match = require('./routes/match');
@@ -16,6 +17,14 @@ var queue = require('./routes/queue');
 var login = require('./routes/login');
 
 var app = express();
+
+app.get('/', function(req, res, next) {
+  if (req.headers.host.slice(0, 3) != 'www') {
+    res.redirect('http://www.' + req.headers.host + req.url, 301);
+  } else {
+    next();
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,12 +47,17 @@ app.use('/match', match);
 app.use('/queue', queue);
 app.use('/login', login);
 
+app.get('/', function(req, res){
+	res.sendFile(__dirname +'/public/register.html');
+})
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
 	err.status = 404;
 	next(err);
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -54,6 +68,18 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+
+
+
+if (host == host.replace('www','')) {
+        res.redirect("http://www." + host + req.url);
+    } 
+    else if (!req.secure) {
+        res.redirect("http://" + host + req.url);
+    } else
+        return next();
+        
+
 });
 
 //////////////////////////////////////////////////////

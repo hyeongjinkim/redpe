@@ -4,7 +4,8 @@
 
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
-
+	<meta name="naver-site-verification" content="e1ee205fa87fa84b3326186f7c1f521a7a62e385"/>
+	<meta name="description" content="서강대생이 만든 신촌지역 대학생 미팅 서비스">
 	<!-- Stylesheets
 	============================================= -->
 	<!--ink href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" /-->
@@ -26,7 +27,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>[빨간거울]</title>
+	<title>빨간거울 - 신촌 대학생 미팅</title>
 	<style>
 	.hashtag {
 		border : 0px;
@@ -64,8 +65,8 @@
 					<!-- Logo
 					============================================= -->
 					<div id="logo">
-						<a href="0-login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="" alt="Canvas Logo"></a>
-						<a href="0-main.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="" alt="Canvas Logo"></a>
+						<a href="login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  style='display : inline !important'></a>
+						<a href="match.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  style='display : inline !important'></a>
 					</div><!-- #logo end -->
 
 					<!-- Primary Navigation
@@ -73,10 +74,10 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li id='login_menu'><a href="0-login.html"><div>로그인</div></a></li>
-							<li><a href="0-main.html"><div>매칭</div></a></li>
-							<li><a href="0-config.html"><div>내역</div></a></li>
-</ul>
+							<li id='login_menu'><a href="login.html"><div>로그인</div></a></li>
+							<li><a href="match.html"><div>매칭</div></a></li>
+							<li><a href="list.html"><div>내역</div></a></li>
+	</ul>
 
 						<!-- Top Cart
 						============================================= -->
@@ -115,7 +116,7 @@
 					</div>
 				</div>
 
-				<a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+				<!--a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a-->
 
 			</div>
 		</section>
@@ -316,7 +317,7 @@
 
 							<ul class="tab-nav clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
 								<li><a href="#tabs-33">소개</a></li>
-								<li><a href="#tabs-34">후기</a></li>
+								
 								<li><a href="#tabs-35">개발자</a></li>
 								<li><a href="#tabs-36">FAQ</a></li>
 							</ul>
@@ -330,9 +331,7 @@
 
 
 								</div>
-								<div class="tab-content clearfix" id="tabs-34">
-									준비중이에요
-								</div>
+								
 								<div class="tab-content clearfix" id="tabs-35">
 									<ul class="testimonials-grid grid-3 clearfix">
 										<li style="height: auto;">
@@ -341,9 +340,9 @@
 													<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
 												</div>
 												<div class="testi-content">
-													<p>고학번의 연륜이라면, 미팅은 더욱 재밌을 것이다. </p>
+													<p>진정한 미팅은 20대 중반부터 가능</p>
 													<div class="testi-meta">
-														김형진
+														KHJ
 														<span>기획</span>
 														<span>서강대 커뮤니티 서담 운영</span>
 														<span>서강대 영문과</span>
@@ -360,7 +359,7 @@
 												<div class="testi-content">
 													<p>미팅 재밌게 하시고 </p>
 													<div class="testi-meta">
-														정종석
+														JJS
 														<span>개발</span>
 														<span>서강대 컴퓨터공학과</span>
 													</div>
@@ -436,7 +435,7 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
+						<!--img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo"-->
 
 						Copyrights &copy; 2017 All Rights Reserved by Redmirror Inc.
 					</div>
@@ -519,7 +518,7 @@ $(document).ready(function(){
 	// 로그인 쿠키가 있다면 가입이 아닌 main으로 이동시키기.
 	//$(document).ready(function(){
 	//	if( userNum > 0 ){
-    //        location.href = '0-main.html';
+    //        location.href = 'match.html';
     //    }
 	//	$(document).on("click", "#queue_start", StartQueue)
 	//	default_show()
@@ -700,7 +699,7 @@ $(document).ready(function(){
 
 								setCookie("user_id", 	data.content.user_id,1);
 								setCookie("user_num", 	data.content.user_num,1);
-								location.href = '0-main.html';
+								location.href = 'match.html';
 						},
 						error: function() {
 							alert("버그가 생겼어요. 잠시 후 다시 시도해주세요.");

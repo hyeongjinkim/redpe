@@ -54,6 +54,15 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+
+  if (host == host.replace('www','')) {
+          res.redirect("http://www." + host + req.url);
+      } 
+      else if (!req.secure) {
+          res.redirect("http://" + host + req.url);
+      } else
+          return next();        
+
 });
 
 //////////////////////////////////////////////////////
