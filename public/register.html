@@ -97,30 +97,6 @@
 		</header><!-- #header end -->
 
 		<!-- pc화면 -->
-		<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix bottommargin-sm slider-parallax-visible hidden-xs" style="height: 284px;">
-			<div class="slider-parallax-inner" style="transform: translateY(0px); height: 284px;">
-
-				<div class="swiper-container swiper-parent swiper-container-horizontal" style="cursor: -webkit-grab;">
-					<div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
-						<!-- 슬라이드1 -->
-						<div class="swiper-slide swiper-slide-active" style="height: 284px; width: 1440px;">
-							<div class="container clearfix">
-								<!-- 피씨 -->
-								<div class="slider-caption slider-caption-center hidden-xs" style="transform: translateY(0px); opacity: 1; top: -10.5px;">
-									<h2 data-caption-animate="fadeInUp t300 bottommargin" class="fadeInUp t300 bottommargin animated">미팅은 <span class="color">추억</span>이다</h2>
-									<p class="t200 topmargin-sm fadeInUp animated" style="line-height : 1.8;" data-caption-animate="fadeInUp" data-caption-delay="200">빨간거울은 신촌지역 <span class="color">대학생 미팅 매칭</span> 서비스입니다.<br> 친구들과 함께 안전하고 즐거운 미팅을 경험해보세요</p>
-									<a data-caption-animate="fadeInUp" data-caption-delay="400" href="#" class="button button-3d topmargin fadeInUp animated" data-easing="easeInOutExpo" data-speed="1250" data-scrollto="#content2">지금 시작하기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!--a href="#" data-scrollto="#content" data-offset="100" class="one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a-->
-
-			</div>
-		</section>
-
 
 
 	<!-- Page Title
@@ -166,7 +142,7 @@
 
 							</div>
 
-							<div class="col_full" id="user_gender-wrap" style='display : none;' onchange="admSelectCheck(this);">
+							<div class="col_full" id="user_gender-wrap"  onchange="admSelectCheck(this);">
 								<label for="user_gender">성별?</label>
 								<select id="user_gender" name="user_gender" class="required sm-form-control">
 									<option value="">성별을 선택하세요</option>
@@ -176,7 +152,7 @@
 
 							</div>
 
-							<div class="col_full" id="user_count-wrap" style='display : none;' >
+							<div class="col_full" id="user_count-wrap"  >
 								<label id='user_count_tooltip' for="user_count" data-toggle="tooltip" data-placement='right' title="현재는 3대3 미팅만 가능해요">미팅 멤버 수?</label>
 								<select id="user_count" name="user_count" class="required sm-form-control">
 									<option value="">멤버수 선택</option>
@@ -184,7 +160,7 @@
 								</select>
 							</div>
 
-							<div class="col_full" id="user_age-wrap" style='display : none;'>
+							<div class="col_full" id="user_age-wrap" >
 								<label for="user_age">나이?</label>
 
 								<!--span data-container="body" data-toggle="popover" data-placement="right" data-content="맴버들의 평균 나이를 연도로 계산해서 입력해주세요">
@@ -207,7 +183,7 @@
 
 
 
-							<div class="col_full" id="user_id-wrap" style='display : none;'>
+							<div class="col_full" id="user_id-wrap" >
 								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정으로 사용됩니다" >이메일</label>
 								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="email@email.com">
 							</div>
@@ -225,15 +201,15 @@
 								<div class="button button-3d nomargin" id='user_concern' type="submit">인증</div>
 							</div>
 							-->
-							<div class="col_full" id="user_pass-wrap" style='display : none;' >
+							<div class="col_full" id="user_pass-wrap"  >
 								<label for="user_pass">비밀번호를 설정해주세요</label>
 								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호(최소 4자)">
 							</div>
-							<div class="col_full" id="re_user_pass-wrap" style='display : none;' >
+							<div class="col_full" id="re_user_pass-wrap"  >
 								<label for="re_user_pass">비밀번호 한번더</label>
 								<input type="password" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
 							</div>
-							<div class="col_full" id="tell-wrap" style='display : none;'>
+							<div class="col_full" id="tell-wrap" >
 								<label for="tell">연락받을 핸드폰번호</label>
 								<div>
 								<input type="number" class="sm-form-control required" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
@@ -244,7 +220,7 @@
 								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
 							</div>
-							<div class="col_full" id="user_concern-wrap" style='display : none;' >
+							<div class="col_full" id="user_concern-wrap"  >
 								<label class='popover_html' id='hash_popover' for="user_concern" data-toggle="popover" title="마지막단계!" data-content="팀을 잘 표현할 수 있는 해시태그를 적어주세요. 센스있게 적을수록 매칭률이 올라갑니다. 
 								&lt;br&gt; 
 								ex)
@@ -272,7 +248,7 @@
 								>
 								</div>							
 							</div>
-							<div class="col_full" id="btn_add-wrap" style='display : none;' >
+							<div class="col_full" id="btn_add-wrap"  >
 								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
 
 								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
@@ -295,116 +271,7 @@
 		</section><!-- #content end -->
 
 		<!--  소개페이지 -->
-			<section id="content">
-
-			<div class="content-wrap padding-sm">
-
-				<div class="container clearfix">
-
-					<div class="row clearfix">
-
-						<div class="col-sm-9">
-
-
-
-							<div class="clear"></div>
-
-							<div class="row clearfix">
-
-								<div class="col-md-12">
-
-									<div class="tabs tabs-bb clearfix ui-tabs ui-widget ui-widget-content ui-corner-all" id="tab-9">
-
-							<ul class="tab-nav clearfix ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-								<li><a href="#tabs-33">소개</a></li>
-								
-								<li><a href="#tabs-35">개발자</a></li>
-								<li><a href="#tabs-36">FAQ</a></li>
-							</ul>
-
-							<div class="tab-container">
-
-								<div class="tab-content clearfix" id="tabs-33" style='max-width : 400px;'>
-									<span class='t700'>- 미팅</span>은 더이상 새내기들의 전유물이 아닙니다. 정든내기, 고학번, 화석 모두 미팅할 권리가 있습니다. 여러분들의 미팅은 빨간거울이 챙겨드릴게요. <br><br>- 빨간거울은 신촌 U-Plex 앞의 빨간거울에서 모티브를 따와서 이름을 지었어요. 신촌의 빨간거울처럼 저희 빨간거울이 신촌 미팅의 성지가 되겠습니다. 
-									<br><br>8월말까지 서비스는 베타버전으로 운영되며, 지속적으로 업데이트 될거에요. 언제나 즐거운 마음으로 빨간 거울을 이용할 수 있도록 노력하겠습니다.
-
-
-
-								</div>
-								
-								<div class="tab-content clearfix" id="tabs-35">
-									<ul class="testimonials-grid grid-3 clearfix">
-										<li style="height: auto;">
-											<div class="testimonial">
-												<div class="testi-image">
-													<a href="#"><img src="images/testimonials/1.jpg" alt="Customer Testimonails"></a>
-												</div>
-												<div class="testi-content">
-													<p>진정한 미팅은 20대 중반부터 가능</p>
-													<div class="testi-meta">
-														KHJ
-														<span>기획</span>
-														<span>서강대 커뮤니티 서담 운영</span>
-														<span>서강대 영문과</span>
-
-													</div>
-												</div>
-											</div>
-										</li>
-										<li style="height: auto;">
-											<div class="testimonial">
-												<div class="testi-image">
-													<a href="#"><img src="images/testimonials/2.jpg" alt="Customer Testimonails"></a>
-												</div>
-												<div class="testi-content">
-													<p>미팅 재밌게 하시고 </p>
-													<div class="testi-meta">
-														JJS
-														<span>개발</span>
-														<span>서강대 컴퓨터공학과</span>
-													</div>
-												</div>
-											</div>
-										</li>
-									</ul>
-
-								</div>
-								<div class="tab-content clearfix" id="tabs-36">
-									<div class="accordion accordion-border clearfix" data-state="closed">
-
-										<div class="acctitle"><i class="acc-closed icon-question-sign"></i><i class="acc-open icon-question-sign"></i>여기 뭐하는곳인가요?</div>
-										<div class="acc_content clearfix" style="display: none;">대학생들끼리 미팅하는 사이트입니다. </div>
-
-										<div class="acctitle"><i class="acc-closed icon-comments-alt"></i><i class="acc-open icon-comments-alt"></i>매칭은 어떻게 이뤄지나요?</div>
-										<div class="acc_content clearfix" style="display: none;">큐를 돌리면 이성팀 중에서 2팀이 랜덤으로 나옵니다. 그 중에서 한 팀을 골라 신청해주시면 됩니다. 상대가 수락하면 연락처를 열람할 수 있습니다.</div>
-
-										<div class="acctitle acctitlec"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-lock3"></i>큐가 뭔가요?</div>
-										<div class="acc_content clearfix" style="display: block;">큐는 미팅할 사람을 찾는 것입니다. 큐를 돌리면 두 팀이 나옵니다. 큐는 하루 한 번 돌릴 수 있습니다. (자정 갱신)</div>
-
-									</div>
-								</div>
-
-							</div>
-
-						</div>
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="line visible-xs-block"></div>
-
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</section><!-- #content end -->
-
-
+		
 		<!--div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:50px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage1'>
 		<center>
 
