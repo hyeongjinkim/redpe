@@ -16,7 +16,9 @@
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
+	<link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />
+	<!-- Radio Checkbox Plugin -->
+	<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
 	<!--link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" /-->
 
 	<!-- Bootstrap Select CSS -->
@@ -38,6 +40,25 @@
 	.erros {
 		border-color : #E42C3E !important;
 	}
+
+	.new-form {
+		display: inline-block;
+		width :49% !important;
+
+	}
+
+	.new-form2 {
+		display: inline-block;
+		width :32% !important;
+	}
+			.white-section {
+			background-color: #FFF;
+			padding: 25px 20px;
+			-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+			box-shadow: 0px 1px 1px 0px #dfdfdf;
+			border-radius: 3px;
+		}
+
 	</style>
 
 </head>
@@ -101,90 +122,36 @@
 
 	<!-- Page Title
 		============================================= -->
-		<section id="page-title" class="page-title-parallax visible-xs" style="padding: 30px 0px; background-image : none; background-size: cover; background-position: center center; border-top : 5px; border-color : black; text-align : left !important;" data-stellar-background-ratio="0.4">
+		<section id="page-title" class="page-title-left">
 
 			<div class="container clearfix">
-				<h3><a class = '#c0392b'>빨간거울</a> 신촌 지역 대학생들끼리 안전하고 유쾌한 미팅을 해보세요. </h3>
-				<!--ol class="breadcrumb">
+				<h1>회원가입</h1>
+				<span>개인정보는 매칭이 완료될때까지 </span>
 
-				</ol-->
 			</div>
 
-		</section><!-- #page-title end -->
-
+		</section>
 
 		<!-- #page-title end -->
+
 
 
 		<!-- Content
 		============================================= -->
 		<section id="content2">
 
-			<div class="content-wrap nopadding">
+			<div class="section nomargin">
 
 				<div class="container clearfix">
 
-					<div class="col_half nobottommargin">
+					<div class="col_half nobottommargin white-section">
 
 
-						<form id="conditional-form" class="nobottommargin" >
-							<div class="col_full">
-								<h3 class='t200 hidden-xs'>미팅을 시작해보세요</h3>
-								<!--label for="user_univ visible-xs">시작하시려면..</label-->
-								<bf>
-								<select id="user_univ" name="user_univ" class="required sm-form-control">
-									<option value="">소속 대학 선택하여 시작</option>
-									<option value="서강대학교">서강대</option>
-									<option value="연세대학교">연세대</option>
-									<option value="이화여자대학교">이화여대</option>
-									<option value="홍익대학교">홍익대</option>
-								</select>
-
-							</div>
-
-							<div class="col_full" id="user_gender-wrap"  onchange="admSelectCheck(this);">
-								<label for="user_gender">성별?</label>
-								<select id="user_gender" name="user_gender" class="required sm-form-control">
-									<option value="">성별을 선택하세요</option>
-									<option value="M" id='admOption'>남자</option>
-									<option value="W">여자</option>
-								</select>
-
-							</div>
-
-							<div class="col_full" id="user_count-wrap"  >
-								<label id='user_count_tooltip' for="user_count" data-toggle="tooltip" data-placement='right' title="현재는 3대3 미팅만 가능해요">미팅 멤버 수?</label>
-								<select id="user_count" name="user_count" class="required sm-form-control">
-									<option value="">멤버수 선택</option>
-									<option value="3">3명</option>
-								</select>
-							</div>
-
-							<div class="col_full" id="user_age-wrap" >
-								<label for="user_age">나이?</label>
-
-								<!--span data-container="body" data-toggle="popover" data-placement="right" data-content="맴버들의 평균 나이를 연도로 계산해서 입력해주세요">
-   								<img src="http://ssodam.com/statics/upload/9e4df2f837f311e7aac10242ac110004.png" style="width: 12px">
-  								</span-->
-
-								<select id="user_age" name="user_age" class="required sm-form-control">
-									<option value="">멤버들 평균 나이 선택</option>
-									<option value="21">21</option>
-									<option value="22">22</option>
-									<option value="23">23</option>
-									<option value="24">24</option>
-									<option value="25">25</option>
-									<option value="26">26</option>
-									<option value="27">27</option>
-									<option value="28">28</option>
-									<option value="29">29</option>
-								</select>
-							</div>
-
-
+						<form id="conditional-form" class="nobottommargin" name='myform' onsubmit="return validateForm()">
+						
 
 							<div class="col_full" id="user_id-wrap" >
-								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="로그인 계정으로 사용됩니다" >이메일</label>
+								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="소속대학의 공식 이메일로만 가입이 가능합니다" >이메일:</label>
 								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="email@email.com">
 							</div>
 
@@ -202,59 +169,124 @@
 							</div>
 							-->
 							<div class="col_full" id="user_pass-wrap"  >
-								<label for="user_pass">비밀번호를 설정해주세요</label>
-								<input type="password" class="sm-form-control required" id="user_pass" name="user_pass" value="" placeholder="로그인 비밀번호(최소 4자)">
+								<label for="user_pass" style='display : block;'>비밀번호:</label>
+								<input type="password" class="sm-form-control required new-form" id="user_pass" name="user_pass" value="" placeholder="비밀번호">
+								<input type="password" class="sm-form-control required new-form" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
 							</div>
-							<div class="col_full" id="re_user_pass-wrap"  >
-								<label for="re_user_pass">비밀번호 한번더</label>
-								<input type="password" class="sm-form-control required" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
+							
+							
+							
+							<div class="col_full">
+						
+								<!--label for="user_univ visible-xs">시작하시려면..</label-->
+								<label for="user_pass" style='display : block;'>팀 정보:</label>
+
+								<select class="selectpicker new-form2" id="user_univ" name="user_univ">
+									<option value="">소속 대학</option>
+									<option value="서강대학교">서강대</option>
+									<option value="연세대학교">연세대</option>
+									<option value="이화여자대학교">이화여대</option>
+									<option value="홍익대학교">홍익대</option>
+								</select>
+								<select class="selectpicker new-form2" id="user_gender" name="user_gender">
+									<option value="">성별</option>
+									<option value="M">남자</option>
+									<option value="W">여자</option>
+								</select>
+								
+								<select id="user_count" name="user_count" class="selectpicker new-form2">
+									<option value="">멤버수</option>
+									<option value="3" data-subtext="3:3">3명</option>
+								</select>							
 							</div>
+							<div class='col-full' style='margin-bottom : 25px;'>
+								<label>평균 나이 :</label>
+								<input class="range_02" id="user_age" name="user_age">
+							</div>
+							<div class='col-full' style='margin-bottom : 25px;'>
+								<label>키 분포 :</label>
+								<input class="range_19" id="user_concern1" name="user_concern1">
+							</div>
+
+							
+
+							<div class="col_full" id="user_concern-wrap"  >
+								<label style='display :block;'>팀 기타정보 : </label>
+
+								
+								<select class="selectpicker new-form" id="user_concern0" name="user_concern0">
+								<option value=''>학과선택</option>
+									<optgroup label="문과">
+
+										<option value='인문대'>인문대</option>
+										<option value='경영대'>경영대</option>
+										<option value='상경계열'>상경계열</option>
+										<option value='문과'>기타</option>
+									</optgroup>
+									<optgroup label="이과">
+										<option value='자연과학'>자연과학</option>
+										<option value='공학'>공학</option>
+										<option value='이과'>기타
+										</option>
+									</optgroup>
+									<optgroup label="예체능">
+										<option value='음대'>음대</option>
+										<option value='미대'>미대</option>
+										<option value='체대'>체대</option>
+										<option value='예체능'>기타</option>
+									</optgroup>
+									<optgroup label="의학">
+										<option value='의대'>의대</option>
+										<option value='치대'>치대</option>
+										<option value='약대'>약대</option>
+										<option value='간호대'>간호대</option>
+										<option value='의료계'>기타</option>
+									</optgroup>
+									<optgroup label="기타">
+										<option value='생활과학대'>생활과학대</option>
+										<option value='사범대'>사범대</option>
+										<option value='대학원'>대학원</option>
+										<option value='특이한학과'>기타</option>
+									</optgroup>
+
+								</select>
+					
+								<select class="selectpicker new-form" id="user_concern2" name="user_concern2">
+									<option>원하는 미팅스타일</option>
+									<option>Ketchup</option>
+									<option>Relish</option>
+									<option>Onions</option>
+								</select>
+							
+  									
+							</div>
+
+
+
 							<div class="col_full" id="tell-wrap" >
-								<label for="tell">연락받을 핸드폰번호</label>
+								<label for="tell">팀 대표자 핸드폰번호 : </label> 
+								
+								<span style="font-size:9px; opacity :0.7">
+							(매칭 완료전까지 절대 노출되지 않으며, 기록 또한 30일내에 삭제됩니다)
+							</span>
 								<div>
-								<input type="number" class="sm-form-control required" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
-								<input type="number" class="sm-form-control required" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
-								<input type="number" class="sm-form-control required" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/ style='display : inline-block; width : 31.3%'>
+								<input type="number" class="sm-form-control required new-form2" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/>
+								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/>
+								<input type="number" class="sm-form-control required new-form2" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/>
 								</div>
 								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
 								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
 							</div>
-							<div class="col_full" id="user_concern-wrap"  >
-								<label class='popover_html' id='hash_popover' for="user_concern" data-toggle="popover" title="마지막단계!" data-content="팀을 잘 표현할 수 있는 해시태그를 적어주세요. 센스있게 적을수록 매칭률이 올라갑니다. 
-								&lt;br&gt; 
-								ex)
-								&lt;code&gt; #잘생겼습니다&lt;/code&gt; 
-								&lt;code&gt; #미대여자&lt;/code&gt; 
-								&lt;code&gt; #경영학과&lt;/code&gt; 
-								&lt;code&gt; #술게임잘함&lt;/code&gt; 
-								&lt;code&gt; #재밌게놀아요&lt;/code&gt;" data-placement="top">해쉬태그</label>
+
+								
+
 							
-  								<!-- 해쉬태그 --> 	
-  								<div style ='margin-bottom :10px;'>
-								<label for='user_concern0 nomargin' style='font-size : 25px;'>#</label>
-								<input id="user_concern0" name="user_concern0" class="required sm-form-control hashtag hashtag1" style='width : 66%; display:inline-block;'>	
-								</div>
-
-								<div style ='margin-bottom :10px;'>
-								<label for='user_concer1 nomargin' style='font-size : 25px;'>#</label>
-								<input id="user_concern1" name="user_concern1" class="required sm-form-control hashtag" style= 'width : 66%; display:inline-block;'
-								>
-								</div>
-
-								<div style ='margin-bottom :10px;'>
-								<label for='user_concer2 nomargin' style='font-size : 25px;'>#</label>
-								<input id="user_concern2" name="user_concern2" class="required sm-form-control hashtag" style='width : 66%; display:inline-block;'
-								>
-								</div>							
-							</div>
 							<div class="col_full" id="btn_add-wrap"  >
-								<!-- <button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
-
-								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
-								<div>
-									<input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" checked="">
-									<label for="checkbox-10" class="checkbox-style-3-label">이용약관에 동의</label>
+								<!--<button id='btn_add' onclick="AddUser()" class="button button-3d nomargin">시작하기</button> -->
+								해당 가입 메일로 시간 내에 인증 요청 메일이 갈 예정입니다. 메일 도착 후 48시간내에 인증이 없다면 계정이 삭
+								<div class="section center nomargin" style="padding: 30px;">
+									<a href='#myModal' data-lightbox="inline" type="button" class="button button-3d nomargin">시작하기</a>
 								</div>
 							</div>
 							
@@ -270,6 +302,16 @@
 
 		</section><!-- #content end -->
 
+
+		<div class="modal1 mfp-hide" id="myModal">
+			<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
+				<div style="padding: 50px;">
+					<h3>도움말</h3>
+					<p class="nobottommargin">이용약관 및 개인정보 취급방침에 동의합니다. </p>
+					<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
+				</div>
+			</div>
+		</div>
 		<!--  소개페이지 -->
 		
 		<!--div style="position:fixed;overflow-y:visible;bottom:0px;width:100%;background-color:#fff;height:50px;text-align:center;z-index:1000;border-top:1px solid #f2f2f2; display:none;" id='infomessage1'>
@@ -405,104 +447,26 @@ $(document).ready(function(){
 				}
 			});
 
-			$('#user_univ').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_univ" ) === true ) {
-					$('#user_gender-wrap').fadeIn();
-					$('#user_gender').focus();
-				} else {
-					$('#user_gender-wrap').fadeOut();
-				}
-			});
-
-			$('#user_gender').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_gender" ) === true ) {
-					$('#user_count-wrap').fadeIn();
-					$('#user_count').focus();
-					$('#user_count_tooltip').tooltip('show');
-				} else {
-					$('#user_count-wrap').fadeOut();
-				}
-			});
-
-			$('#user_count').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_count" ) === true ) {
-					$('#user_age-wrap').fadeIn();
-					$('#user_age').focus();
-					$('#user_count_tooltip').tooltip('hide');
-				} else {
-					$('#user_age-wrap').fadeOut();
-				}
-			});
-
-			$('#user_age').change( function() {
-				if( conditionValidator.element( "#user_age" ) === true ) {
-					$('#user_id-wrap').fadeIn();
-					$('#user_id').focus();
-					/* $('#infomessage1').fadeIn(); */
-				} else {
-					$('#user_id-wrap').fadeOut();
-					/* $('#infomessage1').fadeOut(); */
-				}
-			});
-
-
-			$('#user_id').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_id" ) === true ) {
-					$('#user_pass-wrap').fadeIn();
-				} else {
-					$('#user_pass-wrap').fadeOut();
-				}
-			});
-			$('#user_pass').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_pass" ) === true ) {
-					$('#re_user_pass-wrap').fadeIn();
-					/* $('#infomessage1').fadeOut(); */
-				} else {
-					$('#re_user_pass-wrap').fadeOut();
-				}
-			});
-
 			$('#re_user_pass').bind('input propertychange', function() {
 				if( conditionValidator.element( "#re_user_pass" ) === true && $('#re_user_pass').val() == $('#user_pass').val() ) {  
-					$('#tell-wrap').fadeIn();
 					var element = document.getElementById("re_user_pass");
 					element.classList.remove("erros");
 				} else {
-					$('#tell-wrap').fadeOut();
 					var element = document.getElementById("re_user_pass");
 					element.classList.add("erros");
 				}
 			});
 
-			$('#tell2').bind('input propertychange', function() {
-				if( conditionValidator.element( "#tell2" ) === true ) {
-					$('#user_concern-wrap').fadeIn();
-					
-					
-
-					/* $('#infomessage2').fadeIn(); */
-				} else {
-					$('#user_concern-wrap').fadeOut();
-					 /* $('#infomessage2').fadeOut(); */
-				}
-			});
-			
-			$('#user_concern2').bind('input propertychange', function() {
-				if( conditionValidator.element( "#user_concern2" ) === true ) {
-					$('#btn_add-wrap').fadeIn();
-					/* $('#infomessage2').fadeOut(); */
-				} else {
-					$('#btn_add-wrap').fadeOut();
-				}
-			});
-			// 인증 성공후에 6,7,8번이 fadeout 되어야하고, 5번이 disabled 되어야함.
-
 		});
 
 	</script>
-	<script type="text/javascript">
 
-	</script>
+	<!-- Bootstrap Select Plugin -->
+	<script type="text/javascript" src="js/components/bs-select.js"></script>
+
+	<!-- Select Splitter Plugin -->
+	<script type="text/javascript" src="js/components/selectsplitter.js"></script>
+
 
 	<script type="text/javascript">
 		$('.selectsplitter').selectsplitter();
@@ -514,9 +478,15 @@ $(document).ready(function(){
 	$(document).ready(function(){
 		$(document).on("click", "#btn_add", AddUser);
 	})
-
+	function strlen(str) { return str.length; }
 
 	function AddUser(){
+
+		// 키 값 반환
+		$('#user_concern1').val($('#user_concern1').val() + 'cm');
+		$('#user_concern1').val(function(index, value) {
+		   return value.replace(';', '-');
+		});		
 		var userUniv 	= $("#user_univ").val();
  		var userGender 	= $('#user_gender').val();
 		var userCount 	= $("#user_count").val();
@@ -525,8 +495,74 @@ $(document).ready(function(){
 		var userPass  	= $("#user_pass").val();
 		var re_userPass = $("#re_user_pass").val();
 		var userPhone 	= $("#tell0").val() + '-' + $("#tell1").val() + '-' + $("#tell2").val();
+		var userConcern0 = $("#user_concern0").val();
+		var userConcern1 = $("#user_concern1").val();
+		var userConcern2 = $("#user_concern2").val();
+
+
+
 		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + ' #' + $("#user_concern2").val();
 
+
+  if (strlen(userId) < 1) {
+            alert("이메일을 입력해주세요");
+            return
+        }
+        else if (strlen(userPass) < 1) {
+           	alert("비밀번호를 입력해주세요");
+            return
+        }
+        else if (strlen(re_userPass) < 1) {
+           	alert("재비밀번호를 입력해주세요");
+            return
+        }
+        else if (strlen(userUniv) < 1) {
+           	alert("학교를 입력해주세요");
+            return
+        }
+        else if (strlen(userGender) < 1) {
+           	alert("성별을 입력해주세요");
+            return
+        }
+        else if (strlen(userCount) < 1) {
+            alert("인원수를 입력해주세요");
+            return
+        }
+        else if (strlen(userAge) < 1) {
+            alert("팀 나이를 입력해주세요");
+            return
+        }
+        else if (strlen(userConcern0) < 1) {
+            alert("학과를 입력해주세요");
+            return
+        }
+        else if (strlen(userConcern1) < 1) {
+            alert("외모 장점을 입력해주세요");
+            return
+        }
+        else if (strlen(userConcern2) < 1) {
+            alert("성격 장점을 입력해주세요");
+            return
+        }
+        else if ((userUniv == "서강대학교") && (userId.indexOf("@sogang.ac.kr") == -1)  ){
+        	alert("서강대 공식 메일(@sogang.ac.kr)을 입력해주세요");
+            return
+	    }
+	    else if ((userUniv == "연세대학교") && (userId.indexOf("@yonsei.ac.kr") == -1)  ){
+        	alert("연세대 공식 메일(@yonsei.ac.kr)을 입력해주세요");
+            return
+	    }
+        else if ((userUniv == "이화여자대학교") && (userId.indexOf("@ewha.ac.kr") == -1)  ){
+        	alert("이화여대 공식 메일(@ewha.ac.kr)을 입력해주세요");
+            return
+	    }
+        else if ((userUniv == "홍익대학교") && (userId.indexOf("@hongik.ac.kr") == -1)  ){
+        	alert("홍익대 공식 메일(@hongik.ac.kr)을 입력해주세요");
+            return
+	    }
+
+
+	
 		$.ajax({
 			url     : 'http://13.124.15.208:9000/users',
 			//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
@@ -584,9 +620,14 @@ $(document).ready(function(){
 			error: function() {
 				alert("잠시 후 다시 시도해주세요.");
 			}
-		});
+		}); 
 
 	}
+
+
+
+
+
 	/*
     // 우편번호 찾기 화면을 넣을 element
     var element_layer = document.getElementById('layer');
@@ -775,6 +816,66 @@ $(document).ready(function(){
 		}
 		*/
 	</script>
+
+	<script>
+	function validateForm() {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+</script>
+
+	<!-- Range Slider Plugin -->
+	<script type="text/javascript" src="js/components/rangeslider.min.js"></script>
+	<script type="text/javascript" src="js/components/moment.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+			$(".range_02").ionRangeSlider({
+				min: 20,
+				max: 30,
+				from: 25
+
+			});
+			$(".range_03").ionRangeSlider({
+				type: "double",
+				prefix: "$",
+				min: 0,
+				max: 1000,
+				from: 200,
+				to: 800,
+			});
+					$(".range_17").ionRangeSlider({
+				type: "double",
+				grid: true,
+				min: 150,
+				max: 190,
+				from: 160,
+				to: 175,
+				postfix: " cm",
+				decorate_both: false
+			});
+
+			$(".range_19").ionRangeSlider({
+				type: "double",
+				min: 150,
+				max: 190,
+				from: 160,
+				to: 175,
+				postfix: " cm",
+				decorate_both: false,
+				values_separator: " - "
+			});
+
+
+		});
+
+	</script>
+
 
 </body>
 </html>

@@ -26,6 +26,10 @@ app.get('/', function(req, res, next) {
   }
 });
 
+app.post('/contact/send', function(req, res) {
+  console.log('test')
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

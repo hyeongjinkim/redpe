@@ -187,8 +187,8 @@
 					<nav id="primary-menu">
 
 						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="match.html"><div>매칭큐</div></a></li>
-							<li><a href="list.html"><div>내역</div></a></li>
+							<li><a href="0-main.html"><div>매칭큐</div></a></li>
+							<li><a href="0-config.html"><div>내역</div></a></li>
 						</ul>
 					</nav><!-- #primary-menu end -->
 				</div>
@@ -201,7 +201,7 @@
 
 		<section id="content_1">
 			<div class="content-wrap nopadding">
-				<div class="section nobg nomargin center clearfix" style="padding-top: 12%; padding-bottom : 12%">
+				<div class="section nobg nomargin center clearfix" style="padding: 100px 0;">
 					<div class="container clearfix">
 						<div class='col_one_fifth hidden-xs'>
 						</div>
@@ -215,24 +215,21 @@
 						<div class="col_three_fifth">
 							<div class="fslider">
 							<div class="flexslider">
-							<!--a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a-->
-							<a href='#myModal' data-lightbox="inline" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
+							<a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
 							</div>
 						</div>
 						<div class = 'topmargin'>
-						<a href='list.html' style='color : grey; opacity : 0.4; font-size :14px;'>매칭내역</a>
-						<!--a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움말</a-->
+						<a href='0-config.html' style='color : grey; opacity : 0.4; font-size :14px;'>매칭내역 |</a>
+						<a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움말</a>
 						</div>
 								<div class="modal1 mfp-hide" id="myModal">
 									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
-										<div style="padding: 50px;" class='center'>
-											<h3>Match Queue</h3>
-											<p class="nobottommargin">
-
-											- 잘 어울리는 팀을 찾을 수 있어요.  
-											<br>- 하루에 한 번 돌릴 수 있어요. 
-											<br>- 매일밤 자정에 Queue가 갱신돼요. </p>
-											<a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
+										<div style="padding: 50px;">
+											<h3>도움말</h3>
+											<p class="nobottommargin">Match Queue는 하루에 한 번 돌릴 수 있어요. 매일밤 자정에 Queue가 갱신됩니다. Queue를 돌리면 2개의 팀이 결과로 나와요. 그 중 한 팀을 선택하세요. 상대도 ok하면 서로의 연락처를 알 수 있습니다.</p>
+										</div>
+										<div class="section center nomargin" style="padding: 30px;">
+											<a href="#" class="button" onClick="$.magnificPopup.close();return false;">닫기</a>
 										</div>
 									</div>
 								</div>
@@ -299,16 +296,22 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						<!--img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo"-->
+						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
 
 						Copyrights &copy; 2017 All Rights Reserved by RedMirror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="copyrights-menu copyright-links fright clearfix">
-							<a href="#">Match Queue</a>/<a href="#">Match List</a>/<a href="#">Contact</a>
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
 						</div>
-			
+						<div class="fright clearfix">
+							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+
+						</div>
 					</div>
 
 				</div>
@@ -337,7 +340,7 @@
 
 	$(document).ready(function(){
 		if(user_id == "" || userNum ==""){
-            location.href = 'login.html';
+            location.href = '0-login.html';
         }
 		$(document).on("click", "#queue_start", StartQueue)
 		default_show()
@@ -455,7 +458,7 @@
 
 	function StartQueue(){
 
-		//if( confirm("매칭을 진행하시겠습니까?") == true){
+		if( confirm("매칭을 진행하시겠습니까?") == true){
 			$.ajax({
 				url : 'http://13.124.15.208:9000/match',
 				//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/match',
@@ -489,8 +492,6 @@
 							success: function(data){
 								alert("큐가 등록되었습니다.");
 								default_show();
-								// 모달 닫기 
-								$.magnificPopup.close();return false;
 							},
 							error: function() {
 								alert("잠시 후 다시 시도해주세요.");
@@ -499,8 +500,6 @@
 					}
 					else if(data.type == 2){
 						alert("오늘은 이미 큐를 돌렸어요. 자정이 지나면 다시 돌릴 수 있어요.")
-						// 모달 닫기
-						$.magnificPopup.close();return false;
 					}
 					else{
 						alert("정상적으로 실행이 되지 않습니다.[1]");
@@ -511,7 +510,7 @@
 					alert("잠시 후 다시 시도해주세요.");
 				}
 			});
-		//}
+		}
 	}
 	function MatchRequest(toUserNum, queueNum){
 		if( confirm("해당 팀을 선택하시겠습니까?") == true ){
@@ -546,7 +545,7 @@
 							success: function(data){
 								if(data.type == 1){
 									alert("미팅신청을 보냈습니다. 상대팀이 수락하면 연락처를 열람할 수 있습니다.")
-									location.href = 'list.html';
+									location.href = '0-config.html';
 								}
 							},
 							error: function() {
@@ -554,7 +553,7 @@
 							}
 						});
 						// alert("미팅신청을 보냈습니다3.")
-						// location.href = 'match.html';
+						// location.href = '0-main.html';
 					}
 				},
 				error: function() {
