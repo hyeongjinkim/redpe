@@ -7,6 +7,7 @@ var CORS		= require('cors')();
 var cookieParser = require('cookie-parser');
 var mysql		= require('mysql');
 var dbconfig    = require('./config/database.js');
+var nodemailer = require('nodemailer');
 var connection  = mysql.createConnection(dbconfig);
 
 
@@ -26,8 +27,34 @@ app.get('/', function(req, res, next) {
   }
 });
 
+
+// 메일보내는 함
 app.post('/contact/send', function(req, res) {
-  console.log('test')
+  var transporter = nodemailer.createTransport({
+    service: 'Naver',
+    auth : {
+      user : "redmiror@naver.com",
+      pass : '80silver!@'
+    }
+  });
+
+  var mailOptions = {
+    from: 'redmiror@naver.com',
+    to: 'khj91@sogang.ac.kr'
+    subject: '[빨간거울] 인증번호 4912',
+    text: '인증번호를 입력하여 학교 인증해주세요'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error) {
+      console.log(error);
+      res.redirect('/test.html');
+    }
+    else{
+      console.log('message sent');
+      res.redirect('/test.html');
+    }   
+  });
 });
 
 // view engine setup

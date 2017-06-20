@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mysql		= require('mysql');
 var dbconfig	= require('../config/database.js');
+var nodemailer = require('nodemailer');
 var connection	= mysql.createConnection(dbconfig);
 connection.connect();
 
@@ -40,6 +41,37 @@ router.get('/', function(req, res, next) {
 	});	
 
 })
+
+
+// 메일보내는 함
+router.post('/verify', function(req, res) {
+  var transporter = nodemailer.createTransport({
+    service: 'Naver',
+    auth : {
+      user : "redmiror@naver.com",
+      pass : '80silver!@'
+    }
+  });
+
+  var mailOptions = {
+    from: 'redmiror@naver.com',
+    to: req.body.userId,
+    subject: '[빨간거울] 인증번호 4912',
+    text: '인증번호를 입력하여 학교 인증해주세요'
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error) {
+      console.log(error);
+      res.send('실패')
+    }
+    else{
+      console.log('message sent');
+      res.send('성공')
+    }   
+  });
+});
+
 
 router.post("/", function(req, res, next){
 	// Add User
