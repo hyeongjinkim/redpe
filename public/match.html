@@ -28,130 +28,21 @@
 	<title>매칭 페이지</title>
 
 <style>
-.iportfolio .portfolio-image { overflow: visible; }
 
-.iportfolio img {
-	opacity: 1;
-	-webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 17px rgba(0, 0, 0, 0.15);
-	box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 5px 17px rgba(0, 0, 0, 0.15);
-	-webkit-transition: opacity .4s ease;
-	-o-transition: opacity .4s ease;
-	transition: opacity .4s ease;
-}
+	.white-section {
+	background-color: #FFF;
+	padding: 25px 20px;
+	-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+	box-shadow: 0px 1px 1px 0px #dfdfdf;
+	border-radius: 3px;
+	}
 
-.iportfolio img:hover { opacity: 0.85; }
-
-.iportfolio .portfolio-desc h3 {
-	font-weight: 400;
-	font-size: 14px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin-top: 15px;
-}
-
-.iportfolio .portfolio-desc h3 a:hover { color: #777; }
-
-.iportfolio .portfolio-desc h3 a span {
-	display: inline-block;
-	position: relative;
-	top: -1px;
-	vertical-align: middle;
-	margin: 0 0 0 3px;
-	font-size: 11px !important;
-	padding: 5px 7px;
-	font-weight: 400;
-	color: #FFF;
-	letter-spacing: 0;
-	text-transform: none;
-}
-
-.testimonials-rating {
-	margin-top: 15px;
-	color: #FFD700;
-	font-size: 18px;
-	line-height: 1;
-}
-
-.testi-content p {
-	font-size: 18px;
-	color: #666;
-}
-
-.testi-content p:before,
-.testi-content p:after { display: none; }
-
-.testi-meta:before { display: none; }
-.testi-meta span { padding-left: 0; }
-
-.intro-support-block {
-	border-top: 1px solid #EEE;
-	overflow: hidden;
-}
-
-.intro-support-block > div:before {
-	position: absolute;
-	content: '';
-	top: 0;
-	left: -1px;
-	width: 0;
-	height: 100%;
-	border-left: 1px solid #EEE;
-}
-
-.intro-support-block a.col-padding {
-	display: block;
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.intro-support-block a.col-padding:hover { background-color: #F5F5F5; }
-
-.intro-support-block span {
-	display: block;
-	font-size: 20px;
-	color: #444;
-	margin-top: 15px;
-}
-
-.device-xs .intro-support-block > div:before,
-.device-xxs .intro-support-block > div:before {
-	top: -1px;
-	left: 0;
-	width: 100%;
-	height: 0;
-	border-left: 0;
-	border-top: 1px solid #EEE;
-}
-
-#page-menu {
-	height: 0;
-	overflow: hidden;
-	-webkit-backface-visibility: hidden;
-}
-
-#page-menu #page-menu-wrap {
-	opacity: 0;
-	pointer-events: none;
-	-webkit-transition: all .4s ease;
-	-o-transition: all .4s ease;
-	transition: all .4s ease;
-	-webkit-transform: translate3d(0,-44px,0);
-	-o-transform: translate3d(0,-44px,0);
-	transform: translate3d(0,-44px,0);
-	transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
-}
-
-#page-menu.sticky-page-menu { overflow: visible; }
-
-#page-menu.sticky-page-menu #page-menu-wrap {
-	opacity: 1;
-	pointer-events: auto;
-	-webkit-transform: translate3d(0,0,0);
-	-o-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-}
+	.white-section2 {
+	background-color: #FFF;
+	-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+	box-shadow: 0px 1px 1px 0px #dfdfdf;
+	border-radius: 3px;
+	}
 </style>
 
 </head>
@@ -164,64 +55,41 @@
 
 		<!-- Header
 		============================================= -->
-		<header id="header" class="full-header nobottomborder">
-
-			<div id="header-wrap">
-
-				<div class="container clearfix">
-
-					<div id="primary-menu-trigger">
-						<i class="icon-reorder hidden-xs"></i>
-						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" class='visible-xs' width='14px;'></a>
-					</div>
-
-					<!-- Logo
-					============================================= -->
-					<div id="logo">
-						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
-						<a href="index.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
-					</div><!-- #logo end -->
-
-					<!-- Primary Navigation
-					============================================= -->
-					<nav id="primary-menu">
-
-						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li><a href="0-main.html"><div>매칭큐</div></a></li>
-							<li><a href="0-config.html"><div>내역</div></a></li>
-						</ul>
-					</nav><!-- #primary-menu end -->
-				</div>
-			</div>
-		</header><!-- #header end -->
+	
 
 
 		<!-- 매칭 돌리는 버튼
 		============================================= -->
-
 		<section id="content_1">
-			<div class="content-wrap nopadding">
-				<div class="section nobg nomargin center clearfix" style="padding: 100px 0;">
-					<div class="container clearfix">
-						<div class='col_one_fifth hidden-xs'>
-						</div>
-						<div class="col_three_fifth" >
-						<div class="fancy-title title-dotted-border">
-							<h3 style='padding : 0px 8px !important;'>Match Queue</h3>
-						</div>
-						</div>
-						<div class='col_one_fifth'>
-						</div>
-						<div class="col_three_fifth">
+
+			<div class="section nomargin">
+
+				<div class="container clearfix">
+				<div class='col_full'>
+				<img src ='/img/rlogo.png' width='140'>
+				</div>
+					<div>
+						<div class="col_full white-section" style='padding : 120px;'>
+							<center>
 							<div class="fslider">
-							<div class="flexslider">
-							<a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
+								<div class="flexslider">
+									<h3>Match Queue</h3>
+									<a id="queue_start" href="#" class="button button-3d topmargin pulse animated infinite"  data-delay="4000" data-animate="pulse">상대팀 찾기</a>
+								</div>
 							</div>
+				
+							<div class = 'topmargin'>
+								<a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움이 필요하세요?</a>
+							</div>		
+							</center>
 						</div>
-						<div class = 'topmargin'>
-						<a href='0-config.html' style='color : grey; opacity : 0.4; font-size :14px;'>매칭내역 |</a>
-						<a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움말</a>
-						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+
 								<div class="modal1 mfp-hide" id="myModal">
 									<div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
 										<div style="padding: 50px;">
@@ -233,30 +101,22 @@
 										</div>
 									</div>
 								</div>
-							</div>
-
-
-					</div>
-				</div>
-			</div>
-
-		</section>
 
 		<!-- 매칭결과 페이지
 		============================================= -->
-		<section id="match_box" style="margin-bottom: 0px;">
+<section  id="match_box">
 
-			<div class="content-wrap nopadding">
+			<div class="section nomargin">
 
-				<div class="section nobg nomargin center clearfix" style="padding: 50px 0;">
+				<div class="container clearfix">
+				<div class='col_half'>
+				<img src ='/img/rlogo.png' width='140'>
+				</div>
+
 					<div class="container clearfix nopadding">		
-						<div class="fancy-title title-dotted-border">
-							<h3>&nbsp;SELECT</h3>
 						
 
-						</div>
-
-						<div class="col_half">
+						<div class="col_half white-section2">
 							<div class="feature-box center media-box fbox-bg">
 								<div class="fbox-media" id='match1_select'>
 								</div>
@@ -265,7 +125,7 @@
 							</div>
 						</div>
 						<div class='visible-xs bottommargin' style='text-align :center;'>VS</div>
-						<div class="col_half norightmargin">
+						<div class="col_half norightmargin white-section2">
 							<div class="feature-box center media-box fbox-bg">
 								<div class="fbox-media" id='match2_select'>			
 								</div>
@@ -296,8 +156,8 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
-
+						<img src="/img/rlogo-white.png" alt="Footer Logo" class="footer-logo" width="100" style="opacity :0.25">
+						
 						Copyrights &copy; 2017 All Rights Reserved by RedMirror Inc.
 					</div>
 
@@ -340,7 +200,7 @@
 
 	$(document).ready(function(){
 		if(user_id == "" || userNum ==""){
-            location.href = '0-login.html';
+            location.href = 'login.html';
         }
 		$(document).on("click", "#queue_start", StartQueue)
 		default_show()
@@ -545,7 +405,7 @@
 							success: function(data){
 								if(data.type == 1){
 									alert("미팅신청을 보냈습니다. 상대팀이 수락하면 연락처를 열람할 수 있습니다.")
-									location.href = '0-config.html';
+									location.href = 'list.html';
 								}
 							},
 							error: function() {
@@ -565,6 +425,7 @@
 
 
 	</script>
+
 
 </body>
 </html>

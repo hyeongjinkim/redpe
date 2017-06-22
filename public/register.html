@@ -31,6 +31,10 @@
 	============================================= -->
 	<title>빨간거울 - 신촌 대학생 미팅</title>
 	<style>
+	label {
+		display : block;
+	}
+
 	.hashtag {
 		border : 0px;
 		border-bottom : 2px solid #DDD !important;
@@ -44,20 +48,41 @@
 	.new-form {
 		display: inline-block;
 		width :49% !important;
+		height : 50px;
 
 	}
 
 	.new-form2 {
 		display: inline-block;
 		width :32% !important;
+		height : 50px;
 	}
-			.white-section {
-			background-color: #FFF;
-			padding: 25px 20px;
-			-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
-			box-shadow: 0px 1px 1px 0px #dfdfdf;
-			border-radius: 3px;
-		}
+	.new-form3 {
+		display: inline-block;
+		width : 80% !important;
+		height : 50px;
+	}
+	.new-form4 {
+		display: inline-block;
+		width : 18% !important;
+		height : 50px;
+	}
+	.new-form5 {
+		width : 100% !important;
+
+	}
+	.new-form6 {
+		width : 49% !important;
+
+	}
+
+	.white-section {
+	background-color: #FFF;
+	padding: 25px 20px;
+	-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+	box-shadow: 0px 1px 1px 0px #dfdfdf;
+	border-radius: 3px;
+	}
 
 	</style>
 
@@ -71,66 +96,8 @@
 
 		<!-- Header
 		============================================= -->
-	<header id="header" class="full-header nobottomborder">
+	
 
-			<div id="header-wrap">
-
-				<div class="container clearfix">
-
-					<div id="primary-menu-trigger">
-						<!--i class="icon-reorder hidden-xs"></i-->
-						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  width="14px;" style='display : inline !important'>
-						<img src="/img/down_arrow.png" width="12px;" style='display : inline'>
-					</div>
-
-					<!-- Logo
-					============================================= -->
-					<div id="logo">
-						<a href="login.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  style='display : inline !important'></a>
-						<a href="match.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png"  style='display : inline !important'></a>
-					</div><!-- #logo end -->
-
-					<!-- Primary Navigation
-					============================================= -->
-					<nav id="primary-menu">
-
-						<ul class='norightmargin' style='border-right : 0px !important;'>
-							<li id='login_menu'><a href="login.html"><div>로그인</div></a></li>
-							<li><a href="match.html"><div>매칭</div></a></li>
-							<li><a href="list.html"><div>내역</div></a></li>
-	</ul>
-
-						<!-- Top Cart
-						============================================= -->
-
-
-
-						<!-- Top Search
-						============================================= -->
-
-
-					</nav><!-- #primary-menu end -->
-
-				</div>
-
-			</div>
-
-		</header><!-- #header end -->
-
-		<!-- pc화면 -->
-
-
-	<!-- Page Title
-		============================================= -->
-		<section id="page-title" class="page-title-left">
-
-			<div class="container clearfix">
-				<h1>회원가입</h1>
-				<span>개인정보는 매칭이 완료될때까지 </span>
-
-			</div>
-
-		</section>
 
 		<!-- #page-title end -->
 
@@ -141,13 +108,46 @@
 			<div class="section nomargin">
 
 				<div class="container clearfix">
-					<div class="col_half white-section">
-  						<form method="post" action="users/verify">
-  							<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="소속대학의 공식 이메일로만 가입이 가능합니다" >이메일:</label>
-							<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="email@email.com">
-							<button class="button button-3d nomargin" type="submit">시작하기</button>
-							<input type="text" class="sm-form-control required" id="form-condition-7" name="verify" value="" placeholder="인증번호">
-						</form>
+				<div class='col_half'>
+					<a href = '/'><img src ='/img/rlogo.png' width='140'></a>
+				</div>
+					<a href ='/login.html' style="font-size:9px; opacity :0.7; color : black;">
+							(이미 계정이 있다면..)
+								</a>
+					<div class="col_half white-section" style='margin-bottom : 15px !important;'>
+  						
+  							<div class='col_full'>
+  								<form method="post" action="users/verify" class='nobottommargin'>
+  								<div class='col_full'>
+									<input type="email" class="sm-form-control required new-form3" id="user_id" name="email" value="" placeholder="소속대학 공식메일">
+									<button type="submit" class="button nomargin new-form4 nopadding">인증</button>
+								</div>
+								</form>
+								<div class='col_full'>
+									<input type="text" class="sm-form-control required new-form3" value="" placeholder="인증번호" id='checknumber'>
+									<button class="button button-white nomargin new-form4 nopadding" id='checknumber_btn'>확인</button>
+								</div>
+								<div class="col_full" id="user_pass-wrap"  >
+									<input type="password" class="sm-form-control required new-form" id="user_pass" name="user_pass" value="" placeholder="비밀번호">
+									<input type="password" class="sm-form-control required new-form" id="re_user_pass" name="re_user_pass" value="" placeholder="재확인">
+								</div>
+							</div>
+
+							<div class="col_full nobottommargin" id="tell-wrap" >
+							
+								<div>
+								<input type="number" class="sm-form-control required new-form2" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/>
+								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/>
+								<input type="number" class="sm-form-control required new-form2" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/>
+								<span style="font-size:9px; opacity :0.7">
+								(매칭 완료전까지 절대 노출되지 않습니다. 안심하세요.)
+								</span>
+								</div>
+								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
+								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
+								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
+							</div>
+				
 					</div>
 
 					<div class="col_half nobottommargin white-section">
@@ -155,11 +155,6 @@
 
 						<form id="conditional-form" class="nobottommargin">
 						
-
-							<!--div class="col_full" id="user_id-wrap" >
-								<label id='user_id_tooltip' for="user_id" data-toggle="tooltip" data-placement="right" title="소속대학의 공식 이메일로만 가입이 가능합니다" >이메일:</label>
-								<input type="email" class="sm-form-control required" id="user_id" name="user" value="" placeholder="email@email.com">
-							</div-->
 
 							<!-- 인증번호 보내기
 							<div class="col_full" id="user_pass-wrap" >
@@ -174,53 +169,37 @@
 								<div class="button button-3d nomargin" id='user_concern' type="submit">인증</div>
 							</div>
 							-->
-							<div class="col_full" id="user_pass-wrap"  >
-								<label for="user_pass" style='display : block;'>비밀번호:</label>
-								<input type="password" class="sm-form-control required new-form" id="user_pass" name="user_pass" value="" placeholder="비밀번호">
-								<input type="password" class="sm-form-control required new-form" id="re_user_pass" name="re_user_pass" value="" placeholder="다시입력">
-							</div>
+							
 							
 							
 							
 							<div class="col_full">
 						
 								<!--label for="user_univ visible-xs">시작하시려면..</label-->
-								<label for="user_pass" style='display : block;'>팀 정보:</label>
-
-								<select class="selectpicker new-form2" id="user_univ" name="user_univ">
+								
+								<select class="selectpicker new-form5" id="user_univ" name="user_univ">
 									<option value="">소속 대학</option>
 									<option value="서강대학교">서강대</option>
 									<option value="연세대학교">연세대</option>
 									<option value="이화여자대학교">이화여대</option>
 									<option value="홍익대학교">홍익대</option>
 								</select>
-								<select class="selectpicker new-form2" id="user_gender" name="user_gender">
+							</div>
+							<div class='col_full'>
+								<select class="selectpicker new-form6" id="user_gender" name="user_gender" style='width : 49% !important;'>
 									<option value="">성별</option>
 									<option value="M">남자</option>
 									<option value="W">여자</option>
 								</select>
-								
-								<select id="user_count" name="user_count" class="selectpicker new-form2">
+							
+								<select id="user_count" name="user_count" class="selectpicker new-form6" style='width : 49% !important;'>
 									<option value="">멤버수</option>
 									<option value="3" data-subtext="3:3">3명</option>
 								</select>							
 							</div>
-							<div class='col-full' style='margin-bottom : 25px;'>
-								<label>평균 나이 :</label>
-								<input class="range_02" id="user_age" name="user_age">
-							</div>
-							<div class='col-full' style='margin-bottom : 25px;'>
-								<label>키 분포 :</label>
-								<input class="range_19" id="user_concern1" name="user_concern1">
-							</div>
-
-							
-
 							<div class="col_full" id="user_concern-wrap"  >
-								<label style='display :block;'>팀 기타정보 : </label>
-
 								
-								<select class="selectpicker new-form" id="user_concern0" name="user_concern0">
+								<select class="selectpicker new-form6" id="user_concern0" name="user_concern0">
 								<option value=''>학과선택</option>
 									<optgroup label="문과">
 
@@ -257,7 +236,7 @@
 
 								</select>
 					
-								<select class="selectpicker new-form" id="user_concern2" name="user_concern2">
+								<select class="selectpicker new-form6" id="user_concern2" name="user_concern2">
 									<option>원하는 미팅스타일</option>
 									<option>Ketchup</option>
 									<option>Relish</option>
@@ -268,39 +247,33 @@
 							</div>
 
 
-
-							<div class="col_full" id="tell-wrap" >
-								<label for="tell">팀 대표자 핸드폰번호 : </label> 
-								
-								<span style="font-size:9px; opacity :0.7">
-							(매칭 완료전까지 절대 노출되지 않으며, 기록 또한 30일내에 삭제됩니다)
-							</span>
-								<div>
-								<input type="number" class="sm-form-control required new-form2" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/>
-								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/>
-								<input type="number" class="sm-form-control required new-form2" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/>
-								</div>
-								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
-								<input style="width: 31%;" type="text" id="tell1" maxlength="4" class="number" name="tell">-
-								<input style="width: 31%;" type="text" id="tell2" maxlength="4pm" class="number" name="tell"-->
+							<div class='col-full' style='margin-bottom : 25px;'>
+							
+								<input class="range_15" id="user_age" name="user_age">
+							</div>
+							<div class='col-full nomargin'>
+							
+								<input class="range_19" id="user_concern1" name="user_concern1">
 							</div>
 
-								
+							
 
 							
-							<div class="col_full" id="btn_add-wrap"  >
-								<input type="button" id='btn_add' value="시작하기" class="button button-3d nomargin">
-								<div>
-									<input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" checked="">
-									<label for="checkbox-10" class="checkbox-style-3-label">이용약관에 동의</label>
-								</div>
-							</div>
-							
+
+						
 								
 						
 						</form>
 
 					</div>
+					<div class="col_half" id="btn_add-wrap" style='margin-top : 20px;' >
+								<input type="button" id='btn_add' value="시작하기" class="button button-3d " >
+								<!--div>
+									<input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" checked="">
+									<label for="checkbox-10" class="checkbox-style-3-label">이용약관에 동의</label>
+								</div-->
+							</div>
+						
 
 				</div>
 
@@ -350,7 +323,7 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						<!--img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo"-->
+						<img src="/img/rlogo-white.png" alt="Footer Logo" class="footer-logo" width="100" style="opacity :0.25">
 
 						Copyrights &copy; 2017 All Rights Reserved by Redmirror Inc.
 					</div>
@@ -478,39 +451,28 @@ $(document).ready(function(){
 		$('.selectsplitter').selectsplitter();
 	</script>
 	<script>
-	$('.popover_html').popover({ html : true});
+	$( "#checknumber_btn" ).click(function() {
+
+	    if ($('checknumber').val() == "4293") {
+	       alert("인증에 성공했습니다");지
+	    } else { 
+	       alert("인증되지 않았습니다");
+	    }
+	});
+
+
+
 	</script>
 	<script>
-
-	var userId 	= $("#user_id").val();
-
-	function verify(){
-	
-		$.ajax({
-			url     : 'http://13.124.15.208:9000/users/verify',
-			//url  :'http://ec2-13-124-98-159.ap-northeast-2.compute.amazonaws.com:9000/users',
-			dataType: "json",
-			type: "GET",
-			cache: true,
-			jsonp: true,
-			jsonpCallback: "",
-			data : {
-				userId		: userId
-			},
-			error: function() {
-				alert("잠시 후 다시 시도해주세요.");
-			}
-		}); 
-
-	}
+	$('.popover_html').popover({ html : true});
 	</script>
-
-
 	<script>
 	$(document).ready(function(){
 		$(document).on("click", "#btn_add", AddUser);
 	})
-	function strlen(str) { return str.length; }
+
+
+	function strlen(str) { return str.length; };
 
 
 	function AddUser(){
@@ -889,9 +851,19 @@ $(document).ready(function(){
 				max: 190,
 				from: 160,
 				to: 175,
+				prefix: "팀원들 키 ",
 				postfix: " cm",
 				decorate_both: false,
 				values_separator: " - "
+			});
+
+			$(".range_15").ionRangeSlider({
+				min: 20,
+				max: 30,
+				from: 25,
+				prefix: "평균 ",
+				postfix: " 세",
+				max_postfix: "+"
 			});
 
 

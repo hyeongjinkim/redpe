@@ -45,31 +45,44 @@ router.get('/', function(req, res, next) {
 
 // 메일보내는 함
 router.post('/verify', function(req, res) {
-  var transporter = nodemailer.createTransport({
+	var randomArray = [
+   '4293','1286', '9121', '3312'
+	];
+
+	var rand = randomArray[Math.floor(Math.random() * randomArray.length)];
+
+
+	var transporter = nodemailer.createTransport({
     service: 'Naver',
     auth : {
       user : "redmiror@naver.com",
       pass : '80silver!@'
-    }
-  });
+    	}
+  	});
 
-  var mailOptions = {
+  	var mailOptions = {
     from: 'redmiror@naver.com',
-    to: req.body.userId,
-    subject: '[빨간거울] 인증번호 4912',
+    to: req.body.email,
+    subject: '[빨간거울] 인증번호' + rand,
     text: '인증번호를 입력하여 학교 인증해주세요'
-  };
+  	};
 
-  transporter.sendMail(mailOptions, function(error, info){
+  	if (req.body.email.indexOf('sogang.ac.kr') == -1){
+    	res.send('<script type="text/javascript">alert("소속 대학 메일로만 인증가능합니다. 조금더 안전한 미팅을 위한 것이니 부탁드려요!");window.history.back();</script>');
+    }
+    else { 
+
+  	transporter.sendMail(mailOptions, function(error, info){
     if(error) {
       console.log(error);
-      res.send('실패')
+      res.writeHead(200, {'Content-Type': 'text/plain'});
     }
     else{
       console.log('message sent');
-      res.send('성공')
+      res.send('<script type="text/javascript">alert("인증 번호를 발송했습니다");window.history.back();</script>');
     }   
   });
+  }
 });
 
 
