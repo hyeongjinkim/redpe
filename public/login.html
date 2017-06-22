@@ -22,6 +22,29 @@
 	<!-- Document Title
 	============================================= -->
 	<title>로그인 페이지</title>
+	<style>
+		.white-section {
+	background-color: #FFF;
+	padding: 25px 20px;
+	-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
+	box-shadow: 0px 1px 1px 0px #dfdfdf;
+	border-radius: 3px;
+	}
+	.new-form3 {
+		display: inline-block;
+		width : 100% !important;
+		height : 50px;
+	}
+	.new-form4 {
+		display: inline-block;
+		height : 50px;
+	}
+	.insert {
+	height : 100px;
+	background-color :#f9f9f9;
+}
+		
+	</style>
 
 </head>
 
@@ -31,113 +54,52 @@
 	============================================= -->
 	<div id="wrapper" class="clearfix">
 
-		<!-- Header
-		============================================= -->
-		<header id="header" class="full-header nobottomborder">
 
-			<div id="header-wrap">
+
+<section id="content2">
+
+			<div class="section nomargin">
 
 				<div class="container clearfix">
-
-					<div id="primary-menu-trigger">
-						<i class="icon-reorder hidden-xs"></i>
-						<img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" class='visible-xs' width='14px;'></a>
+					<div class='col_full'>
+						<img src ='/img/rlogo.png' width='140' id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" cursour >
+						<span class="caret" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='margin-top : 10px; opacity :0.5'></span>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style='border-radius : 0px !important;'>
+							    <li ><a href='/'> Home</a></li>
+							    <li ><a href='/register.html'> Register</a></li>
+							    <li ><a href='/'> Contact</a></li>
+							  </ul>
+						<a href ='/register.html' style="font-size:12px; opacity :0.7; color : black; float:right; margin-top :9px">
+							 register
+								</a>
 					</div>
+					<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
 
-					<!-- Logo
-					============================================= -->
-					<div id="logo">
-						<a href="register.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="http://ssodam.com/statics/upload/5983d1183b8811e7976b0242ac110004.png" alt="Canvas Logo"></a>
-						<a href="register.html" class="retina-logo hidden-xs" data-dark-logo="images/logo-dark@2x.png"><img src="http://ssodam.com/statics/upload/29abfa263b8b11e7976b0242ac110004.png" alt="Canvas Logo"></a>
-					</div><!-- #logo end -->
-
-					<!-- Primary Navigation
-					============================================= -->
-					<nav id="primary-menu">
-
-						<ul>
-							<li><a href="login.html"><div>로그인</div></a>
-							</li>
-
-						</ul>
-
-						<!-- Top Cart
-						============================================= -->
-
-						<div id="top-cart">
-							<a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i></a>
-						</div><!-- #top-cart end -->
-
-
-						<!-- Top Search
-						============================================= -->
-
-
-					</nav><!-- #primary-menu end -->
-
-				</div>
-
-			</div>
-
-		</header><!-- #header end -->
-
-
-		<!-- Content
-		============================================= -->
-		<section id="content">
-
-			<div class="content-wrap bottommargin">
-
-				<div class="container clearfix nopadding">
-
-					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
-
-
-						<div class="tab-container">
-
-							<div class="tab-content clearfix" id="tab-login">
-								<div class="panel panel-default nobottommargin">
-									<div class="panel-body" style="padding: 30px;">
-										<form id="login-form" name="login-form" class="nobottommargin" action="#" method="post">
-
-											<h3>로그인</h3>
-
-											<div class="col_full">
-												<label for="login_user_id">이메일:</label>
-												<input type="text" id="login_user_id" name="login_user_id" value="" class="form-control" />
-											</div>
-
-											<div class="col_full">
-												<label for="login_user_password">비밀번호:</label>
-												<input type="password" id="login_user_password" name="login_user_password" value="" class="form-control" />
-											</div>
-
-											<div class="col_full nobottommargin">
-												<!-- <button class="button button-3d button-black nomargin" id="btn_login" name="login-form-submit" value="login">Login</button> -->
-												<input type="button" class="button button-3d button-black nomargin" id="btn_login" name="login-form-submit" value="login">
-												<a href="#" class="fright">비밀번호를 잊으셨나요?</a>
-											</div>
-
-										</form>
-									</div>
-								</div>
-							</div>
-
-
-
+					<div class="col_half white-section">
+						<div class='col_full'>
+							<input type="email" class="sm-form-control required new-form3" id="login_user_id" name="login_user_id" value="" placeholder="계정(이메일)">
 						</div>
-
+						<div class='col_full'>
+							<input type="text" class="sm-form-control required new-form3" value="" placeholder="비밀번호" id='login_user_password' name='login_user_password'>
+						</div>
+						<div class='col_full'>
+							<input type="button" class="button new-form4 " id="btn_login" name="login-form-submit" value="login">
+						</div>
 					</div>
-
+					</form>
+					'<div class="col_full insert hidden-xs"></div>'
 				</div>
 
 			</div>
 
 		</section><!-- #content end -->
 
+
+
+
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+		<footer	 id="footer" class="dark nomargin">
 
 			<!-- Copyrights
 			============================================= -->
@@ -146,9 +108,9 @@
 				<div class="container clearfix">
 
 					<div class="col_half">
-						<img src="images/footer-logo.png" alt="Footer Logo" class="footer-logo">
+						<img src="/img/rlogo-white.png" alt="Footer Logo" class="footer-logo" width="100" style="opacity :0.25">
 
-						Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.
+						Copyrights &copy; 2017 All Rights Reserved by redmiror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
@@ -169,7 +131,6 @@
 			</div><!-- #copyrights end -->
 
 		</footer><!-- #footer end -->
-
 
 	</div><!-- #wrapper end -->
 
