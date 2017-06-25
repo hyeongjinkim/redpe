@@ -7,6 +7,7 @@
 
 	<!-- Stylesheets
 	============================================= -->
+	<link rel='shortcut icon' type='image/x-icon' href='/img/favicon.png' />
 	<link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700italic|Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="css/
@@ -21,11 +22,21 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<link rel="stylesheet" href="css/intro-fonts.css" type="text/css" />
-	<link rel="stylesheet" href="css/colors.php?color=3EA98D" type="text/css" />
+	<link rel="stylesheet" href="css/colors.php?color=3EA98D" type="text/css" />	
+	<META name="Subject" content="홈페이지주제 입력">
+	<META name="Title" content="신촌 대학생 미팅:빨간거울">
+	<META name="Descript-xion" content="신촌 지역 대학생들끼리하는 ">
+	<META name="Keywords" content="신촌, 미팅, 대학생, 빨간거울, 대학생미팅, 소개팅, 연세대미팅, 서강대미팅, 이화여대미팅, 이대미팅, 홍익대미팅, 홍대미팅">
+
+    <meta property="og:title" content="신촌 미팅:빨간거울" />
+    <meta property="og:image" content="/img/logo_redmiror.png" />
+    <meta property="og:description" content= "신촌지역 대학생 미팅" />
+    <meta property="og:site_name" content="빨간거울" />
+
 
 	<!-- Document Title
 	============================================= -->
-	<title>매칭 페이지</title>
+	<title>신촌 대학생 미팅:빨간거울</title>
 
 <style>
 
@@ -72,7 +83,7 @@
 							    <li ><a href='/'> Home</a></li>
 							    <li ><a href='/match.html'> Match</a></li>
 							    <li ><a href='/list.html'> Match List</a></li>
-							    <li ><a href='/'> Contact</a></li>
+							    <li ><a href="http://pf.kakao.com/_BZxeyd">Contact</a>
 							  </ul>
 					</div>
 					<div>
@@ -86,7 +97,13 @@
 							</div>
 				
 							<div class = 'topmargin'>
-								<a href='#myModal' data-lightbox="inline" style='color : grey; opacity : 0.4; font-size :14px;'>도움이 필요하세요?</a>
+								
+								<a style='color : grey; opacity : 0.4; font-size :14px;'>상대팀을 찾을 수 있어요</a>
+								<br>
+								<a style='color : grey; opacity : 0.4; font-size :14px;'>하루 한 번 돌릴 수 있어요</a>
+								<br>
+								<a style='color : grey; opacity : 0.4; font-size :14px;'>매일밤 자정에 갱신돼요</a>
+					
 							</div>		
 							</center>
 						</div>
@@ -116,9 +133,16 @@
 			<div class="section nomargin">
 
 				<div class="container clearfix">
-				<div class='col_half'>
-					<img src ='/img/rlogo.png' width='140'>
-				</div>
+					<div class='col_full'>
+						<img src ='/img/rlogo.png' width='140' id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<span class="caret" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style='margin-top : 10px; opacity :0.5'></span>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel" style='border-radius : 0px !important;'>
+							    <li ><a href='/'> Home</a></li>
+							    <li ><a href='/match.html'> Match</a></li>
+							    <li ><a href='/list.html'> Match List</a></li>
+							    <li ><a href="http://pf.kakao.com/_BZxeyd">Contact</a>
+							  </ul>
+					</div>
 
 					<div class="container clearfix nopadding">		
 						
@@ -154,7 +178,7 @@
 		</section>
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+	<footer	 id="footer" class="dark">
 
 			<!-- Copyrights
 			============================================= -->
@@ -165,12 +189,12 @@
 					<div class="col_half">
 						<img src="/img/rlogo-white.png" alt="Footer Logo" class="footer-logo" width="100" style="opacity :0.25">
 
-						Copyrights &copy; 2017 All Rights Reserved by RedMirror Inc.
+						Copyrights &copy; 2017 All Rights Reserved by redmiror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="copyrights-menu copyright-links fright clearfix">
-							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+							<a href="/">Home</a>/<a href="match.html">Match</a>/<a href="list.html">list</a>/<a href="http://pf.kakao.com/_BZxeyd">Contact</a>
 						</div>
 						<div class="fright clearfix">
 							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
@@ -233,12 +257,13 @@
 				if(data.type == 1){
 
 
+
 					/*대학교 이미지 삽입 */
 					if(data.content.m1_user_univ == '서강대학교'){
 						var img_src = "<img src='/img/campus/sogang.jpg'>"
 					}
 					else if (data.content.m1_user_univ == '연세대학교') {
-						var img_src = "<img src='/img/campus/yonsei.jpg'>"
+						var img_src = "<img src='/img/num1.jpg'>"
 					}
 					else if (data.content.m1_user_univ == '이화여자대학교') {
 						var img_src = "<img src='/img/campus/ewha.jpg'>"
@@ -251,7 +276,7 @@
 						var img_src2 = "<img src='/img/campus/sogang.jpg'>"
 					}
 					else if (data.content.m2_user_univ == '연세대학교') {
-						var img_src2 = "<img src='/img/campus/yonsei.jpg'>"
+						var img_src2 = "<img src='/img/num1.jpg'>"
 					}
 					else if (data.content.m2_user_univ == '이화여자대학교') {
 						var img_src2 = "<img src='/img/campus/ewha.jpg'>"
@@ -260,6 +285,9 @@
 						var img_src2 = "<img src='/img/campus/hongik.jpg'>"
 					}
 
+
+					var img_src = "<img src='/img/num1.jpg'>"
+					var img_src2 = "<img src='/img/num2.jpg'>"
 					/* 이미지 변수 끝 */
 
 					requestNum = data.request_num
@@ -432,7 +460,16 @@
 
 
 	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-58266016-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>

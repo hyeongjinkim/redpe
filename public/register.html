@@ -9,6 +9,7 @@
 	<!-- Stylesheets
 	============================================= -->
 	<!--ink href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" /-->
+	<link rel='shortcut icon' type='image/x-icon' href='/img/favicon.png' />
 	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
@@ -27,9 +28,21 @@
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
+	<META name="Subject" content="홈페이지주제 입력">
+	<META name="Title" content="신촌 대학생 미팅:빨간거울">
+	<META name="Descript-xion" content="신촌 지역 대학생들끼리하는 ">
+	<META name="Keywords" content="신촌, 미팅, 대학생, 빨간거울, 대학생미팅, 소개팅, 연세대미팅, 서강대미팅, 이화여대미팅, 이대미팅, 홍익대미팅, 홍대미팅">
+
+    <meta property="og:title" content="신촌 미팅:빨간거울" />
+    <meta property="og:image" content="/img/logo_redmiror.png" />
+    <meta property="og:description" content= "신촌지역 대학생 미팅" />
+    <meta property="og:site_name" content="빨간거울" />
+
+
+
 	<!-- Document Title
 	============================================= -->
-	<title>빨간거울 - 신촌 대학생 미팅</title>
+	<title>신촌 대학생 미팅:빨간거울</title>
 	<style>
 	label {
 		display : block;
@@ -78,10 +91,20 @@
 
 	.white-section {
 	background-color: #FFF;
-	padding: 25px 20px;
+	padding: 25px 10px 10px 10px ; 
 	-webkit-box-shadow: 0px 1px 1px 0px #dfdfdf;
 	box-shadow: 0px 1px 1px 0px #dfdfdf;
 	border-radius: 3px;
+	}
+
+	.register button.btn-default {
+		border : 2px #ddd solid;
+		border-radius : 0px;
+		height : 50px;
+	}
+
+	.btn-default span.filter-option {
+		opacity :0.7; !important;
 	}
 
 	</style>
@@ -125,13 +148,25 @@
   						
   							<div class='col_full'>
   								<form method="post" action="users/verify" class='nobottommargin'>
+	  							<div class="col_full">
+							
+									<!--label for="user_univ visible-xs">시작하시려면..</label-->
+									
+									<select class="selectpicker new-form5 register" id="user_univ" name="user_univ">
+										<option value="">소속 대학</option>
+										<option value="서강대학교" data-content="<img src ='/img/univ/sogang.jpg' height = '20' width='75'>">서강대</option>
+										<option value="연세대학교" data-content="<img src ='/img/univ/yonsei.jpg' height = '20' width='75'>" >연세대</option>
+										<option value="이화여자대학교" data-content="<img src ='/img/univ/ewha.jpg' height = '20' width='75'>">이화여대</option>
+										<option value="홍익대학교" data-content="<img src ='/img/univ/hongik.jpg' height = '20' width='75'>">홍익대</option>
+									</select>
+								</div>
   								<div class='col_full'>
-									<input type="email" class="sm-form-control required new-form3" id="user_id" name="email" value="" placeholder="소속대학 공식메일">
+									<input type="email" class="sm-form-control required new-form3" id="user_id" name="email" value="" placeholder="소속대학 공식메일(@univ.ac.kr)" style = "text-transform: lowercase;">
 									<button type="submit" class="button nomargin new-form4 nopadding">인증</button>
 								</div>
 								</form>
 								<div class='col_full'>
-									<input type="text" class="sm-form-control required new-form3" value="" placeholder="인증번호" id='checknumber'>
+									<input type="number_only" class="sm-form-control required new-form3" value="" placeholder="인증번호" id='checknumber'>
 									<button class="button button-white nomargin new-form4 nopadding" id='checknumber_btn'>확인</button>
 								</div>
 								<div class="col_full" id="user_pass-wrap"  >
@@ -140,14 +175,14 @@
 								</div>
 							</div>
 
-							<div class="col_full nobottommargin" id="tell-wrap" >
+							<div class="col_full nomargin" id="tell-wrap" style='margin-bottom :0px !important;' >
 							
 								<div>
 								<input type="number" class="sm-form-control required new-form2" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/>
-								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="" maxlength='4' pattern="\d*"/>
+								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="휴대전화" maxlength='4' pattern="\d*"/>
 								<input type="number" class="sm-form-control required new-form2" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/>
-								<span style="font-size:9px; opacity :0.7">
-								(매칭 완료전까지 절대 노출되지 않습니다. 안심하세요.)
+								<span style="font-size:10px; opacity :0.7">
+								(매칭 완료전까지 절대 노출되지 않습니다.)
 								</span>
 								</div>
 								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
@@ -180,33 +215,23 @@
 							
 							
 							
-							<div class="col_full">
-						
-								<!--label for="user_univ visible-xs">시작하시려면..</label-->
-								
-								<select class="selectpicker new-form5" id="user_univ" name="user_univ">
-									<option value="">소속 대학</option>
-									<option value="서강대학교">서강대</option>
-									<option value="연세대학교">연세대</option>
-									<option value="이화여자대학교">이화여대</option>
-									<option value="홍익대학교">홍익대</option>
-								</select>
-							</div>
+
 							<div class='col_full'>
-								<select class="selectpicker new-form6" id="user_gender" name="user_gender" style='width : 49% !important;'>
+								<select class="selectpicker new-form6 register" id="user_gender" name="user_gender" style='width : 49% !important;'>
 									<option value="">성별</option>
-									<option value="M">남자</option>
-									<option value="W">여자</option>
+									<option value="W" data-content="<span class='label label-danger'>여자</span>">여자</option>
+									<option value="M" data-content="<span class='label label-info'>남자</span>">남자</option>
+									
 								</select>
 							
-								<select id="user_count" name="user_count" class="selectpicker new-form6" style='width : 49% !important;'>
+								<select id="user_count" name="user_count" class="selectpicker new-form6 register" style='width : 49% !important;'>
 									<option value="">멤버수</option>
 									<option value="3" data-subtext="3:3">3명</option>
 								</select>							
 							</div>
 							<div class="col_full" id="user_concern-wrap"  >
 								
-								<select class="selectpicker new-form6" id="user_concern0" name="user_concern0">
+								<select class="selectpicker new-form6 register" id="user_concern0" name="user_concern0">
 								<option value=''>학과선택</option>
 									<optgroup label="문과">
 
@@ -243,14 +268,18 @@
 
 								</select>
 					
-								<select class="selectpicker new-form6" id="user_concern2" name="user_concern2">
-									<option>원하는 미팅스타일</option>
-									<option>Ketchup</option>
-									<option>Relish</option>
-									<option>Onions</option>
+								<select class="selectpicker new-form6 register" id="user_concern2" name="user_concern2">
+									<option value=''>원하는 미팅스타일</option>
+									<option value='친구사귀기'>친구사귀기</option>
+									<option value='술마시기'>술마시기</option>
+									<option value='하루재밌게놀기'>하루재밌게놀기</option>
+									<option value='친구애인만들어주기'>친구애인만들어주기</option>
+									<option value='술게임'>술게임</option>
+									<option value='알콩달콩'>알콩달콩</option>
+									<option value='화끈화끈'>화끈화끈</option>
+									<option value='젠틀하게'>젠틀하게</option>		
+									<option value='미팅컨셉몰라요'>모르겠당</option>
 								</select>
-							
-  									
 							</div>
 
 
@@ -274,7 +303,7 @@
 
 					</div>
 					<div class="col_half" id="btn_add-wrap" style='margin-top : 20px;' >
-								<input type="button" id='btn_add' value="시작하기" class="button button-3d col-md-4 col-xs-12" >
+								<input type="button" id='btn_add' value="동의하고 시작하기" class="button button-3d col-md-4 col-xs-12" >
 								<!--div>
 									<input id="checkbox-10" class="checkbox-style" name="checkbox-10" type="checkbox" checked="">
 									<label for="checkbox-10" class="checkbox-style-3-label">이용약관에 동의</label>
@@ -321,7 +350,7 @@
 
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="dark">
+			<footer	 id="footer" class="dark">
 
 			<!-- Copyrights
 			============================================= -->
@@ -332,12 +361,12 @@
 					<div class="col_half">
 						<img src="/img/rlogo-white.png" alt="Footer Logo" class="footer-logo" width="100" style="opacity :0.25">
 
-						Copyrights &copy; 2017 All Rights Reserved by Redmirror Inc.
+						Copyrights &copy; 2017 All Rights Reserved by RedMirror Inc.
 					</div>
 
 					<div class="col_half col_last tright">
 						<div class="copyrights-menu copyright-links fright clearfix">
-							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+							<a href="/">Home</a>/<a href="match.html">Match</a>/<a href="list.html">list</a>/<a href="http://pf.kakao.com/_BZxeyd">Contact</a>
 						</div>
 						<div class="fright clearfix">
 							<a href="#" class="social-icon si-small si-borderless nobottommargin si-facebook">
@@ -353,7 +382,6 @@
 			</div><!-- #copyrights end -->
 
 		</footer><!-- #footer end -->
-
 
 	</div><!-- #wrapper end -->
 
@@ -458,10 +486,14 @@ $(document).ready(function(){
 		$('.selectsplitter').selectsplitter();
 	</script>
 	<script>
+	var list = [
+   '4293','1286', '9121', '3312, 4701'
+	];
+
 	$( "#checknumber_btn" ).click(function() {
 
-	    if ($('checknumber').val() == "4293") {
-	       alert("인증에 성공했습니다");지
+	   if (list.indexOf($('#checknumber').val()) >= 0) {
+	       alert("인증에 성공했습니다");				
 	    } else { 
 	       alert("인증되지 않았습니다");
 	    }
@@ -500,9 +532,6 @@ $(document).ready(function(){
 		var userConcern0 = $("#user_concern0").val();
 		var userConcern1 = $("#user_concern1").val();
 		var userConcern2 = $("#user_concern2").val();
-
-
-
 		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + ' #' + $("#user_concern2").val();
 
 
@@ -547,19 +576,19 @@ $(document).ready(function(){
             return
         }
         else if ((userUniv == "서강대학교") && (userId.indexOf("@sogang.ac.kr") == -1)  ){
-        	alert("서강대 공식 메일(@sogang.ac.kr)을 입력해주세요");
+        	alert("서강대이시면 공식 메일(@sogang.ac.kr)을 입력해주세요");
             return
 	    }
 	    else if ((userUniv == "연세대학교") && (userId.indexOf("@yonsei.ac.kr") == -1)  ){
-        	alert("연세대 공식 메일(@yonsei.ac.kr)을 입력해주세요");
+        	alert("연세대이시면 공식 메일(@yonsei.ac.kr)을 입력해주세요");
             return
 	    }
         else if ((userUniv == "이화여자대학교") && (userId.indexOf("@ewha.ac.kr") == -1)  ){
-        	alert("이화여대 공식 메일(@ewha.ac.kr)을 입력해주세요");
+        	alert("이화여대이시면 공식 메일(@ewha.ac.kr)을 입력해주세요");
             return
 	    }
         else if ((userUniv == "홍익대학교") && (userId.indexOf("@hongik.ac.kr") == -1)  ){
-        	alert("홍익대 공식 메일(@hongik.ac.kr)을 입력해주세요");
+        	alert("홍익대이시면 공식 메일(@hongik.ac.kr)을 입력해주세요");
             return
 	    }
 
@@ -612,7 +641,7 @@ $(document).ready(function(){
 					});
 				}
 				else if(data.type == 2){
-					alert("미안해요. 이미 등록된 계정이에요.")
+					alert("이미 등록된 메일입니다.")
 				}
 				else{
 

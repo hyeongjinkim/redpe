@@ -46,7 +46,7 @@ router.get('/', function(req, res, next) {
 // 메일보내는 함
 router.post('/verify', function(req, res) {
 	var randomArray = [
-   '4293','1286', '9121', '3312'
+   '4293','1286', '9121', '3312, 4701'
 	];
 
 	var rand = randomArray[Math.floor(Math.random() * randomArray.length)];
@@ -63,12 +63,14 @@ router.post('/verify', function(req, res) {
   	var mailOptions = {
     from: 'redmiror@naver.com',
     to: req.body.email,
-    subject: '[빨간거울] 인증번호' + rand,
+    subject: '[빨간거울] 인증번호 ' + rand,
     text: '인증번호를 입력하여 학교 인증해주세요'
   	};
 
-  	if (req.body.email.indexOf('sogang.ac.kr') == -1){
-    	res.send('<script type="text/javascript">alert("소속 대학 메일로만 인증가능합니다. 조금더 안전한 미팅을 위한 것이니 부탁드려요!");window.history.back();</script>');
+
+
+  	if ((req.body.email.indexOf('yonsei.ac.kr') == -1) && (req.body.email.indexOf('sogang.ac.kr') == -1) && (req.body.email.indexOf('ewha.ac.kr') == -1) && (req.body.email.indexOf('hongik.ac.kr') == -1) ) {
+    	res.send('<script type="text/javascript">alert("소속 대학 공식 메일로만 인증가능합니다. 조금 더 안전한 미팅을 위한 것이니 부탁드려요!");window.history.back();</script>');
     }
     else { 
 
