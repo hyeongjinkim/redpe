@@ -34,7 +34,7 @@
 	<META name="Keywords" content="신촌, 미팅, 대학생, 빨간거울, 대학생미팅, 소개팅, 연세대미팅, 서강대미팅, 이화여대미팅, 이대미팅, 홍익대미팅, 홍대미팅">
 
     <meta property="og:title" content="신촌 미팅:빨간거울" />
-    <meta property="og:image" content="/img/logo_redmiror.png" />
+    <meta property="og:image" content="/img/logo_redmiror.jpg" />
     <meta property="og:description" content= "신촌지역 대학생 미팅" />
     <meta property="og:site_name" content="빨간거울" />
 
@@ -147,7 +147,7 @@
 					<div class="col_half white-section" style='margin-bottom : 15px !important;'>
   						
   							<div class='col_full'>
-  								<form method="post" action="users/verify" class='nobottommargin'>
+  								
 	  							<div class="col_full">
 							
 									<!--label for="user_univ visible-xs">시작하시려면..</label-->
@@ -160,14 +160,19 @@
 										<option value="홍익대학교" data-content="<img src ='/img/univ/hongik.jpg' height = '20' width='75'>">홍익대</option>
 									</select>
 								</div>
+								<form class='nobottommargin'>
   								<div class='col_full'>
-									<input type="email" class="sm-form-control required new-form3" id="user_id" name="email" value="" placeholder="소속대학 공식메일(@univ.ac.kr)" style = "text-transform: lowercase;">
-									<button type="submit" class="button nomargin new-form4 nopadding">인증</button>
+									<input type="email" class="sm-form-control required new-form3" id="user_id" name="user_id" value="" placeholder="소속대학 공식메일(@univ.ac.kr)" style = "text-transform: lowercase;">
+									<input type="button" id='ajax_test' value="발송" class="button nomargin new-form4 nopadding">
 								</div>
+
+
 								</form>
+
+
 								<div class='col_full'>
 									<input type="number_only" class="sm-form-control required new-form3" value="" placeholder="인증번호" id='checknumber'>
-									<button class="button button-white nomargin new-form4 nopadding" id='checknumber_btn'>확인</button>
+									<button class="button button-white nomargin new-form4 nopadding button-light" id='checknumber_btn'>확인</button>
 								</div>
 								<div class="col_full" id="user_pass-wrap"  >
 									<input type="password" class="sm-form-control required new-form" id="user_pass" name="user_pass" value="" placeholder="비밀번호">
@@ -181,8 +186,9 @@
 								<input type="number" class="sm-form-control required new-form2" id="tell0" name="tell" value="010" placeholder="" maxlength='4' pattern="\d*"/>
 								<input type="number" class="sm-form-control required new-form2" id="tell1" name="tell" value="" placeholder="휴대전화" maxlength='4' pattern="\d*"/>
 								<input type="number" class="sm-form-control required new-form2" id="tell2" name="tell" value="" placeholder="" maxlength='4' minlength='4' pattern="\d*"/>
-								<span style="font-size:10px; opacity :0.7">
-								(매칭 완료전까지 절대 노출되지 않습니다.)
+								<br>
+								<span style="font-size:10px; opacity :0.7; display : block; margin-top : 6px;" >
+								안내 : 매칭 완료전까지 절대 노출되지 않습니다
 								</span>
 								</div>
 								<!--input style="width: 31%;" type="text" id="tell0" maxlength="4" class="number" name="tell">-
@@ -229,7 +235,7 @@
 									<option value="3" data-subtext="3:3">3명</option>
 								</select>							
 							</div>
-							<div class="col_full" id="user_concern-wrap"  >
+							<div class="col_full">
 								
 								<select class="selectpicker new-form6 register" id="user_concern0" name="user_concern0">
 								<option value=''>학과선택</option>
@@ -237,12 +243,12 @@
 
 										<option value='인문대'>인문대</option>
 										<option value='경영대'>경영대</option>
-										<option value='상경계열'>상경계열</option>
+										<option value='상경대'>상경대</option>
 										<option value='문과'>기타</option>
 									</optgroup>
 									<optgroup label="이과">
-										<option value='자연과학'>자연과학</option>
-										<option value='공학'>공학</option>
+										<option value='자연대'>자연대</option>
+										<option value='공대'>공대</option>
 										<option value='이과'>기타
 										</option>
 									</optgroup>
@@ -267,19 +273,20 @@
 									</optgroup>
 
 								</select>
-					
-								<select class="selectpicker new-form6 register" id="user_concern2" name="user_concern2">
-									<option value=''>원하는 미팅스타일</option>
-									<option value='친구사귀기'>친구사귀기</option>
-									<option value='술마시기'>술마시기</option>
-									<option value='하루재밌게놀기'>하루재밌게놀기</option>
-									<option value='친구애인만들어주기'>친구애인만들어주기</option>
+								<!--select class="selectpicker new-form6 register" id="user_concern2" name="user_concern2">
+									<option value=''>제일 자신있는 것</option>
+									<option value='친구사귀기'>얼굴</option>
+									<option value='술마시기'>몸매</option>
+									<option value='하루재밌게놀기'>키</option>
+									<option value='친구애인만들어주기'></option>
 									<option value='술게임'>술게임</option>
 									<option value='알콩달콩'>알콩달콩</option>
 									<option value='화끈화끈'>화끈화끈</option>
 									<option value='젠틀하게'>젠틀하게</option>		
 									<option value='미팅컨셉몰라요'>모르겠당</option>
-								</select>
+								</select-->
+								<input type="text" class="sm-form-control required new-form" id="user_concern2" name="user_concern2" value="" placeholder="각오한마디(최대15자)" maxlength="15">
+
 							</div>
 
 
@@ -290,6 +297,9 @@
 							<div class='col-full nomargin'>
 							
 								<input class="range_19" id="user_concern1" name="user_concern1">
+								<span style="font-size:10px; opacity :0.7">
+								안내 : 가장 작은 친구 ~ 가장 큰 친구 키 입력
+								</span>
 							</div>
 
 							
@@ -439,13 +449,13 @@ $(document).ready(function(){
 	// var userNum = 16
 
 	// 로그인 쿠키가 있다면 가입이 아닌 main으로 이동시키기.
-	//$(document).ready(function(){
-	//	if( userNum > 0 ){
-    //        location.href = 'match.html';
-    //    }
-	//	$(document).on("click", "#queue_start", StartQueue)
-	//	default_show()
-	// })
+	$(document).ready(function(){
+		if( userNum > 0 ){
+            location.href = 'match.html';
+        }
+		$(document).on("click", "#queue_start", StartQueue)
+		default_show()
+	 })
 
 		jQuery(document).ready( function($){
 			var conditionValidator = $("#conditional-form").validate({
@@ -487,13 +497,14 @@ $(document).ready(function(){
 	</script>
 	<script>
 	var list = [
-   '4293','1286', '9121', '3312, 4701'
+   '4293','1286', '9121', '3312', '4701'
 	];
 
 	$( "#checknumber_btn" ).click(function() {
 
 	   if (list.indexOf($('#checknumber').val()) >= 0) {
-	       alert("인증에 성공했습니다");				
+	       alert("인증에 성공했습니다");		
+	       document.getElementById("checknumber").disabled = true;		
 	    } else { 
 	       alert("인증되지 않았습니다");
 	    }
@@ -505,19 +516,42 @@ $(document).ready(function(){
 	<script>
 	$('.popover_html').popover({ html : true});
 	</script>
+	<script> 
+		$('#ajax_test').click( function (){
+			var userId 	= $("#user_id").val();
+			if ( (userId.indexOf('yonsei.ac.kr') == -1) 
+				&& (userId.indexOf('sogang.ac.kr') == -1) 
+				&& (userId.indexOf('ewha.ac.kr') == -1) 
+				&& (userId.indexOf('hongik.ac.kr') == -1) ) {
+    			alert("학교 공식 메일을 입력해주세요")
+  				}
+
+  			else {
+
+			$.ajax({
+				url : 'http://13.124.15.208:9000/users/verify',
+				dataType: "json",
+				type: "POST",
+				cache: false,
+				jsonp: true,
+				jsonpCallback: "",
+				data : {
+					userId 		: userId,
+				},
+			});
+			alert ("인증번호를 보냈습니다. 혹시 메일이 계속 안온다면, Contact로 문의해주세요.")
+				}
+		});
+	</script>
 	<script>
 	$(document).ready(function(){
 		$(document).on("click", "#btn_add", AddUser);
 	})
 
-
 	function strlen(str) { return str.length; };
-
-
 	function AddUser(){
 
 		// 키 값 반환
-		$('#user_concern1').val($('#user_concern1').val() + 'cm');
 		$('#user_concern1').val(function(index, value) {
 		   return value.replace(';', '-');
 		});		
@@ -532,66 +566,65 @@ $(document).ready(function(){
 		var userConcern0 = $("#user_concern0").val();
 		var userConcern1 = $("#user_concern1").val();
 		var userConcern2 = $("#user_concern2").val();
-		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + ' #' + $("#user_concern2").val();
+		var userConcern = '#' + $("#user_concern0").val() + '  #' + $("#user_concern1").val() + 'cm #' + $("#user_concern2").val();
 
 
-  if (strlen(userId) < 1) {
-            alert("이메일을 입력해주세요");
-            return
-        }
-        else if (strlen(userPass) < 1) {
-           	alert("비밀번호를 입력해주세요");
-            return
-        }
-        else if (strlen(re_userPass) < 1) {
-           	alert("재비밀번호를 입력해주세요");
-            return
-        }
-        else if (strlen(userUniv) < 1) {
-           	alert("학교를 입력해주세요");
-            return
-        }
-        else if (strlen(userGender) < 1) {
-           	alert("성별을 입력해주세요");
-            return
-        }
-        else if (strlen(userCount) < 1) {
-            alert("인원수를 입력해주세요");
-            return
-        }
-        else if (strlen(userAge) < 1) {
-            alert("팀 나이를 입력해주세요");
-            return
-        }
-        else if (strlen(userConcern0) < 1) {
-            alert("학과를 입력해주세요");
-            return
-        }
-        else if (strlen(userConcern1) < 1) {
-            alert("외모 장점을 입력해주세요");
-            return
-        }
-        else if (strlen(userConcern2) < 1) {
-            alert("성격 장점을 입력해주세요");
-            return
-        }
-        else if ((userUniv == "서강대학교") && (userId.indexOf("@sogang.ac.kr") == -1)  ){
-        	alert("서강대이시면 공식 메일(@sogang.ac.kr)을 입력해주세요");
-            return
-	    }
-	    else if ((userUniv == "연세대학교") && (userId.indexOf("@yonsei.ac.kr") == -1)  ){
-        	alert("연세대이시면 공식 메일(@yonsei.ac.kr)을 입력해주세요");
-            return
-	    }
-        else if ((userUniv == "이화여자대학교") && (userId.indexOf("@ewha.ac.kr") == -1)  ){
-        	alert("이화여대이시면 공식 메일(@ewha.ac.kr)을 입력해주세요");
-            return
-	    }
-        else if ((userUniv == "홍익대학교") && (userId.indexOf("@hongik.ac.kr") == -1)  ){
-        	alert("홍익대이시면 공식 메일(@hongik.ac.kr)을 입력해주세요");
-            return
-	    }
-
+	  if (strlen(userId) < 1) {
+	            alert("이메일을 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userPass) < 1) {
+	           	alert("비밀번호를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(re_userPass) < 1) {
+	           	alert("재비밀번호를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userUniv) < 1) {
+	           	alert("학교를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userGender) < 1) {
+	           	alert("성별을 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userCount) < 1) {
+	            alert("인원수를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userAge) < 1) {
+	            alert("팀 나이를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userConcern0) < 1) {
+	            alert("학과를 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userConcern1) < 1) {
+	            alert("외모 장점을 입력해주세요");
+	            return
+	        }
+	        else if (strlen(userConcern2) < 1) {
+	            alert("성격 장점을 입력해주세요");
+	            return
+	        }
+	        else if ((userUniv == "서강대학교") && (userId.indexOf("@sogang.ac.kr") == -1)  ){
+	        	alert("서강대이시면 공식 메일(@sogang.ac.kr)을 입력해주세요");
+	            return
+		    }
+		    else if ((userUniv == "연세대학교") && (userId.indexOf("@yonsei.ac.kr") == -1)  ){
+	        	alert("연세대이시면 공식 메일(@yonsei.ac.kr)을 입력해주세요");
+	            return
+		    }
+	        else if ((userUniv == "이화여자대학교") && (userId.indexOf("@ewha.ac.kr") == -1)  ){
+	        	alert("이화여대이시면 공식 메일(@ewha.ac.kr)을 입력해주세요");
+	            return
+		    }
+	        else if ((userUniv == "홍익대학교") && (userId.indexOf("@hongik.ac.kr") == -1)  ){
+	        	alert("홍익대이시면 공식 메일(@hongik.ac.kr)을 입력해주세요");
+	            return
+		    }
 
 	
 		$.ajax({
@@ -906,6 +939,7 @@ $(document).ready(function(){
 		});
 
 	</script>
+					
 
 
 </body>
